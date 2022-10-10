@@ -1,0 +1,283 @@
+[AGL] eecs-vemurir-d ~/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL> python3 pattern_connection_checker.py
+/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs/dc_c6288_7_216.v
+/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs/dc_c6288_5_75.v
+/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs/dc_c6288_7_218.v
+[1]
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_1.v
+cat: /etc/upstream-release: Is a directory
+Best Optimized factor = 12.5
+Best Assign VAlue = 0
+BEST LHS CONNECTION =  ['N1507_0', 'N1508_0', 'N1371_1_e', 'N1508_1_e', 'N1507_1_e']
+BEST RHS CONNECTION =  ['n4_1', 'N1371_1', 'n3_1', 'n3_1', 'N1507_1']
+[1]
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_0_2.v
+cat: /etc/upstream-release: Is a directory
+Best Optimized factor = 100
+Best Assign VAlue = -1
+BEST LHS CONNECTION =  []
+BEST RHS CONNECTION =  []
+[0]
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_0.v
+cat: /etc/upstream-release: Is a directory
+Best Optimized factor = 58.82352941176471
+Best Assign VAlue = 0
+BEST LHS CONNECTION =  ['N1371_1', 'N1508_1', 'N1507_1', 'N1507_0_e', 'N1508_0_e']
+BEST RHS CONNECTION =  ['n7_0', 'N1508_0', 'n9_0', 'n9_0', 'n8_0']
+[0]
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_1_2.v
+cat: /etc/upstream-release: Is a directory
+Best Optimized factor = 100
+Best Assign VAlue = -1
+BEST LHS CONNECTION =  []
+BEST RHS CONNECTION =  []
+[1]
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_0.v
+cat: /etc/upstream-release: Is a directory
+Best Optimized factor = 31.25
+Best Assign VAlue = 0
+BEST LHS CONNECTION =  ['N1372_2', 'N1508_2', 'N1371_1_e', 'N1508_1_e', 'N1507_1_e']
+BEST RHS CONNECTION =  ['n7_0', 'N1508_0', 'n9_0', 'n9_0', 'n8_0']
+[1]
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Done with writing pattern_merge_graphs/pattern_2_1.v
+cat: /etc/upstream-release: Is a directory
+Best Optimized factor = 13.333333333333334
+Best Assign VAlue = 0
+BEST LHS CONNECTION =  ['N1372_2', 'N1508_2', 'N1371_1_e', 'N1508_1_e', 'N1507_1_e']
+BEST RHS CONNECTION =  ['n4_1', 'N1371_1', 'n3_1', 'n3_1', 'N1507_1']
+

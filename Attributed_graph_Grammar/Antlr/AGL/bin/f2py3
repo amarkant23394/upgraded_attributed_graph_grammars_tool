@@ -1,0 +1,11 @@
+#!/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/bin/python3
+
+# -*- coding: utf-8 -*-
+import re
+import sys
+
+from numpy.f2py.f2py2e import main
+
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

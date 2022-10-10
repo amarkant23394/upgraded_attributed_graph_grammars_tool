@@ -1,0 +1,12 @@
+module test_c6288_5_98(IN_1,IN_2,IN_3,IN_4,N1371,N1372,N1508);
+input IN_1,IN_2,IN_3,IN_4;
+output N1371,N1372,N1508;
+wire N1311,N1446;
+not I_0(N1311,IN_1);
+nor I_1(N1371,N1311,IN_2);
+not I_2(N1372,N1311);
+nor I_3(N1508,N1311,N1446);
+nor I_4(N1446,IN_3,IN_4);
+endmodule
+
+
