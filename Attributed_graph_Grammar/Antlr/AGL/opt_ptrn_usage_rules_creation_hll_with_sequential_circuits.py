@@ -1110,10 +1110,10 @@ for i in range(len(list_of_no_gates)):
 #    GGX2Verilog("./benchmarks_generated/txt_files/Benchmark_testing100_removed_out.ggx",("/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/benchmarks_generated/benchmark_generated_files/Benchmark_testing100_removed.v"),AGLVal.getPortOder())
 
     AGLVal = AGL2GGX("./benchmarks_generated/txt_files/"+output_file+".txt")()
-    LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
-    GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
-    dc_shell_input_file_write_up(output_file)
-
+#    LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
+#    GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
+#    dc_shell_input_file_write_up(output_file)
+#
 
 
 
