@@ -192,7 +192,7 @@ for i in range(len(list_of_no_gates)):
         "gateType" : "",
     }
 
-    if 1:
+    if 0:
         with open(output_path,'w')as fp_rule_file:
 
             ################################READING THE NEW FORMED CIRCUITS FROM PATTERN JSON FILE########################################
