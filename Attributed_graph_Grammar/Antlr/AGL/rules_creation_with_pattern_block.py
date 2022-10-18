@@ -37,9 +37,9 @@ from dc_shell_s import dc_shell_input_file_write_up
 ###############################################################################
 
 
-list_of_no_inputs = [330]#, 100, 100, 100, 100, 100, 700, 900, 1000, 1200, 1500]
-list_of_no_gates = [100]#, 500, 1000, 5000, 10000, 25000, 35000, 45000, 65000, 85000, 100000]
-list_of_no_levels = [5]#, 10, 20, 30 , 40, 50, 60, 100, 130, 190, 280]
+list_of_no_inputs = [100, 100, 100, 100, 100, 700, 900, 1000, 1200, 1500]
+list_of_no_gates = [500, 1000, 5000, 10000, 25000, 35000, 45000, 65000, 85000, 100000]
+list_of_no_levels = [10, 20, 30 , 40, 50, 60, 100, 130, 190, 280]
 clock_input = "BM_CLK"
 reset_input = "BM_RST"
 
@@ -1211,9 +1211,9 @@ for i in range(len(list_of_no_gates)):
                 for input_rule_num in range(max_inputs):
                     fp_rule_file.write("\n\t\t\tout_edge_removal_nt_"+str(input_rule_num+1)+" : *;")
                     fp_rule_file.write("\n\t\t\tout_edge_removal_with_dff_output_nt_"+str(input_rule_num+1)+" : *;")
-                    fp_rule_file.write("\n\t\t\tout_edge_removal_dff : *;")
-                    fp_rule_file.write("\n\t\t\tout_edge_removal_dff_both_ends : *;")
 
+                fp_rule_file.write("\n\t\t\tout_edge_removal_dff : *;")
+                fp_rule_file.write("\n\t\t\tout_edge_removal_dff_both_ends : *;")
                 fp_rule_file.write("\n\t\t\tout_instance_removal_nt : *;")
                 fp_rule_file.write("\n\t\t\tout_instance_removal_dff : *;")
 
