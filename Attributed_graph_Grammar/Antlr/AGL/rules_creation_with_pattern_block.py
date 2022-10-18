@@ -38,8 +38,8 @@ from dc_shell_s import dc_shell_input_file_write_up
 
 
 list_of_no_inputs = [330]#, 100, 100, 100, 100, 100, 700, 900, 1000, 1200, 1500]
-list_of_no_gates = [100]#, 500, 1000, 5000, 10000, 25000, 35000, 45000, 65000, 85000, 100000]
-list_of_no_levels = [5]#, 10, 20, 30 , 40, 50, 60, 100, 130, 190, 280]
+list_of_no_gates = [35000]#, 500, 1000, 5000, 10000, 25000, 35000, 45000, 65000, 85000, 100000]
+list_of_no_levels = [60]#, 10, 20, 30 , 40, 50, 60, 100, 130, 190, 280]
 clock_input = "BM_CLK"
 reset_input = "BM_RST"
 
@@ -321,55 +321,279 @@ for i in range(len(list_of_no_gates)):
             fp_rule_file.write("\n\t}")
             #####################################################################################################
 
+
+            #########################################PRIMARY IN_REMOVAL_rule#################################################
+            for input_rule_num in range(max_inputs):
+                fp_rule_file.write("\n\n\trule primary_input_in_edge_removal_"+str(input_rule_num+1)+" {")
+
+                fp_rule_file.write("\n\t\tsub {")
+                fp_rule_file.write("\n\t\t\tU1 INPUT_G[connected = \"1\" ];")
+
+                fp_rule_file.write("\n\t\t\tU2 IN_INSTANCE [ connected = \"1\"]")
+                fp_rule_file.write("(U1.OUT1 -> IN1)")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\t\tU3 GATE_NODE_N[ connected = \"0\"](")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\t}")
+
+                fp_rule_file.write("\n\t\tdel U3 GATE_NODE_N(")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\tadd U3 (")
+                fp_rule_file.write("U1.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+
             #########################################IN_REMOVAL_rule#################################################
-#            for input_rule_num in range(max_inputs):
-#                fp_rule_file.write("\n\n\trule in_removal_"+str(input_rule_num)+" {")
-#                fp_rule_file.write("\n\t\tsub {")
-#                fp_rule_file.write("\n\t\t\tREF_L GATE_NODE_N[ connected = \"0\"]")
-#                fp_rule_file.write(";")
-#
-#                fp_rule_file.write("\n\t\t\tIN_PORT_I")
-#                fp_rule_file.write(" IN_INSTANCE")
-#                ports_attributes_dictionary["connected"] = "1"
-#                writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
-#                fp_rule_file.write("(REF_L.OUT1 -> IN1)")
-#                fp_rule_file.write(";")
-#
-#                fp_rule_file.write("\n\t\t\tREF_R GATE_NODE_N[ connected = \"0\"](")
-#                fp_rule_file.write("IN_PORT_I.OUT1 -> IN"+str(input_rule_num+1))
-#                fp_rule_file.write(")")
-#                fp_rule_file.write(";")
-#
-#                fp_rule_file.write("\n\t\t}")
-#
-#                fp_rule_file.write("\n\t\tREF_R GATE_NODE_N[connected = \"1\"](")
-#                fp_rule_file.write("REF_L.OUT1 -> IN"+str(input_rule_num+1))
-#                fp_rule_file.write(")")
-#                fp_rule_file.write(";")
-#
-#                fp_rule_file.write("\n\t}")
+            for input_rule_num in range(max_inputs):
+                fp_rule_file.write("\n\n\trule in_edge_removal_"+str(input_rule_num+1)+" {")
+
+                fp_rule_file.write("\n\t\tsub {")
+                fp_rule_file.write("\n\t\t\tU1 OUT_INSTANCE [ connected = \"1\"];")
+
+                fp_rule_file.write("\n\t\t\tU2 IN_INSTANCE [ connected = \"1\"]")
+                fp_rule_file.write("(U1.OUT1 -> IN1)")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\t\tU3 GATE_NODE_N[ connected = \"0\"](")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\t}")
+
+                fp_rule_file.write("\n\t\tdel U3 GATE_NODE_N(")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\tadd U3 (")
+                fp_rule_file.write("U1.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+            #########################################PRIMARY IN_REMOVAL_rule_for_dff#################################################
+            fp_rule_file.write("\n\n\trule primary_input_in_edge_removal_dff {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 INPUT_G[connected = \"1\" ];")
+
+            fp_rule_file.write("\n\t\t\tU2 IN_INSTANCE [ connected = \"1\"]")
+            fp_rule_file.write("(U1.OUT1 -> IN1)")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\t\tU3 DFF_G[ connected = \"0\"](")
+            fp_rule_file.write("U2.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U3 DFF_G(")
+            fp_rule_file.write("U2.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\tadd U3 (")
+            fp_rule_file.write("U1.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+
+            fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+
+            #########################################IN_REMOVAL_rule_for_DFF#################################################
+            fp_rule_file.write("\n\n\trule in_edge_removal_dff {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 OUT_INSTANCE [ connected = \"1\"];")
+
+            fp_rule_file.write("\n\t\t\tU2 IN_INSTANCE [ connected = \"1\"]")
+            fp_rule_file.write("(U1.OUT1 -> IN1)")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\t\tU3 DFF_G[ connected = \"0\"](")
+            fp_rule_file.write("U2.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U3 DFF_G(")
+            fp_rule_file.write("U2.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\tadd U3 (")
+            fp_rule_file.write("U1.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+
+            fp_rule_file.write("\n\t}")
             #####################################################################################################
 
             #########################################IN_REMOVAL_rule#################################################
-#            fp_rule_file.write("\n\n\trule out_removal {")
-#            fp_rule_file.write("\n\t\tsub {")
-#            fp_rule_file.write("\n\t\t\tREF_GATE GATE_NODE_N")
-#            fp_rule_file.write(";")
-#            fp_rule_file.write("\n\t\t\tOUT_PORT_")
-#            fp_rule_file.write(" OUT_INSTANCE")
-#            ports_attributes_dictionary["connected"] = "1"
-#            writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
-#            fp_rule_file.write("(REF_GATE.OUT1 -> IN1)") 
-#            fp_rule_file.write(";")
-#            fp_rule_file.write("\n\t\t}")
-#            fp_rule_file.write("\n\t\tdel OUT_PORT_")
-#            fp_rule_file.write(" OUT_INSTANCE")
-#            ports_attributes_dictionary["connected"] = "1"
-#            writing_attributes_func(fp_rule_file,ports_attributes_dictionary) 
-#            fp_rule_file.write("(REF_GATE.OUT1 -> IN1)")
-#            fp_rule_file.write(";")
-#            fp_rule_file.write("\n\t}")
+            fp_rule_file.write("\n\n\trule primary_in_instance_removal {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 INPUT_G[connected = \"1\" ];")
+            fp_rule_file.write("\n\t\t\tU2 IN_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U2 IN_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+
+            fp_rule_file.write("\n\t}")
             #####################################################################################################
+
+            #########################################IN_REMOVAL_rule#################################################
+            fp_rule_file.write("\n\n\trule mid_in_instance_removal {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 OUT_INSTANCE [ connected = \"1\"];")
+            fp_rule_file.write("\n\t\t\tU2 IN_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U2 IN_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+
+            fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+            #########################################OUT_edge_REMOVAL_rule#################################################
+            for input_rule_num in range(max_inputs):
+                fp_rule_file.write("\n\n\trule out_edge_removal_nt_"+str(input_rule_num+1)+" {")
+
+                fp_rule_file.write("\n\t\tsub {")
+                fp_rule_file.write("\n\t\t\tU1 GATE_NODE_N[ connected = \"0\"];")
+                fp_rule_file.write("\n\t\t\tU2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+                fp_rule_file.write("\n\t\t\tU3 GATE_NODE_N[ connected = \"0\"](")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(");")
+                fp_rule_file.write("\n\t\t}")
+
+                fp_rule_file.write("\n\t\tdel U3 GATE_NODE_N(")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\tadd U3 (")
+                fp_rule_file.write("U1.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t}")
+
+            #########################################OUT_edge_REMOVAL_rule#################################################
+            for input_rule_num in range(max_inputs):
+                fp_rule_file.write("\n\n\trule out_edge_removal_with_dff_output_nt_"+str(input_rule_num+1)+" {")
+
+                fp_rule_file.write("\n\t\tsub {")
+                fp_rule_file.write("\n\t\t\tU1 DFF_G[ connected = \"0\"];")
+                fp_rule_file.write("\n\t\t\tU2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+                fp_rule_file.write("\n\t\t\tU3 GATE_NODE_N[ connected = \"0\"](")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(");")
+                fp_rule_file.write("\n\t\t}")
+
+                fp_rule_file.write("\n\t\tdel U3 GATE_NODE_N(")
+                fp_rule_file.write("U2.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t\tadd U3 (")
+                fp_rule_file.write("U1.OUT1 -> IN"+str(input_rule_num+1))
+                fp_rule_file.write(")")
+                fp_rule_file.write(";")
+
+                fp_rule_file.write("\n\t}")
+
+            #########################################OUT_edge_REMOVAL_rule#################################################
+            fp_rule_file.write("\n\n\trule out_edge_removal_dff {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 GATE_NODE_N[ connected = \"0\"];")
+            fp_rule_file.write("\n\t\t\tU2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t\tU3 DFF_G [ connected = \"0\"](U2.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U3 DFF_G(")
+            fp_rule_file.write("U2.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\tadd U3 (")
+            fp_rule_file.write("U1.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+            #########################################OUT_edge_REMOVAL_rule#################################################
+            fp_rule_file.write("\n\n\trule out_edge_removal_dff_both_ends {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 DFF_G[ connected = \"0\"];")
+            fp_rule_file.write("\n\t\t\tU2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t\tU3 DFF_G [ connected = \"0\"](U2.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U3 DFF_G(")
+            fp_rule_file.write("U2.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t\tadd U3 (")
+            fp_rule_file.write("U1.OUT1 -> IN1")
+            fp_rule_file.write(")")
+            fp_rule_file.write(";")
+
+            fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+            #########################################OUT_REMOVAL_rule#################################################
+            fp_rule_file.write("\n\n\trule out_instance_removal_nt {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 GATE_NODE_N[ connected = \"0\"];")
+            fp_rule_file.write("\n\t\t\tU2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+
+            fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+            #########################################OUT_REMOVAL_rule#################################################
+            fp_rule_file.write("\n\n\trule out_instance_removal_dff {")
+
+            fp_rule_file.write("\n\t\tsub {")
+            fp_rule_file.write("\n\t\t\tU1 DFF_G[ connected = \"0\"];")
+            fp_rule_file.write("\n\t\t\tU2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t}")
+
+            fp_rule_file.write("\n\t\tdel U2 OUT_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+
+            fp_rule_file.write("\n\t}")
+            #####################################################################################################
+
+
+
 
             if 1:
                 #############################rule for replacing patterns with subcircuits###############################
@@ -433,6 +657,30 @@ for i in range(len(list_of_no_gates)):
 
                     ########################################MATCH####################################################
 
+                    for output_node in graph_dict_inst["OUTPUT_NODES"]:
+                        fp_rule_file.write("\n\t\tdel OUT_PORT_"+output_node)
+                        fp_rule_file.write(" OUT_INSTANCE")
+                        fp_rule_file.write("(")
+                        fp_rule_file.write("P_inst_"+str(graph_num)+"."+str(output_node)+" -> "+"IN1")
+                        fp_rule_file.write(");")
+
+                    fp_rule_file.write("\n\t\tdel P_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected = \"1\"](")
+                       
+                    for input_num,input_node in enumerate(graph_dict_inst["INPUT_NODES"]):
+                        if(input_num == len(graph_def_inst_dict["INPUT_NODES"]) - 1):
+                            fp_rule_file.write("IN_PORT_"+input_node+".OUT1 -> "+input_node)
+                        else:
+                            fp_rule_file.write("IN_PORT_"+input_node+".OUT1 -> "+input_node+" , ")
+
+                    if "CLOCK" in graph_def_inst_dict:
+                        fp_rule_file.write(" , BM_CLK.OUT1 -> CLK")
+
+
+                    if "RESET" in graph_def_inst_dict:
+                        fp_rule_file.write(" , BM_RST.OUT1 -> RST")
+
+                    fp_rule_file.write(");")
+
                     for node_name in nx.topological_sort(graph_inst):
                         input_degree_inst = graph_inst.in_degree(node_name)
                         if input_degree_inst == 0:
@@ -484,42 +732,13 @@ for i in range(len(list_of_no_gates)):
 
                     for output_node in graph_dict_inst["OUTPUT_NODES"]:
                         fp_rule_file.write("\n\t\tadd OUT_PORT_"+output_node)
-                        fp_rule_file.write(" OUT_INSTANCE")
-                        ports_attributes_dictionary["connected"] = "1"
-                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                         fp_rule_file.write("(")
                         fp_rule_file.write(output_node+".OUT1 -> "+"IN1")
                         fp_rule_file.write(");") 
 
-                    fp_rule_file.write("\n\t\t\tP_inst_"+str(graph_num)+"[connected = \"2\"];")
-
                     fp_rule_file.write("\n\t}")
                 #########################################################################################################  
-
-                ##################################PATTERN REMOVAL########################################################
-                for graph_num, graph_dict_inst in enumerate(list_of_dictionaries):
-                    graph_inst = graph_dict_inst["GRAPH"]
-                    input_node_list = graph_dict_inst["INPUT_NODES"]
-                    output_node_list = graph_dict_inst["OUTPUT_NODES"]
-                    graph_node_attributes=nx.get_node_attributes(graph_inst,'type')
-                    clk_list = []
-                    rst_list = []
-                    if "CLOCK" in graph_dict_inst:
-                        clk_list = graph_dict_inst["CLOCK"]
-
-                    if "RESET" in graph_dict_inst:
-                        rst_list = graph_dict_inst["RESET"]
-
-                    fp_rule_file.write("\n\n\trule pattern_removal_"+str(graph_num)+" {")
-                    fp_rule_file.write("\n\t\tsub {")
-                    fp_rule_file.write("\n\t\t\tP_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected = \"2\"];")
-                    fp_rule_file.write("\n\t\t}")
-                    fp_rule_file.write("\n\t\t\tdel P_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected = \"2\"];")
-                    fp_rule_file.write("\n\t}")
-
-
-          
-
+     
             
             input_connect_gates = []
             gates_of_each_subcircuit = []
@@ -722,18 +941,25 @@ for i in range(len(list_of_no_gates)):
                         writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                         fp_rule_file.write(";")
 
-                    fp_rule_file.write("\n\t\tadd P_inst_"+str(rhs_graph_num)+" PAT_"+str(rhs_graph_num)+"[ connected = \"0\"](")
-
 
                     for input_num,input_node in enumerate(rhs_input_nodes):
+                        fp_rule_file.write("\n\t\tadd IN_PORT_"+str(input_num)+"_"+str(rhs_graph_num))
+                        fp_rule_file.write(" IN_INSTANCE")
+                        ports_attributes_dictionary["connected"] = "1"
+                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                        fp_rule_file.write("(")
                         lhs_connected_index = rhs_nodes_to_be_considered.index(input_node)
                         lhs_output_node_inst = lhs_nodes_to_be_considered[lhs_connected_index]
                         output_instance_node_num = dict_pat_out[lhs_output_node_inst]
-                        if(input_num == len(rhs_input_nodes) - 1):
-                            fp_rule_file.write("OUT_PORT_"+str(output_instance_node_num)+"_"+str(lhs_graph_num)+".OUT1 -> "+input_node)
-                        else:
-                            fp_rule_file.write("OUT_PORT_"+str(output_instance_node_num)+"_"+str(lhs_graph_num)+".OUT1 -> "+input_node+" , ")
+                        fp_rule_file.write("OUT_PORT_"+str(output_instance_node_num)+"_"+str(lhs_graph_num)+".OUT1 -> IN1")
+                        fp_rule_file.write(");")
 
+                    fp_rule_file.write("\n\t\tadd P_inst_"+str(rhs_graph_num)+" PAT_"+str(rhs_graph_num)+"[ connected = \"0\"](")
+                    for input_num,input_node in enumerate(rhs_input_nodes):
+                        if(input_num < len(rhs_input_nodes)-1):
+                            fp_rule_file.write("IN_PORT_"+str(input_num)+"_"+str(rhs_graph_num)+".OUT1 -> "+input_node+" , ")
+                        else:
+                            fp_rule_file.write("IN_PORT_"+str(input_num)+"_"+str(rhs_graph_num)+".OUT1 -> "+input_node)
 
                     for rhs_clk_node in rhs_clk_list:
                         if rhs_graph_node_attribues[rhs_clk_node] == "INPUT":
@@ -975,11 +1201,24 @@ for i in range(len(list_of_no_gates)):
                 fp_rule_file.write("\n\t\tsubsequence : 1 {")
                 for graph_num, graph_dict_inst in enumerate(list_of_dictionaries):
                     fp_rule_file.write("\n\t\t\tpattern_substitute_"+str(graph_num)+" : *;")
-                fp_rule_file.write("\n\t\t}")
+                for input_rule_num in range(max_inputs):
+                    fp_rule_file.write("\n\t\t\tprimary_input_in_edge_removal_"+str(input_rule_num+1)+" : *;")
+                    fp_rule_file.write("\n\t\t\tin_edge_removal_"+str(input_rule_num+1)+" : *;")
+                fp_rule_file.write("\n\t\t\tprimary_input_in_edge_removal_dff : *;")
+                fp_rule_file.write("\n\t\t\tin_edge_removal_dff : *;")
+                fp_rule_file.write("\n\t\t\tprimary_in_instance_removal : *;")
+                fp_rule_file.write("\n\t\t\tmid_in_instance_removal : *;")
+                for input_rule_num in range(max_inputs):
+                    fp_rule_file.write("\n\t\t\tout_edge_removal_nt_"+str(input_rule_num+1)+" : *;")
+                    fp_rule_file.write("\n\t\t\tout_edge_removal_with_dff_output_nt_"+str(input_rule_num+1)+" : *;")
+                    fp_rule_file.write("\n\t\t\tout_edge_removal_dff : *;")
+                    fp_rule_file.write("\n\t\t\tout_edge_removal_dff_both_ends : *;")
 
-                fp_rule_file.write("\n\t\tsubsequence : 1 {")
-                for graph_num, graph_dict_inst in enumerate(list_of_dictionaries):
-                    fp_rule_file.write("\n\t\t\tpattern_removal_"+str(graph_num)+" : *;")
+                fp_rule_file.write("\n\t\t\tout_instance_removal_nt : *;")
+                fp_rule_file.write("\n\t\t\tout_instance_removal_dff : *;")
+
+
+
                 fp_rule_file.write("\n\t\t}")
 
                 ############################################################################################################################
@@ -990,7 +1229,4 @@ for i in range(len(list_of_no_gates)):
     AGLVal = AGL2GGX("./benchmarks_generated/txt_files/"+output_file+".txt")()
     LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
     GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
-
-
-
 
