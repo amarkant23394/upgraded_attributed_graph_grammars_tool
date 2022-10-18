@@ -24633,18 +24633,18 @@ module Benchmark_rules{
 			Reset_Init : 1;
 		}
 		subsequence : 1 {
-			input_connect_9 : 1;
+			input_connect_1 : 1;
 			r_attribute_change : *;
-			pattern_connect_9_4 : 1;
-			pattern_clear_9 : 1;
+			pattern_connect_1_6 : 1;
+			pattern_clear_1 : 1;
 			r_attribute_change : *;
-			pattern_connect_4_13 : 1;
-			pattern_clear_4 : 1;
+			pattern_connect_6_5 : 1;
+			pattern_clear_6 : 1;
 			r_attribute_change : *;
-			pattern_connect_13_5 : 1;
-			pattern_clear_13 : 1;
+			pattern_connect_5_13 : 1;
+			pattern_clear_5 : 1;
 			r_attribute_change : *;
-			final_layer_pattern_clear_5 : 1;
+			final_layer_pattern_clear_13 : 1;
 		}
 		subsequence : 1 {
 			pattern_substitute_0 : *;

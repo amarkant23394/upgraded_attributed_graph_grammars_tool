@@ -38,8 +38,8 @@ from dc_shell_s import dc_shell_input_file_write_up
 
 
 list_of_no_inputs = [330]#, 100, 100, 100, 100, 100, 700, 900, 1000, 1200, 1500]
-list_of_no_gates = [35000]#, 500, 1000, 5000, 10000, 25000, 35000, 45000, 65000, 85000, 100000]
-list_of_no_levels = [60]#, 10, 20, 30 , 40, 50, 60, 100, 130, 190, 280]
+list_of_no_gates = [100]#, 500, 1000, 5000, 10000, 25000, 35000, 45000, 65000, 85000, 100000]
+list_of_no_levels = [5]#, 10, 20, 30 , 40, 50, 60, 100, 130, 190, 280]
 clock_input = "BM_CLK"
 reset_input = "BM_RST"
 
@@ -1229,4 +1229,5 @@ for i in range(len(list_of_no_gates)):
     AGLVal = AGL2GGX("./benchmarks_generated/txt_files/"+output_file+".txt")()
     LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
     GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
+    dc_shell_input_file_write_up(output_file)
 

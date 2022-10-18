@@ -230,12 +230,12 @@ set_dont_use saed90nm_typ_ht/XNOR3X2
 set_dont_use saed90nm_typ_ht/XOR3X1
 set_dont_use saed90nm_typ_ht/XOR3X2
 
-analyze -library WORK -format verilog {./AGL/benchmarks_generated/benchmark_generated_files/Benchmark_testing100.v}
+analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/benchmarks_generated/benchmark_generated_files/Benchmark_testing100.v}
 elaborate Benchmark_testing100 -architecture verilog -library DEFAULT
 link
 uniquify
 compile -map_effort high
 report_area > rprt_area_check
 
-write -hierarchy -format verilog -output {./benchmarks_generated/dc_compiled/dc_Benchmark_testing100.v}
+write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/benchmarks_generated/dc_compiled/dc_Benchmark_testing100.v}
 exit
