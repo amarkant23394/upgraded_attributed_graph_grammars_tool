@@ -64,8 +64,8 @@ graph_name_for_node = 0
 pattern_connection_detail = "./pattern_connnection_data.json"
 
 ##########NEW SUBCIRCUITS TO BE CREATED#################
-no_of_subcircuit_input_nodes = 11
-no_of_subcircuit_output_nodes = 10
+no_of_subcircuit_input_nodes = 7
+no_of_subcircuit_output_nodes = 6
 ########################################################
 
 
@@ -155,7 +155,7 @@ random_combo_graphs = []
 no_of_inputs = []
 no_of_outputs = []
 
-if 1:
+if 0:
     for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs").iterdir():
         if file_path.is_file():
             input_f_path_str = str(file_path)
@@ -193,7 +193,7 @@ if 1:
                         for rst_name in resetPattern.split("|"):
                             if rst_name in node_name:
                                 inst_dff_reset.append(node_name)
-                                rst_match = False
+                                rst_match = True
                                 break
                 if rst_match == True and clk_match == True:
                     break
@@ -215,7 +215,6 @@ if 1:
                 "CLOCK" : inst_dff_clk,
                 "RESET" : inst_dff_reset,
             }
-            print(input_dictionary)
             no_of_inputs.append(len(input_nodes_list))
             no_of_outputs.append(len(output_nodes_list))
             list_of_dictionaries.append(input_dictionary)
@@ -225,16 +224,6 @@ if 1:
             nodes_input_degree = list(set(nodes_input_degree))
             nodes_output_degree = list(set(nodes_output_degree))
             graph_name_for_node += 1
-#            print(nx.get_node_attributes(d_graph_obj, "type"))
-#            for node_name in d_graph_obj.nodes():
-#                print(node_name)
-#                for pred_node in d_graph_obj.successors(node_name):
-#                    print(pred_node)
-#                print()
-#                for pred_node in d_graph_obj.predecessors(node_name):
-#                    print(pred_node)
-#                print()
-#                print()
     #################READING OF ALL GRAPHS DONE##################################
 
     no_of_graphs = len(list_of_dictionaries)
@@ -264,7 +253,26 @@ if 1:
     ret_subset_sum_list.clear()
 
     print(list_of_combinations_lhs)
+    print()
+    print("RHS COMBINATIONS")
     print(list_of_combinations_rhs)
+
+    #####################################PART ADDED FOR LIMITING#################################
+    new_list_of_rhs_combinations = []
+    no_of_lhs_combinations = len(list_of_combinations_lhs)
+    for i in range(no_of_lhs_combinations):
+        rhs_combo_new_inst = random.randint(0, len(list_of_combinations_rhs)-1)
+        new_list_of_rhs_combinations.append(list_of_combinations_rhs[rhs_combo_new_inst].copy())
+
+    list_of_combinations_rhs.clear()
+    list_of_combinations_rhs = new_list_of_rhs_combinations.copy()
+    new_list_of_rhs_combinations.clear()
+
+    print("RHS COMBINATIONS")
+    print(list_of_combinations_rhs)
+#    sys.exit("combination")
+    #####################################PART ADDED FOR LIMITING WILL BE DELETED##################
+
     ##############################################################################################
 
 
@@ -327,6 +335,7 @@ if 1:
             print(cur_inst_rhs_list)
             best_lhs_connection = []
             best_rhs_connection = []
+            
             #########################CREATING LIST OF INTER-CONNECTION##################
             lhs_output_list = []
             lhs_dff_clk = []
@@ -354,12 +363,12 @@ if 1:
                             for rst_name in resetPattern.split("|"):
                                 if rst_name in node_name:
                                     lhs_dff_reset.append(node_name)
-                                    rst_match = False
+                                    rst_match = True
                                     break
                     if rst_match == True and clk_match == True:
                         break
 
-                if (len(lhs_dff_reset) != 0):
+                if (len(lhs_dff_reset) != 0) and rst_match == True:
                     for inst_rst in lhs_graph.successors(lhs_dff_reset[-1]):
                         if lhs_inst_node_attributes[inst_rst] == "NOT":
                             lhs_dff_reset.append(inst_rst)
@@ -397,12 +406,12 @@ if 1:
                             for rst_name in resetPattern.split("|"):
                                 if rst_name in node_name:
                                     rhs_dff_reset.append(node_name)
-                                    rst_match = False
+                                    rst_match = True
                                     break
                     if rst_match == True and clk_match == True:
                         break
 
-                if (len(rhs_dff_reset) != 0):
+                if (len(rhs_dff_reset) != 0) and rst_match == True:
                     for inst_rst in rhs_graph.successors(rhs_dff_reset[-1]):
                         if rhs_inst_node_attributes[inst_rst] == "NOT":
                             rhs_dff_reset.append(inst_rst)
@@ -548,6 +557,7 @@ if 1:
                 if(len(sub_circuit_dff_rst_list) != 0):
                     selected_rst_node = sub_circuit_dff_rst_list.pop(0)
                     selected_rst_connected_node_index = -1
+                    print(selected_rst_node)
                     for inst_rst in connection_graph.successors(selected_rst_node):
                         if connection_graph_inst_node_attributes[inst_rst] == "NOT":
                             selected_rst_connected_node_index = sub_circuit_dff_rst_list.index(inst_rst)
@@ -633,6 +643,8 @@ if 1:
                             if line == "\n":
                                 gate_count_start_flag = True
                                 wire_started = False
+                            if (line.startswith('assign')):
+                                no_of_assign += 1
 
                         if valid_file == True and gate_count_start_flag == True and line != "":
                             if (line.startswith('assign')):
@@ -663,7 +675,7 @@ if 1:
                         optimization_checker_count = 0
 ##################################################################################################################################################
 
-if 0:
+if 1:
     graph_name_for_node = 0
     with open(pattern_connection_detail,'w')as fp_pattern_data_json:
         list_of_dictionaries.clear()
@@ -936,6 +948,8 @@ if 0:
                                     if line == "\n":
                                         gate_count_start_flag = True
                                         wire_started = False
+                                    if (line.startswith('assign')):
+                                        no_of_assign += 1
 
                                 if valid_file == True and gate_count_start_flag == True and line != "":
                                     if (line.startswith('assign')):
