@@ -1,61 +1,54 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : O-2018.06-SP1
-// Date      : Mon Oct  3 20:53:23 2022
+// Date      : Tue Oct 18 23:05:46 2022
 /////////////////////////////////////////////////////////////
 
 
-module test_final ( G1_0_l, G2_0_l, IN_2_0_l, IN_4_0_l, IN_5_0_l, IN_7_0_l, 
-        IN_8_0_l, IN_10_0_l, IN_11_0_l, IN_1_5_l, IN_2_5_l, blif_clk_net_1_r, 
-        blif_reset_net_1_r, G42_1_r, n_572_1_r, n_573_1_r, n_549_1_r, 
-        n_569_1_r, n_452_1_r, n_42_2_r, G199_2_r, ACVQN2_3_r, n_266_and_0_3_r
- );
-  input G1_0_l, G2_0_l, IN_2_0_l, IN_4_0_l, IN_5_0_l, IN_7_0_l, IN_8_0_l,
-         IN_10_0_l, IN_11_0_l, IN_1_5_l, IN_2_5_l, blif_clk_net_1_r,
-         blif_reset_net_1_r;
-  output G42_1_r, n_572_1_r, n_573_1_r, n_549_1_r, n_569_1_r, n_452_1_r,
-         n_42_2_r, G199_2_r, ACVQN2_3_r, n_266_and_0_3_r;
-  wire   n_431_0_l, n4_1_r, N3_2_r, n9, n20, n24, n25, n26, n27, n28, n29, n30,
-         n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44,
-         n45;
+module test_final ( IN_1_0_l, IN_2_0_l, IN_3_0_l, IN_4_0_l, IN_1_1_l, IN_2_1_l, 
+        IN_3_1_l, blif_clk_net_8_l, blif_reset_net_8_l, IN_1_8_l, IN_2_8_l, 
+        IN_3_8_l, IN_6_8_l, N1371_0_r, N1508_0_r, N1372_1_r, N1508_1_r, 
+        N6147_2_r, N6147_3_r, N1372_4_r, N1508_4_r, N1507_6_r, N1508_6_r );
+  input IN_1_0_l, IN_2_0_l, IN_3_0_l, IN_4_0_l, IN_1_1_l, IN_2_1_l, IN_3_1_l,
+         blif_clk_net_8_l, blif_reset_net_8_l, IN_1_8_l, IN_2_8_l, IN_3_8_l,
+         IN_6_8_l;
+  output N1371_0_r, N1508_0_r, N1372_1_r, N1508_1_r, N6147_2_r, N6147_3_r,
+         N1372_4_r, N1508_4_r, N1507_6_r, N1508_6_r;
+  wire   N20, N37, N6147_3_r, N3_8_l, n6, n17, n18, n19, n20, n21, n22, n23,
+         n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35;
+  assign N1372_1_r = N20;
+  assign N1372_4_r = N37;
+  assign N6147_2_r = N6147_3_r;
 
-  DFFARX1 I_1 ( .D(n_431_0_l), .CLK(blif_clk_net_1_r), .RSTB(n9), .Q(n43), 
-        .QN(n26) );
-  DFFARX1 I_12 ( .D(IN_2_5_l), .CLK(blif_clk_net_1_r), .RSTB(n9), .Q(n44) );
-  DFFARX1 I_14 ( .D(IN_1_5_l), .CLK(blif_clk_net_1_r), .RSTB(n9), .Q(n45), 
-        .QN(n27) );
-  DFFARX1 I_15 ( .D(n4_1_r), .CLK(blif_clk_net_1_r), .RSTB(n9), .Q(G42_1_r) );
-  DFFARX1 I_26 ( .D(N3_2_r), .CLK(blif_clk_net_1_r), .RSTB(n9), .Q(G199_2_r)
-         );
-  DFFARX1 I_29 ( .D(n24), .CLK(blif_clk_net_1_r), .RSTB(n9), .Q(ACVQN2_3_r) );
-  DFFARX1 I_31 ( .D(n25), .CLK(blif_clk_net_1_r), .RSTB(n9), .QN(n20) );
-  NAND2X0 U32 ( .IN1(n28), .IN2(n26), .QN(n_573_1_r) );
-  NOR2X0 U33 ( .IN1(n29), .IN2(n30), .QN(n_572_1_r) );
-  NAND2X0 U34 ( .IN1(n31), .IN2(n26), .QN(n30) );
-  NAND2X0 U35 ( .IN1(n45), .IN2(n28), .QN(n_569_1_r) );
-  INVX0 U36 ( .INP(n25), .ZN(n28) );
-  NOR2X0 U37 ( .IN1(n32), .IN2(n27), .QN(n_549_1_r) );
-  AND2X1 U38 ( .IN1(n26), .IN2(n44), .Q(n32) );
-  NOR2X0 U39 ( .IN1(n43), .IN2(n44), .QN(n_452_1_r) );
-  OR2X1 U40 ( .IN1(n33), .IN2(IN_8_0_l), .Q(n_431_0_l) );
-  AND2X1 U41 ( .IN1(n34), .IN2(IN_2_0_l), .Q(n33) );
-  NOR2X0 U42 ( .IN1(IN_4_0_l), .IN2(n29), .QN(n34) );
-  NOR2X0 U43 ( .IN1(n35), .IN2(n36), .QN(n_42_2_r) );
-  NAND2X0 U44 ( .IN1(G1_0_l), .IN2(n31), .QN(n36) );
-  INVX0 U45 ( .INP(G2_0_l), .ZN(n35) );
-  NOR2X0 U46 ( .IN1(n37), .IN2(n20), .QN(n_266_and_0_3_r) );
-  NOR2X0 U47 ( .IN1(IN_5_0_l), .IN2(n29), .QN(n37) );
-  INVX0 U48 ( .INP(G1_0_l), .ZN(n29) );
-  INVX0 U49 ( .INP(blif_reset_net_1_r), .ZN(n9) );
-  NOR2X0 U50 ( .IN1(n44), .IN2(n25), .QN(n4_1_r) );
-  NAND2X0 U51 ( .IN1(n38), .IN2(IN_7_0_l), .QN(n25) );
-  NOR2X0 U52 ( .IN1(G2_0_l), .IN2(n31), .QN(n38) );
-  INVX0 U53 ( .INP(IN_5_0_l), .ZN(n31) );
-  NAND2X0 U54 ( .IN1(n39), .IN2(IN_11_0_l), .QN(n24) );
-  NOR2X0 U55 ( .IN1(IN_10_0_l), .IN2(G2_0_l), .QN(n39) );
-  NOR2X0 U56 ( .IN1(n45), .IN2(n40), .QN(N3_2_r) );
-  NOR2X0 U57 ( .IN1(n41), .IN2(G2_0_l), .QN(n40) );
-  NOR2X0 U58 ( .IN1(IN_10_0_l), .IN2(n42), .QN(n41) );
-  INVX0 U59 ( .INP(IN_11_0_l), .ZN(n42) );
+  DFFARX1 I_8 ( .D(N3_8_l), .CLK(blif_clk_net_8_l), .RSTB(n6), .QN(n35) );
+  INVX0 U27 ( .INP(blif_reset_net_8_l), .ZN(n6) );
+  NOR2X0 U28 ( .IN1(n17), .IN2(n18), .QN(N6147_3_r) );
+  NOR2X0 U29 ( .IN1(IN_1_8_l), .IN2(IN_3_8_l), .QN(n18) );
+  INVX0 U30 ( .INP(n19), .ZN(n17) );
+  AND2X1 U31 ( .IN1(IN_6_8_l), .IN2(n20), .Q(N3_8_l) );
+  NAND2X0 U32 ( .IN1(IN_3_8_l), .IN2(IN_2_8_l), .QN(n20) );
+  INVX0 U33 ( .INP(n21), .ZN(N37) );
+  NOR2X0 U34 ( .IN1(n19), .IN2(n22), .QN(N1508_6_r) );
+  NOR2X0 U35 ( .IN1(n23), .IN2(n21), .QN(N1508_4_r) );
+  NAND2X0 U36 ( .IN1(n24), .IN2(n25), .QN(n21) );
+  NOR2X0 U37 ( .IN1(IN_3_8_l), .IN2(IN_3_1_l), .QN(n25) );
+  NOR2X0 U38 ( .IN1(IN_1_8_l), .IN2(n19), .QN(n24) );
+  NOR2X0 U39 ( .IN1(n26), .IN2(n27), .QN(n23) );
+  AND2X1 U40 ( .IN1(n22), .IN2(N20), .Q(N1508_1_r) );
+  NAND2X0 U41 ( .IN1(n28), .IN2(n29), .QN(N1508_0_r) );
+  OR2X1 U42 ( .IN1(n30), .IN2(n35), .Q(n29) );
+  NAND2X0 U43 ( .IN1(N20), .IN2(n31), .QN(n28) );
+  INVX0 U44 ( .INP(IN_3_1_l), .ZN(n31) );
+  NOR2X0 U45 ( .IN1(n30), .IN2(n19), .QN(N20) );
+  NAND2X0 U46 ( .IN1(IN_2_1_l), .IN2(IN_1_1_l), .QN(n19) );
+  NOR2X0 U47 ( .IN1(n32), .IN2(n22), .QN(N1507_6_r) );
+  INVX0 U48 ( .INP(n27), .ZN(n22) );
+  NOR2X0 U49 ( .IN1(n35), .IN2(n30), .QN(n32) );
+  NOR2X0 U50 ( .IN1(n27), .IN2(n30), .QN(N1371_0_r) );
+  INVX0 U51 ( .INP(n26), .ZN(n30) );
+  NOR2X0 U52 ( .IN1(n33), .IN2(n34), .QN(n26) );
+  NOR2X0 U53 ( .IN1(IN_3_0_l), .IN2(IN_4_0_l), .QN(n33) );
+  NOR2X0 U54 ( .IN1(IN_2_0_l), .IN2(n34), .QN(n27) );
+  INVX0 U55 ( .INP(IN_1_0_l), .ZN(n34) );
 endmodule
 

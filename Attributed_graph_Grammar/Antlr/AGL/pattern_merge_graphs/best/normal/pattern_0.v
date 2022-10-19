@@ -1,0 +1,45 @@
+module test_final(IN_1_0_l,IN_2_0_l,IN_3_0_l,IN_4_0_l,IN_1_1_l,IN_2_1_l,IN_3_1_l,blif_clk_net_8_l,blif_reset_net_8_l,IN_1_8_l,IN_2_8_l,IN_3_8_l,IN_6_8_l,N1371_0_r,N1508_0_r,N1372_1_r,N1508_1_r,N6147_2_r,N6147_3_r,N1372_4_r,N1508_4_r,N1507_6_r,N1508_6_r);
+input IN_1_0_l,IN_2_0_l,IN_3_0_l,IN_4_0_l,IN_1_1_l,IN_2_1_l,IN_3_1_l,blif_clk_net_8_l,blif_reset_net_8_l,IN_1_8_l,IN_2_8_l,IN_3_8_l,IN_6_8_l;
+output N1371_0_r,N1508_0_r,N1372_1_r,N1508_1_r,N6147_2_r,N6147_3_r,N1372_4_r,N1508_4_r,N1507_6_r,N1508_6_r;
+wire N1371_0_l,N1508_0_l,n3_0_l,n4_0_l,N1372_1_l,N1508_1_l,n4_1_l,n_42_8_l,G199_8_l,N3_8_l,n1_8_l,n3_8_l,n3_0_r,n4_0_r,n4_1_r,n5_2_r,n6_2_r,N6138_2_r,n7_2_r,n3_3_r,N6138_3_r,n6_4_r,n7_4_r,n8_4_r,n6_6_r,n7_6_r,n8_6_r,n9_6_r;
+nor I_0(N1371_0_l,IN_2_0_l,n4_0_l);
+nor I_1(N1508_0_l,n3_0_l,n4_0_l);
+nor I_2(n3_0_l,IN_3_0_l,IN_4_0_l);
+not I_3(n4_0_l,IN_1_0_l);
+not I_4(N1372_1_l,n4_1_l);
+nor I_5(N1508_1_l,IN_3_1_l,n4_1_l);
+nand I_6(n4_1_l,IN_1_1_l,IN_2_1_l);
+nor I_7(n_42_8_l,IN_1_8_l,IN_3_8_l);
+DFFARX1 I_8(N3_8_l,blif_clk_net_8_l,n1_8_l,G199_8_l,);
+and I_9(N3_8_l,IN_6_8_l,n3_8_l);
+not I_10(n1_8_l,blif_reset_net_8_l);
+nand I_11(n3_8_l,IN_2_8_l,IN_3_8_l);
+nor I_12(N1371_0_r,n4_0_r,N1372_1_l);
+nor I_13(N1508_0_r,n3_0_r,n4_0_r);
+nor I_14(n3_0_r,n_42_8_l,N1508_0_l);
+not I_15(n4_0_r,N1372_1_l);
+not I_16(N1372_1_r,n4_1_r);
+nor I_17(N1508_1_r,n4_1_r,N1508_1_l);
+nand I_18(n4_1_r,N1371_0_l,N1508_0_l);
+nor I_19(N6147_2_r,n5_2_r,n6_2_r);
+nor I_20(n5_2_r,n7_2_r,N1508_0_l);
+not I_21(n6_2_r,N6138_2_r);
+nor I_22(N6138_2_r,n_42_8_l,G199_8_l);
+nor I_23(n7_2_r,N1371_0_l,N1508_0_l);
+nor I_24(N6147_3_r,n3_3_r,G199_8_l);
+not I_25(n3_3_r,N6138_3_r);
+nor I_26(N6138_3_r,G199_8_l,N1372_1_l);
+not I_27(N1372_4_r,n7_4_r);
+nor I_28(N1508_4_r,n6_4_r,n7_4_r);
+nor I_29(n6_4_r,n8_4_r,N1371_0_l);
+nand I_30(n7_4_r,N1372_1_l,N1508_1_l);
+and I_31(n8_4_r,N1508_1_l,n_42_8_l);
+nor I_32(N1507_6_r,n8_6_r,n9_6_r);
+and I_33(N1508_6_r,n6_6_r,G199_8_l);
+nor I_34(n6_6_r,n7_6_r,n8_6_r);
+not I_35(n7_6_r,N1508_0_l);
+nor I_36(n8_6_r,n9_6_r,n_42_8_l);
+and I_37(n9_6_r,N1372_1_l,N1508_1_l);
+endmodule
+
+

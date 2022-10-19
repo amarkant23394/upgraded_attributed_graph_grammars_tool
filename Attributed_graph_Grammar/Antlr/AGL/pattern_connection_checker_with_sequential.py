@@ -76,8 +76,87 @@ random_combination_cir_dictionaries = []
 random_combo_graphs = []
 no_of_inputs = []
 no_of_outputs = []
-if 0:
-    for file_path in pathlib.Path("/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs").iterdir():
+"""
+@author: M.Satya Amarkant
+
+Project Name : Graph Grammar Attribute Benchmark Generator
+Description:- This module takes the list of graphs and makes rules for their addition into host graph
+"""
+
+#Modules
+#-----------------------------------------------------------------------------#
+from networkx.algorithms import isomorphism
+from xmlrpc.client import boolean
+import networkx as nx
+from LoadGGX import LoadGGX
+import networkx as nx
+import GraGra2ggx.TagCreator
+import GraGra2ggx.Tags
+import GraGra2ggx.GraGra2ggx
+from operator import getitem
+import copy
+import pathlib
+from pathlib import Path
+import verilog_parsing
+import matplotlib.pyplot as plt
+from operator import getitem
+import sys
+import AGL
+from AGL import AGL2GGX
+from AGL import GGX2Verilog
+from dc_pattern_opti_calculator import dc_shell_pattern_check_write_up
+from Networkx2Verilog import Networkx2Verilog
+import json
+from pathlib import Path
+import shutil
+import itertools
+import random
+
+###############################################################################
+
+#Source Code
+#-----------------------------------------------------------------------------#
+ret_subset_sum_list = []
+def subset_sum(numbers, target, partial=[]):
+    s = sum(n for _, n in partial)
+
+    # check if the partial sum is equals to target
+    if s == target:
+        ret_subset_sum_list.append(partial)
+    if s >= target:
+        return  # if we reach the number why bother to continue
+
+    for i in range(len(numbers)):
+        n = numbers[i]
+        remaining = numbers[i + 1:]
+        subset_sum(remaining, target, partial + [n])
+
+
+single_input_gates = ["NOT","BUF","INV","CLKBUF","INPUT"]
+three_input_gates = ["DFF"]
+four_input_gates = ["SDFF"]
+clockPattern="CLK|clock|clk|CK"
+resetPattern="rst|reset|RST|Rst|RN|RSTB"
+
+graph_name_for_node = 0
+pattern_connection_detail = "./pattern_connnection_data.json"
+
+##########NEW SUBCIRCUITS TO BE CREATED#################
+no_of_subcircuit_input_nodes = 11
+no_of_subcircuit_output_nodes = 10
+########################################################
+
+
+list_of_dictionaries = []
+nodes_input_degree = []
+nodes_output_degree = []
+random_combination_cir_dictionaries = []
+random_combo_graphs = []
+no_of_inputs = []
+no_of_outputs = []
+
+if 1:
+    for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs").iterdir():
         if file_path.is_file():
             input_f_path_str = str(file_path)
             print(input_f_path_str)
@@ -119,9 +198,10 @@ if 0:
                 if rst_match == True and clk_match == True:
                     break
 
-            for inst_rst in d_graph_obj.successors(inst_dff_reset[-1]):
-                if inst_node_attributes[inst_rst] == "NOT":
-                    inst_dff_reset.append(inst_rst)
+            if(len(inst_dff_reset) != 0):
+                for inst_rst in d_graph_obj.successors(inst_dff_reset[-1]):
+                    if inst_node_attributes[inst_rst] == "NOT":
+                        inst_dff_reset.append(inst_rst)
 
             input_nodes_list = [u for u, deg in d_graph_obj.in_degree() if not deg and (u not in inst_dff_clk) and (u not in inst_dff_reset)]
             output_nodes_list = [u for u, deg in d_graph_obj.out_degree() if not deg]
@@ -135,6 +215,7 @@ if 0:
                 "CLOCK" : inst_dff_clk,
                 "RESET" : inst_dff_reset,
             }
+            print(input_dictionary)
             no_of_inputs.append(len(input_nodes_list))
             no_of_outputs.append(len(output_nodes_list))
             list_of_dictionaries.append(input_dictionary)
@@ -278,9 +359,10 @@ if 0:
                     if rst_match == True and clk_match == True:
                         break
 
-                for inst_rst in lhs_graph.successors(lhs_dff_reset[-1]):
-                    if lhs_inst_node_attributes[inst_rst] == "NOT":
-                        lhs_dff_reset.append(inst_rst)
+                if (len(lhs_dff_reset) != 0):
+                    for inst_rst in lhs_graph.successors(lhs_dff_reset[-1]):
+                        if lhs_inst_node_attributes[inst_rst] == "NOT":
+                            lhs_dff_reset.append(inst_rst)
 
                 for u, deg in lhs_graph.out_degree():
                     if not deg:
@@ -320,9 +402,10 @@ if 0:
                     if rst_match == True and clk_match == True:
                         break
 
-                for inst_rst in rhs_graph.successors(rhs_dff_reset[-1]):
-                    if rhs_inst_node_attributes[inst_rst] == "NOT":
-                        rhs_dff_reset.append(inst_rst)
+                if (len(rhs_dff_reset) != 0):
+                    for inst_rst in rhs_graph.successors(rhs_dff_reset[-1]):
+                        if rhs_inst_node_attributes[inst_rst] == "NOT":
+                            rhs_dff_reset.append(inst_rst)
 
                 for u, deg in rhs_graph.in_degree():
                     if not deg and (u not in rhs_dff_clk) and (u not in rhs_dff_reset):
@@ -445,25 +528,29 @@ if 0:
                 sub_circuit_dff_clk_list = []
                 sub_circuit_dff_clk_list.extend(rhs_dff_clk.copy())
                 sub_circuit_dff_clk_list.extend(lhs_dff_clk.copy())
+                selected_clk_node = []
 
-                selected_clk_node = sub_circuit_dff_clk_list.pop(0)
-                for clk_node in sub_circuit_dff_clk_list:
-                    succ_nodes=connection_graph.successors(clk_node)
-                    connection_graph.remove_node(clk_node)
-                    for sel_succ_node in succ_nodes:
-                        connection_graph.add_edge(selected_clk_node, sel_succ_node)
+                if(len(sub_circuit_dff_clk_list) != 0):
+                    selected_clk_node = sub_circuit_dff_clk_list.pop(0)
+                    for clk_node in sub_circuit_dff_clk_list:
+                        succ_nodes=connection_graph.successors(clk_node)
+                        connection_graph.remove_node(clk_node)
+                        for sel_succ_node in succ_nodes:
+                            connection_graph.add_edge(selected_clk_node, sel_succ_node)
 
                 sub_circuit_dff_rst_list = []
                 sub_circuit_dff_rst_list.extend(rhs_dff_reset.copy())
                 sub_circuit_dff_rst_list.extend(lhs_dff_reset.copy())
+                selected_rst_node = []
 
                 connection_graph_inst_node_attributes = nx.get_node_attributes(connection_graph, "type")
 
-                selected_rst_node = sub_circuit_dff_rst_list.pop(0)
-                selected_rst_connected_node_index = -1
-                for inst_rst in connection_graph.successors(selected_rst_node):
-                    if connection_graph_inst_node_attributes[inst_rst] == "NOT":
-                        selected_rst_connected_node_index = sub_circuit_dff_rst_list.index(inst_rst)
+                if(len(sub_circuit_dff_rst_list) != 0):
+                    selected_rst_node = sub_circuit_dff_rst_list.pop(0)
+                    selected_rst_connected_node_index = -1
+                    for inst_rst in connection_graph.successors(selected_rst_node):
+                        if connection_graph_inst_node_attributes[inst_rst] == "NOT":
+                            selected_rst_connected_node_index = sub_circuit_dff_rst_list.index(inst_rst)
 
 
                 for rst_node in sub_circuit_dff_rst_list:
@@ -473,14 +560,15 @@ if 0:
                         for sel_succ_node in succ_nodes:
                             connection_graph.add_edge(selected_rst_node, sel_succ_node)
 
-
-                selected_rst_connected_node = sub_circuit_dff_rst_list.pop(selected_rst_connected_node_index)
-                for rst_connected_node in sub_circuit_dff_rst_list:
-                    if connection_graph_inst_node_attributes[rst_connected_node] == "NOT":
-                        succ_nodes=connection_graph.successors(rst_connected_node)
-                        connection_graph.remove_node(rst_connected_node)
-                        for sel_succ_node in succ_nodes:
-                            connection_graph.add_edge(selected_rst_connected_node, sel_succ_node)
+                selected_rst_connected_node = []
+                if(len(sub_circuit_dff_rst_list)!=0):
+                    selected_rst_connected_node = sub_circuit_dff_rst_list.pop(selected_rst_connected_node_index)
+                    for rst_connected_node in sub_circuit_dff_rst_list:
+                        if connection_graph_inst_node_attributes[rst_connected_node] == "NOT":
+                            succ_nodes=connection_graph.successors(rst_connected_node)
+                            connection_graph.remove_node(rst_connected_node)
+                            for sel_succ_node in succ_nodes:
+                                connection_graph.add_edge(selected_rst_connected_node, sel_succ_node)
 
                 sub_circuit_dff_rst_list.append(selected_rst_node)
                 sub_circuit_dff_rst_list.append(selected_rst_connected_node)
@@ -575,7 +663,7 @@ if 0:
                         optimization_checker_count = 0
 ##################################################################################################################################################
 
-if 1:
+if 0:
     graph_name_for_node = 0
     with open(pattern_connection_detail,'w')as fp_pattern_data_json:
         list_of_dictionaries.clear()
@@ -624,9 +712,10 @@ if 1:
                     if rst_match == True and clk_match == True:
                         break
 
-                for inst_rst in d_graph_obj.successors(inst_dff_reset[-1]):
-                    if inst_node_attributes[inst_rst] == "NOT":
-                        inst_dff_reset.append(inst_rst)
+                if(len(inst_dff_reset) != 0):
+                    for inst_rst in d_graph_obj.successors(inst_dff_reset[-1]):
+                        if inst_node_attributes[inst_rst] == "NOT":
+                            inst_dff_reset.append(inst_rst)
 
                 input_nodes_list = [u for u, deg in d_graph_obj.in_degree() if not deg and (u not in inst_dff_clk) and (u not in inst_dff_reset)]
                 output_nodes_list = [u for u, deg in d_graph_obj.out_degree() if not deg]
@@ -911,6 +1000,57 @@ if 1:
             }
             json.dump(dictionary, fp_pattern_data_json)
             fp_pattern_data_json.write('\n')
+
+                    
+
+
+
+
+            
+
+
+
+
+
+        
+            
+
+
+
+            
+            
+
+            
+
+                 
+            
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     
 

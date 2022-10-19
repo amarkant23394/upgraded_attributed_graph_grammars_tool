@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version O-2018.06-SP1 for linux64 -- Jul 19, 2018
-#@ # Date:   Mon Oct 17 21:45:13 2022
+#@ # Date:   Tue Oct 18 23:10:19 2022
 #@ # Run by: marupust@eecs-vemurir-d
 #@ 
 
@@ -6624,8 +6624,8 @@ source /opt/eda/synopsys/syn/current/admin/setup/.synopsys_dc.setup
 
 #@ # -- End source /opt/eda/synopsys/syn/current/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/./benchmarks_generated/tcl_file/Benchmark_testing100.tcl
-#@ # -- Starting source /home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/./benchmarks_generated/tcl_file/Benchmark_testing100.tcl
+source -echo -verbose /home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/./pattern_merge_graphs/tcl_files/pattern_4.tcl
+#@ # -- Starting source /home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/./pattern_merge_graphs/tcl_files/pattern_4.tcl
 
 #@ remove_design -designs
 #@ set search_path {/home/marupust/Desktop/research_benchmark/nikhil_bhaiya_files/technology_files}
@@ -6859,12 +6859,10 @@ source -echo -verbose /home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Gra
 #@ set_dont_use saed90nm_typ_ht/XOR3X1
 #@ set_dont_use saed90nm_typ_ht/XOR3X2
 #@ 
-#@ analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/benchmarks_generated/benchmark_generated_files/Benchmark_testing100.v}
-#@ elaborate Benchmark_testing100 -architecture verilog -library DEFAULT
+#@ analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_4.v}
+#@ elaborate test_final -architecture verilog -library DEFAULT
 #@ link
 #@ uniquify
 #@ compile -map_effort high
-#@ report_area > rprt_area_check
-#@ 
-#@ write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/benchmarks_generated/dc_compiled/dc_Benchmark_testing100.v}
+#@ write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_4.v}
 #@ exit

@@ -457,9 +457,9 @@ set_dont_use saed90nm_typ_ht/XOR3X1
 1
 set_dont_use saed90nm_typ_ht/XOR3X2
 1
-analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_17_16.v}
+analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_4.v}
 Running PRESTO HDLC
-Compiling source file /home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_17_16.v
+Compiling source file /home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_4.v
 Presto compilation completed successfully.
 1
 elaborate test_final -architecture verilog -library DEFAULT
@@ -510,18 +510,18 @@ Information: Design 'test_final' has no optimization constraints set. (OPT-108)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
 
 
 
@@ -532,9 +532,9 @@ Information: Design 'test_final' has no optimization constraints set. (OPT-108)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -544,18 +544,18 @@ Information: Design 'test_final' has no optimization constraints set. (OPT-108)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     783.4      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
-    0:00:01     766.8      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     244.2      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
+    0:00:00     238.7      0.00       0.0       0.0                          
 Loading db file '/home/marupust/Desktop/research_benchmark/nikhil_bhaiya_files/technology_files/saed90nm_typ_ht.db'
 
 
@@ -565,8 +565,9 @@ Note: Symbol # after min delay cost means estimated hold TNS across all active s
   Optimization Complete
   ---------------------
 1
-write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_17_16.v}
-Writing verilog file '/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_17_16.v'.
+write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_4.v}
+Writing verilog file '/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_4.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 1
 exit
 Thank you...

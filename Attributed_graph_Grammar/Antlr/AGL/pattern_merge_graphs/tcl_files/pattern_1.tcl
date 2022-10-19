@@ -230,10 +230,10 @@ set_dont_use saed90nm_typ_ht/XNOR3X2
 set_dont_use saed90nm_typ_ht/XOR3X1
 set_dont_use saed90nm_typ_ht/XOR3X2
 
-analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_1.v}
+analyze -library WORK -format verilog {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/pattern_1.v}
 elaborate test_final -architecture verilog -library DEFAULT
 link
 uniquify
 compile -map_effort high
-write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_1.v}
+write -hierarchy -format verilog -output {/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/dc_pattern_1.v}
 exit

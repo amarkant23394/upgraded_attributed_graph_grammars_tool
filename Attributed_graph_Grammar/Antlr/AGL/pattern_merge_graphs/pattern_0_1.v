@@ -45,28 +45,28 @@ DFFARX1 I_39(G199_4_l_1,blif_clk_net_1_r_1,n5_1,ACVQN2_3_r_1,);
 nor I_40(n_266_and_0_3_r_1,n16_1,n14_1);
 DFFARX1 I_41(N1_4_r_1,blif_clk_net_1_r_1,n5_1,G199_4_r_1,);
 DFFARX1 I_42(G199_4_l_1,blif_clk_net_1_r_1,n5_1,G214_4_r_1,);
-and I_43(N3_2_l_1,n23_1,G199_4_r_0);
+and I_43(N3_2_l_1,n23_1,n_572_1_r_0);
 not I_44(n5_1,blif_reset_net_1_r_1);
 DFFARX1 I_45(N3_2_l_1,blif_clk_net_1_r_1,n5_1,n26_1,);
 not I_46(n17_1,n26_1);
-DFFARX1 I_47(n_573_1_r_0,blif_clk_net_1_r_1,n5_1,n16_internal_1,);
+DFFARX1 I_47(G42_1_r_0,blif_clk_net_1_r_1,n5_1,n16_internal_1,);
 not I_48(n16_1,n16_internal_1);
-DFFARX1 I_49(n_42_2_r_0,blif_clk_net_1_r_1,n5_1,ACVQN1_3_l_1,);
-and I_50(N1_4_l_1,n25_1,n_573_1_r_0);
+DFFARX1 I_49(n_549_1_r_0,blif_clk_net_1_r_1,n5_1,ACVQN1_3_l_1,);
+and I_50(N1_4_l_1,n25_1,n_572_1_r_0);
 DFFARX1 I_51(N1_4_l_1,blif_clk_net_1_r_1,n5_1,G199_4_l_1,);
 DFFARX1 I_52(G214_4_r_0,blif_clk_net_1_r_1,n5_1,G214_4_l_1,);
 nor I_53(n4_1_r_1,n26_1,G214_4_l_1);
 DFFARX1 I_54(G214_4_l_1,blif_clk_net_1_r_1,n5_1,n14_internal_1,);
 not I_55(n14_1,n14_internal_1);
 nor I_56(N1_4_r_1,n17_1,n24_1);
-nand I_57(n18_1,ACVQN1_3_l_1,n_549_1_r_0);
-nor I_58(n19_1,G42_1_r_0,n_572_1_r_0);
+nand I_57(n18_1,ACVQN1_3_l_1,n_573_1_r_0);
+nor I_58(n19_1,n_42_2_r_0,G199_2_r_0);
 not I_59(n20_1,n18_1);
 nor I_60(n21_1,n26_1,n22_1);
 not I_61(n22_1,n19_1);
-nand I_62(n23_1,G42_1_r_0,n_572_1_r_0);
+nand I_62(n23_1,G42_1_r_0,G199_2_r_0);
 nor I_63(n24_1,n18_1,n22_1);
-nand I_64(n25_1,n_549_1_r_0,G199_2_r_0);
+nand I_64(n25_1,G199_4_r_0,n_573_1_r_0);
 endmodule
 
 

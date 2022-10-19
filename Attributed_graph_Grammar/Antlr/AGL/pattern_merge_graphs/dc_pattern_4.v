@@ -1,56 +1,64 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : O-2018.06-SP1
-// Date      : Mon Oct  3 20:57:55 2022
+// Date      : Tue Oct 18 23:10:21 2022
 /////////////////////////////////////////////////////////////
 
 
-module test_final ( G1_0_l, G2_0_l, IN_2_0_l, IN_4_0_l, IN_5_0_l, IN_7_0_l, 
-        IN_8_0_l, IN_10_0_l, IN_11_0_l, IN_1_5_l, IN_2_5_l, blif_clk_net_1_r, 
-        blif_reset_net_1_r, G42_1_r, n_572_1_r, n_573_1_r, n_549_1_r, 
-        n_569_1_r, n_452_1_r, ACVQN2_3_r, n_266_and_0_3_r, ACVQN1_5_r, P6_5_r
- );
-  input G1_0_l, G2_0_l, IN_2_0_l, IN_4_0_l, IN_5_0_l, IN_7_0_l, IN_8_0_l,
-         IN_10_0_l, IN_11_0_l, IN_1_5_l, IN_2_5_l, blif_clk_net_1_r,
-         blif_reset_net_1_r;
-  output G42_1_r, n_572_1_r, n_573_1_r, n_549_1_r, n_569_1_r, n_452_1_r,
-         ACVQN2_3_r, n_266_and_0_3_r, ACVQN1_5_r, P6_5_r;
-  wire   n_431_0_l, G78_0_l, ACVQN1_5_l, n4_1_r, n6, n15, n16, n17, n19, n20,
-         n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33;
-  assign n_452_1_r = 1'b0;
+module test_final ( IN_1_0_l, IN_2_0_l, IN_3_0_l, IN_4_0_l, IN_1_1_l, IN_2_1_l, 
+        IN_3_1_l, blif_clk_net_8_l, blif_reset_net_8_l, IN_1_8_l, IN_2_8_l, 
+        IN_3_8_l, IN_6_8_l, N1371_0_r, N1508_0_r, N1372_1_r, N1508_1_r, 
+        N6147_2_r, N6147_3_r, N1507_6_r, N1508_6_r, N1372_10_r, N1508_10_r );
+  input IN_1_0_l, IN_2_0_l, IN_3_0_l, IN_4_0_l, IN_1_1_l, IN_2_1_l, IN_3_1_l,
+         blif_clk_net_8_l, blif_reset_net_8_l, IN_1_8_l, IN_2_8_l, IN_3_8_l,
+         IN_6_8_l;
+  output N1371_0_r, N1508_0_r, N1372_1_r, N1508_1_r, N6147_2_r, N6147_3_r,
+         N1507_6_r, N1508_6_r, N1372_10_r, N1508_10_r;
+  wire   N20, N43, N3_8_l, n6, n24, n25, n26, n27, n28, n29, n30, n31, n32,
+         n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46,
+         n47, n48, n49, n50, n51;
+  assign N1372_1_r = N20;
+  assign N1372_10_r = N43;
+  assign N1371_0_r = 1'b0;
 
-  DFFARX1 I_1 ( .D(n_431_0_l), .CLK(blif_clk_net_1_r), .RSTB(n6), .Q(G78_0_l)
-         );
-  DFFARX1 I_12 ( .D(IN_2_5_l), .CLK(blif_clk_net_1_r), .RSTB(n6), .Q(
-        ACVQN1_5_l), .QN(n16) );
-  DFFARX1 I_14 ( .D(IN_1_5_l), .CLK(blif_clk_net_1_r), .RSTB(n6), .QN(n17) );
-  DFFARX1 I_15 ( .D(n4_1_r), .CLK(blif_clk_net_1_r), .RSTB(n6), .Q(G42_1_r) );
-  DFFARX1 I_25 ( .D(n19), .CLK(blif_clk_net_1_r), .RSTB(n6), .Q(ACVQN2_3_r) );
-  DFFARX1 I_27 ( .D(G78_0_l), .CLK(blif_clk_net_1_r), .RSTB(n6), .QN(n15) );
-  DFFARX1 I_28 ( .D(n19), .CLK(blif_clk_net_1_r), .RSTB(n6), .Q(ACVQN1_5_r) );
-  DFFARX1 I_30 ( .D(ACVQN1_5_l), .CLK(blif_clk_net_1_r), .RSTB(n6), .QN(P6_5_r) );
-  NAND2X0 U22 ( .IN1(n16), .IN2(G2_0_l), .QN(n_573_1_r) );
-  NOR2X0 U23 ( .IN1(G78_0_l), .IN2(n17), .QN(n_572_1_r) );
-  NAND2X0 U24 ( .IN1(n20), .IN2(n21), .QN(n_569_1_r) );
-  NOR2X0 U25 ( .IN1(IN_10_0_l), .IN2(G2_0_l), .QN(n21) );
-  AND2X1 U26 ( .IN1(n16), .IN2(IN_11_0_l), .Q(n20) );
-  NOR2X0 U27 ( .IN1(n22), .IN2(n23), .QN(n_549_1_r) );
-  NAND2X0 U28 ( .IN1(IN_11_0_l), .IN2(n24), .QN(n23) );
-  INVX0 U29 ( .INP(G2_0_l), .ZN(n24) );
-  NAND2X0 U30 ( .IN1(n25), .IN2(G78_0_l), .QN(n22) );
-  OR2X1 U31 ( .IN1(n26), .IN2(IN_8_0_l), .Q(n_431_0_l) );
-  AND2X1 U32 ( .IN1(n27), .IN2(IN_2_0_l), .Q(n26) );
-  NOR2X0 U33 ( .IN1(IN_4_0_l), .IN2(n28), .QN(n27) );
-  INVX0 U34 ( .INP(G1_0_l), .ZN(n28) );
-  NOR2X0 U35 ( .IN1(n29), .IN2(n15), .QN(n_266_and_0_3_r) );
-  INVX0 U36 ( .INP(n30), .ZN(n29) );
-  INVX0 U37 ( .INP(blif_reset_net_1_r), .ZN(n6) );
-  NOR2X0 U38 ( .IN1(n30), .IN2(n31), .QN(n4_1_r) );
-  NAND2X0 U39 ( .IN1(IN_11_0_l), .IN2(n25), .QN(n31) );
-  INVX0 U40 ( .INP(IN_10_0_l), .ZN(n25) );
-  NAND2X0 U41 ( .IN1(n32), .IN2(IN_7_0_l), .QN(n30) );
-  NOR2X0 U42 ( .IN1(G2_0_l), .IN2(n33), .QN(n32) );
-  NAND2X0 U43 ( .IN1(G1_0_l), .IN2(n33), .QN(n19) );
-  INVX0 U44 ( .INP(IN_5_0_l), .ZN(n33) );
+  DFFARX1 I_8 ( .D(N3_8_l), .CLK(blif_clk_net_8_l), .RSTB(n6), .Q(n51), .QN(
+        n24) );
+  INVX0 U33 ( .INP(blif_reset_net_8_l), .ZN(n6) );
+  NOR2X0 U34 ( .IN1(n51), .IN2(n25), .QN(N6147_3_r) );
+  NOR2X0 U35 ( .IN1(n26), .IN2(n27), .QN(N6147_2_r) );
+  NAND2X0 U36 ( .IN1(n28), .IN2(n24), .QN(n27) );
+  NAND2X0 U37 ( .IN1(n29), .IN2(n30), .QN(n28) );
+  NOR2X0 U38 ( .IN1(IN_3_8_l), .IN2(IN_1_8_l), .QN(n26) );
+  AND2X1 U39 ( .IN1(IN_6_8_l), .IN2(n31), .Q(N3_8_l) );
+  NAND2X0 U40 ( .IN1(IN_3_8_l), .IN2(IN_2_8_l), .QN(n31) );
+  NOR2X0 U41 ( .IN1(n32), .IN2(n33), .QN(N1508_6_r) );
+  NAND2X0 U42 ( .IN1(n51), .IN2(n34), .QN(n33) );
+  NAND2X0 U43 ( .IN1(n35), .IN2(n36), .QN(n34) );
+  NAND2X0 U44 ( .IN1(n25), .IN2(n37), .QN(n36) );
+  NAND2X0 U45 ( .IN1(n38), .IN2(n39), .QN(n32) );
+  NOR2X0 U46 ( .IN1(n29), .IN2(n40), .QN(N1508_1_r) );
+  NOR2X0 U47 ( .IN1(n41), .IN2(n42), .QN(N1508_10_r) );
+  INVX0 U48 ( .INP(N43), .ZN(n42) );
+  NOR2X0 U49 ( .IN1(n30), .IN2(n35), .QN(N43) );
+  NOR2X0 U50 ( .IN1(n43), .IN2(n37), .QN(n41) );
+  NAND2X0 U51 ( .IN1(n44), .IN2(n45), .QN(N1508_0_r) );
+  NAND2X0 U52 ( .IN1(n51), .IN2(n43), .QN(n45) );
+  NAND2X0 U53 ( .IN1(N20), .IN2(n37), .QN(n44) );
+  INVX0 U54 ( .INP(n40), .ZN(N20) );
+  NAND2X0 U55 ( .IN1(n43), .IN2(n25), .QN(n40) );
+  NOR2X0 U56 ( .IN1(IN_2_0_l), .IN2(n46), .QN(n43) );
+  NOR2X0 U57 ( .IN1(n47), .IN2(n35), .QN(N1507_6_r) );
+  INVX0 U58 ( .INP(n29), .ZN(n35) );
+  NOR2X0 U59 ( .IN1(n48), .IN2(n46), .QN(n29) );
+  INVX0 U60 ( .INP(IN_1_0_l), .ZN(n46) );
+  NOR2X0 U61 ( .IN1(IN_3_0_l), .IN2(IN_4_0_l), .QN(n48) );
+  NOR2X0 U62 ( .IN1(n49), .IN2(n50), .QN(n47) );
+  NAND2X0 U63 ( .IN1(n25), .IN2(n38), .QN(n50) );
+  INVX0 U64 ( .INP(IN_1_8_l), .ZN(n38) );
+  INVX0 U65 ( .INP(n30), .ZN(n25) );
+  NAND2X0 U66 ( .IN1(IN_2_1_l), .IN2(IN_1_1_l), .QN(n30) );
+  NAND2X0 U67 ( .IN1(n37), .IN2(n39), .QN(n49) );
+  INVX0 U68 ( .INP(IN_3_8_l), .ZN(n39) );
+  INVX0 U69 ( .INP(IN_3_1_l), .ZN(n37) );
 endmodule
 
