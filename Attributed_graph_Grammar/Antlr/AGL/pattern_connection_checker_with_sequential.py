@@ -144,6 +144,7 @@ pattern_connection_detail = "./pattern_connnection_data.json"
 ##########NEW SUBCIRCUITS TO BE CREATED#################
 no_of_subcircuit_input_nodes = 11
 no_of_subcircuit_output_nodes = 10
+total_number_of_unit_subcircuits_for_each_side = 4
 ########################################################
 
 
@@ -257,17 +258,16 @@ if 0:
     print("RHS COMBINATIONS")
     print(list_of_combinations_rhs)
 
-    #####################################PART ADDED FOR LIMITING#################################
-    new_list_of_rhs_combinations = []
-    no_of_lhs_combinations = len(list_of_combinations_lhs)
-    for i in range(no_of_lhs_combinations):
-        rhs_combo_new_inst = random.randint(0, len(list_of_combinations_rhs)-1)
-        new_list_of_rhs_combinations.append(list_of_combinations_rhs[rhs_combo_new_inst].copy())
+    #####################################PART ADDED FOR LIMITING LHS AND RHS#################################
+    random.shuffle(list_of_combinations_lhs)
+    list_of_combinations_lhs = list_of_combinations_lhs[0:total_number_of_unit_subcircuits_for_each_side]
 
-    list_of_combinations_rhs.clear()
-    list_of_combinations_rhs = new_list_of_rhs_combinations.copy()
-    new_list_of_rhs_combinations.clear()
+    random.shuffle(list_of_combinations_rhs)
+    list_of_combinations_rhs = list_of_combinations_rhs[0:total_number_of_unit_subcircuits_for_each_side]
 
+    print()
+    print(list_of_combinations_lhs)
+    print()
     print("RHS COMBINATIONS")
     print(list_of_combinations_rhs)
 #    sys.exit("combination")
@@ -682,7 +682,7 @@ if 1:
         nodes_input_degree.clear()
         nodes_output_degree.clear()
 
-        for file_path in pathlib.Path("/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/best/normal").iterdir():
+        for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/best/dc").iterdir():
             if file_path.is_file():
                 input_f_path_str = str(file_path)
                 print(input_f_path_str)
@@ -719,12 +719,12 @@ if 1:
                             for rst_name in resetPattern.split("|"):
                                 if rst_name in node_name:
                                     inst_dff_reset.append(node_name)
-                                    rst_match = False
+                                    rst_match = True
                                     break
                     if rst_match == True and clk_match == True:
                         break
 
-                if(len(inst_dff_reset) != 0):
+                if(len(inst_dff_reset) != 0) and rst_match == True:
                     for inst_rst in d_graph_obj.successors(inst_dff_reset[-1]):
                         if inst_node_attributes[inst_rst] == "NOT":
                             inst_dff_reset.append(inst_rst)
@@ -850,25 +850,29 @@ if 1:
                         sub_circuit_dff_clk_list = []
                         sub_circuit_dff_clk_list.extend(rhs_clock_node.copy())
                         sub_circuit_dff_clk_list.extend(lhs_clock_node.copy())
+                        selected_clk_node = []
 
-                        selected_clk_node = sub_circuit_dff_clk_list.pop(0)
-                        for clk_node in sub_circuit_dff_clk_list:
-                            succ_nodes=connection_graph.successors(clk_node)
-                            connection_graph.remove_node(clk_node)
-                            for sel_succ_node in succ_nodes:
-                                connection_graph.add_edge(selected_clk_node, sel_succ_node)
+                        if(len(sub_circuit_dff_clk_list) != 0):
+                            selected_clk_node = sub_circuit_dff_clk_list.pop(0)
+                            for clk_node in sub_circuit_dff_clk_list:
+                                succ_nodes=connection_graph.successors(clk_node)
+                                connection_graph.remove_node(clk_node)
+                                for sel_succ_node in succ_nodes:
+                                    connection_graph.add_edge(selected_clk_node, sel_succ_node)
 
                         sub_circuit_dff_rst_list = []
                         sub_circuit_dff_rst_list.extend(rhs_reset_node.copy())
                         sub_circuit_dff_rst_list.extend(lhs_reset_node.copy())
+                        selected_rst_node = []
 
                         connection_graph_inst_node_attributes = nx.get_node_attributes(connection_graph, "type")
 
-                        selected_rst_node = sub_circuit_dff_rst_list.pop(0)
-                        selected_rst_connected_node_index = -1
-                        for inst_rst in connection_graph.successors(selected_rst_node):
-                            if connection_graph_inst_node_attributes[inst_rst] == "NOT":
-                                selected_rst_connected_node_index = sub_circuit_dff_rst_list.index(inst_rst)
+                        if(len(sub_circuit_dff_rst_list) != 0):
+                            selected_rst_node = sub_circuit_dff_rst_list.pop(0)
+                            selected_rst_connected_node_index = -1
+                            for inst_rst in connection_graph.successors(selected_rst_node):
+                                if connection_graph_inst_node_attributes[inst_rst] == "NOT":
+                                    selected_rst_connected_node_index = sub_circuit_dff_rst_list.index(inst_rst)
 
 
                         for rst_node in sub_circuit_dff_rst_list:
@@ -878,14 +882,15 @@ if 1:
                                 for sel_succ_node in succ_nodes:
                                     connection_graph.add_edge(selected_rst_node, sel_succ_node)
 
-
-                        selected_rst_connected_node = sub_circuit_dff_rst_list.pop(selected_rst_connected_node_index)
-                        for rst_connected_node in sub_circuit_dff_rst_list:
-                            if connection_graph_inst_node_attributes[rst_connected_node] == "NOT":
-                                succ_nodes=connection_graph.successors(rst_connected_node)
-                                connection_graph.remove_node(rst_connected_node)
-                                for sel_succ_node in succ_nodes:
-                                    connection_graph.add_edge(selected_rst_connected_node, sel_succ_node)
+                        selected_rst_connected_node = []
+                        if(len(sub_circuit_dff_rst_list)!=0):
+                            selected_rst_connected_node = sub_circuit_dff_rst_list.pop(selected_rst_connected_node_index)
+                            for rst_connected_node in sub_circuit_dff_rst_list:
+                                if connection_graph_inst_node_attributes[rst_connected_node] == "NOT":
+                                    succ_nodes=connection_graph.successors(rst_connected_node)
+                                    connection_graph.remove_node(rst_connected_node)
+                                    for sel_succ_node in succ_nodes:
+                                        connection_graph.add_edge(selected_rst_connected_node, sel_succ_node)
 
                         sub_circuit_dff_rst_list.append(selected_rst_node)
                         sub_circuit_dff_rst_list.append(selected_rst_connected_node)
@@ -967,7 +972,7 @@ if 1:
 
                             cur_optimized_factor = ((no_of_cells_in_uncompiled - no_of_cells_in_compiled)/no_of_cells_in_uncompiled)*100
               
-                            if (cur_optimized_factor <= best_optimized_factor) and no_of_assign == 0:
+                            if (cur_optimized_factor <= best_optimized_factor):
                                 best_optimized_factor = cur_optimized_factor
                                 best_assign_possible = no_of_assign
                                 best_lhs_connection.clear()
@@ -980,7 +985,7 @@ if 1:
 
 
                             optimization_checker_count -= 1
-                            if(best_optimized_factor <= 0):
+                            if(best_optimized_factor <= 10):
                                 optimization_checker_count = 0   
 
                     print("Best Optimized factor = "+str(best_optimized_factor))

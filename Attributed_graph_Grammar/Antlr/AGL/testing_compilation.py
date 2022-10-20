@@ -1,6 +1,6 @@
 sub_circuits_id_num = 16
-pattern_file_path = "pattern_merge_graphs/pattern_"+str(sub_circuits_id_num)+".v"
-dc_pattern_file_path = "pattern_merge_graphs/dc_pattern_"+str(sub_circuits_id_num)+".v"
+pattern_file_path = "pattern_merge_graphs/best/normal/pattern_"+str(sub_circuits_id_num)+".v"
+dc_pattern_file_path = "pattern_merge_graphs/best/dc/dc_pattern_"+str(sub_circuits_id_num)+".v"
 
 with open(pattern_file_path,'r')as fp_file , open(dc_pattern_file_path,'r')as dc_fp_file:
     no_of_cells_in_uncompiled = 0
@@ -51,6 +51,8 @@ with open(pattern_file_path,'r')as fp_file , open(dc_pattern_file_path,'r')as dc
             if line == "\n":
                 gate_count_start_flag = True
                 wire_started = False
+            if (line.startswith('assign')):
+                no_of_assign += 1
 
         if valid_file == True and gate_count_start_flag == True and line != "":
             if (line.startswith('assign')):
