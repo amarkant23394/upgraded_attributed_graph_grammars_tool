@@ -1,0 +1,76 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : O-2018.06-SP1
+// Date      : Fri Oct 21 10:36:01 2022
+/////////////////////////////////////////////////////////////
+
+
+module test_final ( IN_1_2_l_10, IN_2_2_l_10, IN_3_2_l_10, IN_4_2_l_10, 
+        IN_5_2_l_10, IN_1_6_l_10, IN_2_6_l_10, IN_3_6_l_10, IN_4_6_l_10, 
+        IN_5_6_l_10, IN_1_9_l_10, IN_2_9_l_10, IN_3_9_l_10, IN_4_9_l_10, 
+        IN_5_9_l_10, blif_clk_net_7_r_16, blif_reset_net_7_r_16, N1371_0_r_16, 
+        N1508_0_r_16, N1372_1_r_16, N1508_1_r_16, N6147_2_r_16, N1507_6_r_16, 
+        N1508_6_r_16, G42_7_r_16, n_572_7_r_16, n_573_7_r_16, n_569_7_r_16, 
+        n_452_7_r_16 );
+  input IN_1_2_l_10, IN_2_2_l_10, IN_3_2_l_10, IN_4_2_l_10, IN_5_2_l_10,
+         IN_1_6_l_10, IN_2_6_l_10, IN_3_6_l_10, IN_4_6_l_10, IN_5_6_l_10,
+         IN_1_9_l_10, IN_2_9_l_10, IN_3_9_l_10, IN_4_9_l_10, IN_5_9_l_10,
+         blif_clk_net_7_r_16, blif_reset_net_7_r_16;
+  output N1371_0_r_16, N1508_0_r_16, N1372_1_r_16, N1508_1_r_16, N6147_2_r_16,
+         N1507_6_r_16, N1508_6_r_16, G42_7_r_16, n_572_7_r_16, n_573_7_r_16,
+         n_569_7_r_16, n_452_7_r_16;
+  wire   n53_16, N3_8_l_16, n8, n38, n39, n40, n41, n42, n43, n44, n45, n46,
+         n47, n48, n49, n50, n51, n52, n53, n54, n55, n56, n57, n58, n59, n60,
+         n61, n62, n63, n64, n65, n66, n67, n68, n69, n70;
+  assign N1372_1_r_16 = 1'b0;
+  assign N1508_6_r_16 = 1'b0;
+  assign N1508_1_r_16 = 1'b0;
+  assign N1508_0_r_16 = 1'b0;
+  assign N1507_6_r_16 = 1'b0;
+  assign N1371_0_r_16 = 1'b0;
+
+  DFFARX1 I_51 ( .D(1'b1), .CLK(blif_clk_net_7_r_16), .RSTB(n8), .Q(G42_7_r_16) );
+  DFFARX1 I_59 ( .D(N3_8_l_16), .CLK(blif_clk_net_7_r_16), .RSTB(n8), .Q(
+        n53_16) );
+  INVX0 U41 ( .INP(n_452_7_r_16), .ZN(n_573_7_r_16) );
+  INVX0 U42 ( .INP(n_572_7_r_16), .ZN(n_569_7_r_16) );
+  NAND2X0 U43 ( .IN1(n38), .IN2(n39), .QN(n_572_7_r_16) );
+  NOR2X0 U44 ( .IN1(IN_1_9_l_10), .IN2(n40), .QN(n39) );
+  NOR2X0 U45 ( .IN1(n41), .IN2(n42), .QN(n38) );
+  AND2X1 U46 ( .IN1(n43), .IN2(n44), .Q(n42) );
+  INVX0 U47 ( .INP(n45), .ZN(n41) );
+  INVX0 U48 ( .INP(blif_reset_net_7_r_16), .ZN(n8) );
+  NOR2X0 U49 ( .IN1(n46), .IN2(n53_16), .QN(N6147_2_r_16) );
+  NOR2X0 U50 ( .IN1(n_452_7_r_16), .IN2(n47), .QN(n46) );
+  NOR2X0 U51 ( .IN1(IN_1_9_l_10), .IN2(n48), .QN(n47) );
+  NOR2X0 U52 ( .IN1(n49), .IN2(n50), .QN(n48) );
+  NAND2X0 U53 ( .IN1(n51), .IN2(n52), .QN(n_452_7_r_16) );
+  NAND2X0 U54 ( .IN1(n43), .IN2(n49), .QN(n52) );
+  NOR2X0 U55 ( .IN1(n53), .IN2(n54), .QN(n51) );
+  NOR2X0 U56 ( .IN1(IN_1_9_l_10), .IN2(n55), .QN(n54) );
+  NAND2X0 U57 ( .IN1(n45), .IN2(n50), .QN(n55) );
+  INVX0 U58 ( .INP(n40), .ZN(n50) );
+  NOR2X0 U59 ( .IN1(n56), .IN2(n57), .QN(n53) );
+  INVX0 U60 ( .INP(IN_1_9_l_10), .ZN(n57) );
+  NOR2X0 U61 ( .IN1(n58), .IN2(n44), .QN(n56) );
+  NOR2X0 U62 ( .IN1(n49), .IN2(n59), .QN(N3_8_l_16) );
+  NAND2X0 U63 ( .IN1(n44), .IN2(n60), .QN(n59) );
+  NAND2X0 U64 ( .IN1(n45), .IN2(n61), .QN(n60) );
+  NAND2X0 U65 ( .IN1(n58), .IN2(n40), .QN(n61) );
+  NOR2X0 U66 ( .IN1(IN_5_9_l_10), .IN2(n62), .QN(n40) );
+  INVX0 U67 ( .INP(n43), .ZN(n58) );
+  NAND2X0 U68 ( .IN1(n63), .IN2(n64), .QN(n43) );
+  OR2X1 U69 ( .IN1(IN_5_2_l_10), .IN2(n65), .Q(n64) );
+  NOR2X0 U70 ( .IN1(IN_3_2_l_10), .IN2(IN_4_2_l_10), .QN(n65) );
+  NOR2X0 U71 ( .IN1(IN_2_2_l_10), .IN2(IN_1_2_l_10), .QN(n63) );
+  NAND2X0 U72 ( .IN1(n66), .IN2(IN_2_6_l_10), .QN(n45) );
+  AND2X1 U73 ( .IN1(IN_1_6_l_10), .IN2(n67), .Q(n66) );
+  NAND2X0 U74 ( .IN1(n68), .IN2(n69), .QN(n67) );
+  INVX0 U75 ( .INP(IN_5_6_l_10), .ZN(n69) );
+  NOR2X0 U76 ( .IN1(n70), .IN2(n62), .QN(n44) );
+  NOR2X0 U77 ( .IN1(IN_3_9_l_10), .IN2(IN_4_9_l_10), .QN(n62) );
+  INVX0 U78 ( .INP(IN_2_9_l_10), .ZN(n70) );
+  NAND2X0 U79 ( .IN1(IN_5_6_l_10), .IN2(n68), .QN(n49) );
+  NAND2X0 U80 ( .IN1(IN_4_6_l_10), .IN2(IN_3_6_l_10), .QN(n68) );
+endmodule
+
