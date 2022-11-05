@@ -1,0 +1,41 @@
+module test_final(IN_1_0_l,IN_2_0_l,IN_4_0_l,IN_1_1_l,IN_2_1_l,IN_3_1_l,IN_6_1_l,IN_1_5_l,IN_2_5_l,IN_3_5_l,IN_6_5_l,blif_reset_net_0_r,blif_clk_net_0_r,ACVQN2_0_r,n_266_and_0_0_r,ACVQN1_2_r,P6_2_r,n_429_or_0_3_r,G78_3_r,n_576_3_r,n_102_3_r,n_547_3_r,n_42_5_r,G199_5_r);
+input IN_1_0_l,IN_2_0_l,IN_4_0_l,IN_1_1_l,IN_2_1_l,IN_3_1_l,IN_6_1_l,IN_1_5_l,IN_2_5_l,IN_3_5_l,IN_6_5_l,blif_reset_net_0_r,blif_clk_net_0_r;
+output ACVQN2_0_r,n_266_and_0_0_r,ACVQN1_2_r,P6_2_r,n_429_or_0_3_r,G78_3_r,n_576_3_r,n_102_3_r,n_547_3_r,n_42_5_r,G199_5_r;
+wire ACVQN2_0_l,n_266_and_0_0_l,ACVQN1_0_l,G199_1_l,G214_1_l,N1_1_l,n3_1_l,n_42_5_l,G199_5_l,N3_5_l,n3_5_l,n1_0_r,ACVQN1_0_r,P6_internal_2_r,n_431_3_r,n11_3_r,n12_3_r,n13_3_r,n14_3_r,n15_3_r,n16_3_r,N3_5_r,n3_5_r;
+DFFARX1 I_0 ( .D(IN_1_0_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(ACVQN2_0_l) );
+and I_1(n_266_and_0_0_l,IN_4_0_l,ACVQN1_0_l);
+DFFARX1 I_2 ( .D(IN_2_0_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(ACVQN1_0_l) );
+DFFARX1 I_3 ( .D(N1_1_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(G199_1_l) );
+DFFARX1 I_4 ( .D(IN_3_1_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(G214_1_l) );
+and I_5(N1_1_l,IN_6_1_l,n3_1_l);
+nand I_6(n3_1_l,IN_1_1_l,IN_2_1_l);
+nor I_7(n_42_5_l,IN_1_5_l,IN_3_5_l);
+DFFARX1 I_8 ( .D(N3_5_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(G199_5_l) );
+and I_9(N3_5_l,IN_6_5_l,n3_5_l);
+nand I_10(n3_5_l,IN_2_5_l,IN_3_5_l);
+DFFARX1 I_11 ( .D(n_266_and_0_0_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(ACVQN2_0_r) );
+and I_12(n_266_and_0_0_r,ACVQN1_0_r,G199_5_l);
+not I_13(n1_0_r,blif_reset_net_0_r);
+DFFARX1 I_14 ( .D(G214_1_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(ACVQN1_0_r) );
+DFFARX1 I_15 ( .D(G199_5_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(ACVQN1_2_r) );
+not I_16(P6_2_r,P6_internal_2_r);
+DFFARX1 I_17 ( .D(G214_1_l), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(P6_internal_2_r) );
+nand I_18(n_429_or_0_3_r,n12_3_r,G199_5_l);
+DFFARX1 I_19 ( .D(n_431_3_r), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(G78_3_r) );
+nand I_20(n_576_3_r,n11_3_r,n_42_5_l);
+not I_21(n_102_3_r,n_266_and_0_0_l);
+nand I_22(n_547_3_r,n13_3_r,ACVQN2_0_l);
+or I_23(n_431_3_r,n14_3_r,n_42_5_l);
+nor I_24(n11_3_r,n12_3_r,n_266_and_0_0_l);
+not I_25(n12_3_r,G199_1_l);
+nor I_26(n13_3_r,G199_1_l,n_266_and_0_0_l);
+and I_27(n14_3_r,n15_3_r,ACVQN2_0_l);
+nor I_28(n15_3_r,n16_3_r,G199_1_l);
+not I_29(n16_3_r,G199_5_l);
+nor I_30(n_42_5_r,ACVQN2_0_l,n_266_and_0_0_l);
+DFFARX1 I_31 ( .D(N3_5_r), .CLK(blif_clk_net_0_r), .RSTB(n1_0_r), .Q(G199_5_r) );
+and I_32(N3_5_r,n3_5_r,n_42_5_l);
+nand I_33(n3_5_r,ACVQN2_0_l,G214_1_l);
+endmodule
+
+

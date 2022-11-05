@@ -1,0 +1,43 @@
+module test_final(IN_1_0_l,IN_2_0_l,IN_4_0_l,G18_4_l,G15_4_l,IN_1_4_l,IN_4_4_l,IN_5_4_l,IN_7_4_l,IN_9_4_l,IN_10_4_l,blif_reset_net_0_r,blif_clk_net_0_r,ACVQN2_0_r,n_266_and_0_0_r,G199_1_r,G214_1_r,n_429_or_0_3_r,G78_3_r,n_576_3_r,n_102_3_r,n_547_3_r,n_42_5_r,G199_5_r);
+input IN_1_0_l,IN_2_0_l,IN_4_0_l,G18_4_l,G15_4_l,IN_1_4_l,IN_4_4_l,IN_5_4_l,IN_7_4_l,IN_9_4_l,IN_10_4_l,blif_reset_net_0_r,blif_clk_net_0_r;
+output ACVQN2_0_r,n_266_and_0_0_r,G199_1_r,G214_1_r,n_429_or_0_3_r,G78_3_r,n_576_3_r,n_102_3_r,n_547_3_r,n_42_5_r,G199_5_r;
+wire ACVQN2_0_l,n_266_and_0_0_l,ACVQN1_0_l,G42_4_l,n_87_4_l,n_572_4_l,n_573_4_l,n_549_4_l,n_569_4_l,n_452_4_l,n4_4_l,n7_4_l,n1_0_r,ACVQN1_0_r,N1_1_r,n3_1_r,n_431_3_r,n11_3_r,n12_3_r,n13_3_r,n14_3_r,n15_3_r,n16_3_r,N3_5_r,n3_5_r;
+DFFARX1 I_0(IN_1_0_l,blif_clk_net_0_r,n1_0_r,ACVQN2_0_l,);
+and I_1(n_266_and_0_0_l,IN_4_0_l,ACVQN1_0_l);
+DFFARX1 I_2(IN_2_0_l,blif_clk_net_0_r,n1_0_r,ACVQN1_0_l,);
+DFFARX1 I_3(n4_4_l,blif_clk_net_0_r,n1_0_r,G42_4_l,);
+not I_4(n_87_4_l,G15_4_l);
+nor I_5(n_572_4_l,G15_4_l,IN_7_4_l);
+or I_6(n_573_4_l,IN_5_4_l,IN_9_4_l);
+nor I_7(n_549_4_l,IN_10_4_l,n7_4_l);
+or I_8(n_569_4_l,IN_9_4_l,IN_10_4_l);
+nor I_9(n_452_4_l,G18_4_l,IN_5_4_l);
+nor I_10(n4_4_l,G18_4_l,IN_1_4_l);
+and I_11(n7_4_l,IN_4_4_l,n_87_4_l);
+DFFARX1 I_12(n_572_4_l,blif_clk_net_0_r,n1_0_r,ACVQN2_0_r,);
+and I_13(n_266_and_0_0_r,ACVQN1_0_r,n_452_4_l);
+not I_14(n1_0_r,blif_reset_net_0_r);
+DFFARX1 I_15(n_572_4_l,blif_clk_net_0_r,n1_0_r,ACVQN1_0_r,);
+DFFARX1 I_16(N1_1_r,blif_clk_net_0_r,n1_0_r,G199_1_r,);
+DFFARX1 I_17(G42_4_l,blif_clk_net_0_r,n1_0_r,G214_1_r,);
+and I_18(N1_1_r,n3_1_r,n_572_4_l);
+nand I_19(n3_1_r,n_549_4_l,ACVQN2_0_l);
+nand I_20(n_429_or_0_3_r,n12_3_r,n_266_and_0_0_l);
+DFFARX1 I_21(n_431_3_r,blif_clk_net_0_r,n1_0_r,G78_3_r,);
+nand I_22(n_576_3_r,n11_3_r,ACVQN2_0_l);
+not I_23(n_102_3_r,n_266_and_0_0_l);
+nand I_24(n_547_3_r,n13_3_r,n_573_4_l);
+or I_25(n_431_3_r,n14_3_r,n_569_4_l);
+nor I_26(n11_3_r,n12_3_r,n_266_and_0_0_l);
+not I_27(n12_3_r,G42_4_l);
+nor I_28(n13_3_r,n_266_and_0_0_l,n_452_4_l);
+and I_29(n14_3_r,n15_3_r,ACVQN2_0_l);
+nor I_30(n15_3_r,n16_3_r,n_569_4_l);
+not I_31(n16_3_r,n_266_and_0_0_l);
+nor I_32(n_42_5_r,n_549_4_l,n_266_and_0_0_l);
+DFFARX1 I_33(N3_5_r,blif_clk_net_0_r,n1_0_r,G199_5_r,);
+and I_34(N3_5_r,n3_5_r,G42_4_l);
+nand I_35(n3_5_r,n_266_and_0_0_l,n_573_4_l);
+endmodule
+
+

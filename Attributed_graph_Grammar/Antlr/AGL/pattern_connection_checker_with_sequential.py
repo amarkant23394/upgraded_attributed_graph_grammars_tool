@@ -27,6 +27,7 @@ import AGL
 from AGL import AGL2GGX
 from AGL import GGX2Verilog
 from dc_pattern_opti_calculator import dc_shell_pattern_check_write_up
+from formatting_verilog_files import formatting_unit_subcircuits
 from Networkx2Verilog import Networkx2Verilog
 import json
 from pathlib import Path
@@ -65,7 +66,7 @@ pattern_connection_detail = "./pattern_connnection_data.json"
 
 ##########NEW SUBCIRCUITS TO BE CREATED#################
 no_of_subcircuit_input_nodes = 11
-no_of_subcircuit_output_nodes = 10
+no_of_subcircuit_output_nodes = 11
 ########################################################
 
 
@@ -76,7 +77,7 @@ random_combination_cir_dictionaries = []
 random_combo_graphs = []
 no_of_inputs = []
 no_of_outputs = []
-if 1:
+if 0:
     for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs").iterdir():
         if file_path.is_file():
             input_f_path_str = str(file_path)
@@ -174,6 +175,7 @@ if 1:
 
     print(list_of_combinations_lhs)
     print(list_of_combinations_rhs)
+#    sys.exit("combination")
     ##############################################################################################
 
 
@@ -568,13 +570,16 @@ if 1:
 ##################################################################################################################################################
 
 if 1:
+    formatting_unit_subcircuits()
+
+if 1:
     graph_name_for_node = 0
     with open(pattern_connection_detail,'w')as fp_pattern_data_json:
         list_of_dictionaries.clear()
         nodes_input_degree.clear()
         nodes_output_degree.clear()
 
-        for file_path in pathlib.Path("/home/marupust/Desktop/AGG_NEW_ANTLR/Attributed_Graph_Grammar/Antlr/AGL/pattern_merge_graphs/best/normal").iterdir():
+        for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/pattern_merge_graphs/best/normal_compile_rule").iterdir():
             if file_path.is_file():
                 input_f_path_str = str(file_path)
                 print(input_f_path_str)
@@ -641,6 +646,8 @@ if 1:
                 nodes_input_degree = list(set(nodes_input_degree))
                 nodes_output_degree = list(set(nodes_output_degree))
                 graph_name_for_node += 1
+                print("Input nodes no. :- ",len(input_nodes_list))
+                print("output nodes no. :- ",len(output_nodes_list))
 
         no_of_graphs = len(list_of_dictionaries)
         dictionary = {
@@ -648,6 +655,7 @@ if 1:
         }
         json.dump(dictionary, fp_pattern_data_json)
         fp_pattern_data_json.write('\n')
+#        sys.exit("combination")
 
         for dict_graph_num in range(no_of_graphs):
             dict_graph = list_of_dictionaries[dict_graph_num]["GRAPH"]
@@ -871,7 +879,7 @@ if 1:
 
 
                             optimization_checker_count -= 1
-                            if(best_optimized_factor <= 0):
+                            if(best_optimized_factor < 10):
                                 optimization_checker_count = 0   
 
                     print("Best Optimized factor = "+str(best_optimized_factor))

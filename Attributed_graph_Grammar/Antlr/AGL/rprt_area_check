@@ -1,9 +1,9 @@
  
 ****************************************
 Report : area
-Design : Benchmark_testing100000
+Design : Benchmark_testing25000
 Version: O-2018.06-SP1
-Date   : Thu Oct 27 09:02:03 2022
+Date   : Fri Nov  4 20:53:18 2022
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -11,21 +11,21 @@ Library(s) Used:
 
     saed90nm_typ_ht (File: /home/marupust/Desktop/research_benchmark/nikhil_bhaiya_files/technology_files/saed90nm_typ_ht.db)
 
-Number of ports:                          384
-Number of nets:                         89110
-Number of cells:                        81552
-Number of combinational cells:          57656
-Number of sequential cells:             23896
+Number of ports:                          288
+Number of nets:                         22443
+Number of cells:                        20482
+Number of combinational cells:          14599
+Number of sequential cells:              5883
 Number of macros/black boxes:               0
-Number of buf/inv:                       9750
-Number of references:                       7
+Number of buf/inv:                       2266
+Number of references:                       6
 
-Combinational area:             327886.854940
-Buf/Inv area:                    53996.545386
-Noncombinational area:          770660.364395
+Combinational area:              82667.521810
+Buf/Inv area:                    12530.073925
+Noncombinational area:          189729.795052
 Macro/Black Box area:                0.000000
-Net Interconnect area:          101131.841693
+Net Interconnect area:           16806.792888
 
-Total cell area:               1098547.219336
-Total area:                    1199679.061028
+Total cell area:                272397.316861
+Total area:                     289204.109750
 1

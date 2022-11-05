@@ -1,0 +1,41 @@
+module test_final(IN_1_0_l,IN_2_0_l,IN_4_0_l,G18_4_l,G15_4_l,IN_1_4_l,IN_4_4_l,IN_5_4_l,IN_7_4_l,IN_9_4_l,IN_10_4_l,blif_clk_net_3_r,blif_reset_net_3_r,n_429_or_0_3_r,G78_3_r,n_576_3_r,n_102_3_r,n_547_3_r,G42_4_r,n_572_4_r,n_573_4_r,n_549_4_r,n_569_4_r,n_452_4_r);
+input IN_1_0_l,IN_2_0_l,IN_4_0_l,G18_4_l,G15_4_l,IN_1_4_l,IN_4_4_l,IN_5_4_l,IN_7_4_l,IN_9_4_l,IN_10_4_l,blif_clk_net_3_r,blif_reset_net_3_r;
+output n_429_or_0_3_r,G78_3_r,n_576_3_r,n_102_3_r,n_547_3_r,G42_4_r,n_572_4_r,n_573_4_r,n_549_4_r,n_569_4_r,n_452_4_r;
+wire ACVQN2_0_l,n_266_and_0_0_l,ACVQN1_0_l,G42_4_l,n_87_4_l,n_572_4_l,n_573_4_l,n_549_4_l,n_569_4_l,n_452_4_l,n4_4_l,n7_4_l,n_431_3_r,n2_3_r,n11_3_r,n12_3_r,n13_3_r,n14_3_r,n15_3_r,n16_3_r,n_87_4_r,n4_4_r,n7_4_r;
+DFFARX1 I_0(IN_1_0_l,blif_clk_net_3_r,n2_3_r,ACVQN2_0_l,);
+and I_1(n_266_and_0_0_l,IN_4_0_l,ACVQN1_0_l);
+DFFARX1 I_2(IN_2_0_l,blif_clk_net_3_r,n2_3_r,ACVQN1_0_l,);
+DFFARX1 I_3(n4_4_l,blif_clk_net_3_r,n2_3_r,G42_4_l,);
+not I_4(n_87_4_l,G15_4_l);
+nor I_5(n_572_4_l,G15_4_l,IN_7_4_l);
+or I_6(n_573_4_l,IN_5_4_l,IN_9_4_l);
+nor I_7(n_549_4_l,IN_10_4_l,n7_4_l);
+or I_8(n_569_4_l,IN_9_4_l,IN_10_4_l);
+nor I_9(n_452_4_l,G18_4_l,IN_5_4_l);
+nor I_10(n4_4_l,G18_4_l,IN_1_4_l);
+and I_11(n7_4_l,IN_4_4_l,n_87_4_l);
+nand I_12(n_429_or_0_3_r,n12_3_r,n_266_and_0_0_l);
+DFFARX1 I_13(n_431_3_r,blif_clk_net_3_r,n2_3_r,G78_3_r,);
+nand I_14(n_576_3_r,n11_3_r,ACVQN2_0_l);
+not I_15(n_102_3_r,G42_4_l);
+nand I_16(n_547_3_r,n13_3_r,n_569_4_l);
+or I_17(n_431_3_r,n14_3_r,n_572_4_l);
+not I_18(n2_3_r,blif_reset_net_3_r);
+nor I_19(n11_3_r,n12_3_r,G42_4_l);
+not I_20(n12_3_r,n_549_4_l);
+nor I_21(n13_3_r,G42_4_l,n_549_4_l);
+and I_22(n14_3_r,n15_3_r,ACVQN2_0_l);
+nor I_23(n15_3_r,n16_3_r,n_573_4_l);
+not I_24(n16_3_r,n_266_and_0_0_l);
+DFFARX1 I_25(n4_4_r,blif_clk_net_3_r,n2_3_r,G42_4_r,);
+not I_26(n_87_4_r,ACVQN2_0_l);
+nor I_27(n_572_4_r,ACVQN2_0_l,n_573_4_l);
+or I_28(n_573_4_r,n_452_4_l,n_569_4_l);
+nor I_29(n_549_4_r,n7_4_r,n_572_4_l);
+or I_30(n_569_4_r,n_572_4_l,n_569_4_l);
+nor I_31(n_452_4_r,n_452_4_l,n_266_and_0_0_l);
+nor I_32(n4_4_r,n_266_and_0_0_l,G42_4_l);
+and I_33(n7_4_r,n_87_4_r,n_452_4_l);
+endmodule
+
+

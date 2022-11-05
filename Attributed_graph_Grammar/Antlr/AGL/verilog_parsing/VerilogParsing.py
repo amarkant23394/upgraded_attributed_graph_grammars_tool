@@ -283,6 +283,7 @@ class VerilogParsing:
                             self.instances[instance] = FullAdder()
 
                     for eachnode in nodes:
+                        #print(eachnode)
                         namedPort = self.getPatternDetect("namedport",
                                                           eachnode.strip(" "))
                         namedPortValue = self.getPatternDetect("namedportvalue",
