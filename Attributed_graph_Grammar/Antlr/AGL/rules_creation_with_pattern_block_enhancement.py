@@ -38,9 +38,9 @@ from formatting_benchmark_files import formatting_benchmark_circuit_verilog
 ###############################################################################
 
 
-list_of_no_inputs = [100, 100, 100, 100, 700, 900, 1000, 1200, 1500, 2000]
-list_of_no_gates = [100, 1000, 25000, 45000, 85000, 100000, 200000, 400000, 700000, 1000000]
-list_of_no_levels = [5, 30, 50, 70, 100, 150, 200, 290, 300, 400]
+list_of_no_inputs = [50]#,1000, 1200, 1500, 2000]
+list_of_no_gates = [25000]#,200000, 400000, 700000, 1000000]
+list_of_no_levels = [50]#,200, 290, 300, 400]
 clock_input = "BM_CLK"
 reset_input = "BM_RST"
 
