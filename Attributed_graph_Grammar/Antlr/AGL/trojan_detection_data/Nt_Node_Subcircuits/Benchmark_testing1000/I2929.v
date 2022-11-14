@@ -1,0 +1,10 @@
+module test_I2929(I1415,I1391,I1311,I2929);
+input I1415,I1391,I1311;
+output I2929;
+wire I2895,I2912;
+and I_0(I2929,I2912,I1391);
+not I_1(I2895,I1415);
+nor I_2(I2912,I2895,I1311);
+endmodule
+
+

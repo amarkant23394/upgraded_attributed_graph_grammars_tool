@@ -1,0 +1,9 @@
+module test_I2441(I1223,I1327,I1255,I2441);
+input I1223,I1327,I1255;
+output I2441;
+wire I2424;
+and I_0(I2441,I2424,I1327);
+nand I_1(I2424,I1223,I1255);
+endmodule
+
+

@@ -1,0 +1,9 @@
+module test_I2633(I1477,I1470,I1239,I2633);
+input I1477,I1470,I1239;
+output I2633;
+wire I2181;
+not I_0(I2181,I1477);
+DFFARX1 I_1(I1239,I1470,I2181,,,I2633,);
+endmodule
+
+

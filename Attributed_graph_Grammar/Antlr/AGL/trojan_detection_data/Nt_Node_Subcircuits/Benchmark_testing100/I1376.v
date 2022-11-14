@@ -1,0 +1,9 @@
+module test_I1376(I1231,I1239,I1287,I1376);
+input I1231,I1239,I1287;
+output I1376;
+wire I1359;
+and I_0(I1376,I1359,I1231);
+nand I_1(I1359,I1287,I1239);
+endmodule
+
+

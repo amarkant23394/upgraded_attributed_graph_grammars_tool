@@ -1,0 +1,10 @@
+module test_I1603(I1215,I1423,I1455,I1603);
+input I1215,I1423,I1455;
+output I1603;
+wire I1586,I1535;
+nor I_0(I1586,I1535,I1215);
+nand I_1(I1603,I1586,I1423);
+not I_2(I1535,I1455);
+endmodule
+
+

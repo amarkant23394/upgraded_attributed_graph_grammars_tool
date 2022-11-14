@@ -1,0 +1,9 @@
+module test_I2810(I1351,I1319,I1335,I2810);
+input I1351,I1319,I1335;
+output I2810;
+wire I2793;
+nand I_0(I2810,I2793,I1335);
+nor I_1(I2793,I1351,I1319);
+endmodule
+
+

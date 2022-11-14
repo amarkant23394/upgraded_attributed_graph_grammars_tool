@@ -1,0 +1,9 @@
+module test_I1622(I1255,I1294,I1301,I1622);
+input I1255,I1294,I1301;
+output I1622;
+wire I1342;
+DFFARX1 I_0(I1255,I1294,I1342,,,I1622,);
+not I_1(I1342,I1301);
+endmodule
+
+

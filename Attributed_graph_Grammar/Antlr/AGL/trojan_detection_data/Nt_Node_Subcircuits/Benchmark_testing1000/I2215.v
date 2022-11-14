@@ -1,0 +1,9 @@
+module test_I2215(I1343,I1231,I1271,I2215);
+input I1343,I1231,I1271;
+output I2215;
+wire I2198;
+nand I_0(I2198,I1343,I1231);
+and I_1(I2215,I2198,I1271);
+endmodule
+
+

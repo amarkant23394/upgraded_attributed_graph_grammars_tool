@@ -1,0 +1,10 @@
+module test_I1733(I1439,I1367,I1207,I1733);
+input I1439,I1367,I1207;
+output I1733;
+wire I1716,I1699;
+and I_0(I1733,I1716,I1439);
+nor I_1(I1716,I1699,I1367);
+not I_2(I1699,I1207);
+endmodule
+
+
