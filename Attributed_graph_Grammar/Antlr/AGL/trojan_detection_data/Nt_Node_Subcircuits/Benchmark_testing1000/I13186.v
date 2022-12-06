@@ -1,22 +1,41 @@
-module test_I13186(I8851,I1477,I1470,I8848,I11751,I13186);
-input I8851,I1477,I1470,I8848,I11751;
+module test_I13186(I11542,I8848,I11751,I8851,I1470_clk,I1477_rst,I13186);
+input I11542,I8848,I11751,I8851,I1470_clk,I1477_rst;
 output I13186;
-wire I11378,I13601,I11429,I11296,I13197,I11299,I11559,I11768,I11272,I11395,I13508,I11689,I13491,I11310;
+wire I11378,I11272,I11310_rst,I13197_rst,I11559,I13508,I11299,I13491,I11429,I11296,I13601,I11689,I11768,I11395;
 nor I_0(I11378,I8848);
-DFFARX1 I_1(I11299,I1470,I13197,,,I13601,);
-not I_2(I11429,I8848);
-nand I_3(I11296,I11559,I11689);
-not I_4(I13197,I1477);
-nor I_5(I11299,I11395,I11429);
-DFFARX1 I_6(I1470,I11310,,,I11559,);
-and I_7(I11768,I11429,I11751);
-DFFARX1 I_8(I11768,I1470,I11310,,,I11272,);
-nor I_9(I13186,I13601,I13508);
-nand I_10(I11395,I11378,I8851);
-and I_11(I13508,I13491,I11272);
-nor I_12(I11689,I11395);
-DFFARX1 I_13(I11296,I1470,I13197,,,I13491,);
-not I_14(I11310,I1477);
+DFFARX1 I_1 (I11768,I1470_clk,I11310_rst,I11272);
+not I_2(I11310_rst,I1477_rst);
+not I_3(I13197_rst,I1477_rst);
+DFFARX1 I_4 (I11542,I1470_clk,I11310_rst,I11559);
+and I_5(I13508,I13491,I11272);
+nor I_6(I11299,I11395,I11429);
+DFFARX1 I_7 (I11296,I1470_clk,I13197_rst,I13491);
+not I_8(I11429,I8848);
+nand I_9(I11296,I11559,I11689);
+DFFARX1 I_10 (I11299,I1470_clk,I13197_rst,I13601);
+nor I_11(I11689,I11395);
+nor I_12(I13186,I13601,I13508);
+and I_13(I11768,I11429,I11751);
+nand I_14(I11395,I11378,I8851);
 endmodule
 
 
+
+//DFF Module (with asynch reset)
+module DFFARX1(d, clock, reset, q);
+	input d, clock, reset;
+	output q;
+	wire clock_inv, l1_x, l1_y, l1, l1_inv;
+	wire l2_x, l2_y, q_inv, q_sync;
+	not  dff0 (clock_inv, clock);
+	nand dff1 (l1_x, d, clock_inv);
+	nand dff2 (l1_y, l1_x, clock_inv);
+	nand dff3 (l1, l1_x, l1_inv);
+	nand dff4 (l1_inv, l1_y, l1);
+	nand dff5 (l2_x, l1, clock);
+	nand dff6 (l2_y, l2_x, clock);
+	nand dff7 (q_sync, l2_x, q_inv);
+	nand dff8 (q_inv, l2_y, q_sync);
+	and  dff9 (q, q_sync, reset);
+	and dff10 (q, q_sync, reset);
+endmodule

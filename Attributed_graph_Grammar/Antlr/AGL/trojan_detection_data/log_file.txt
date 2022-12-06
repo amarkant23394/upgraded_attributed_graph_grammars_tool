@@ -1,0 +1,10 @@
+	Top level design units:
+		tb_test_I14341
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+/opt/eda/cadence/XCELIUM1809/tools.lnx86/bin/cds_no_gcc: 17: [: x86_64: unexpected operator
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /opt/eda/cadence/XCELIUM1809/tools/xcelium/files/xmsimrc
+xcelium> run
+Simulation complete via $finish(1) at time 90 NS + 0
+./trojan_detection_data/test_bench_files/Benchmark_testing1000/I14341.sv:46 $finish;
+xcelium> exit

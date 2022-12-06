@@ -9,7 +9,6 @@ Description:- This module takes the list of graphs and makes rules for their add
 #-----------------------------------------------------------------------------#
 from networkx.algorithms import isomorphism
 from xmlrpc.client import boolean
-import networkx as nxs
 from LoadGGX import LoadGGX
 import networkx as nx
 import GraGra2ggx.TagCreator
@@ -36,9 +35,9 @@ from formatting_benchmark_files import formatting_benchmark_circuit_verilog
 ###############################################################################
 
 
-list_of_no_inputs = [1000, 1200, 1500, 2000]
-list_of_no_gates = [200000, 400000, 700000, 1000000]
-list_of_no_levels = [200, 290, 300, 400]
+list_of_no_inputs = [50]#1000, 1200, 1500, 2000]
+list_of_no_gates = [100]#200000, 400000, 700000, 1000000]
+list_of_no_levels = [5]#200, 290, 300, 400]
 clock_input = "BM_CLK"
 reset_input = "BM_RST"
 
@@ -69,16 +68,22 @@ def defining_attributes_func(file_stream_fp,dictionary_inst):
         i+=1
     file_stream_fp.write(" ]")
 
-def writing_attributes_func(file_stream_fp,dictionary_inst):
+def writing_attributes_func(file_stream_fp,dictionary_inst,within_sub=False):
     file_stream_fp.write("[ ")
     i=0
     for key in dictionary_inst:
         if i > 0:
-            file_stream_fp.write(" , ")   
+            file_stream_fp.write(" , ")
+
         file_stream_fp.write(str(key))
-        file_stream_fp.write(" = \"")
-        file_stream_fp.write(str(dictionary_inst[key]))
-        file_stream_fp.write("\"")
+        if(within_sub==True):
+            file_stream_fp.write(" := ")
+        else:
+            file_stream_fp.write(" = ")
+        if(type(dictionary_inst[key])==str):
+            file_stream_fp.write("\""+str(dictionary_inst[key])+"\"")
+        else:
+            file_stream_fp.write(str(dictionary_inst[key]))
         i+=1
     file_stream_fp.write("]")
 
@@ -152,8 +157,8 @@ for i in range(len(list_of_no_gates)):
     no_of_gates = list_of_no_gates[i]
     no_of_levels = list_of_no_levels[i]
 
-    module_name = "Benchmark_rules"
-    output_file = "Benchmark_testing"+str(no_of_gates)
+    module_name = "Benchmark_rules"+str(no_of_gates)
+    output_file = "Benchmark_rules"+str(no_of_gates)
 
     threshold_input_range = 5
 
@@ -181,7 +186,7 @@ for i in range(len(list_of_no_gates)):
     }
 
     ports_attributes_dictionary = {
-        "connected" : "",
+        "connected" : 0,
     }
 
     if 1:
@@ -331,11 +336,11 @@ for i in range(len(list_of_no_gates)):
             fp_rule_file.write("\n\n\trule nt_connected_IC__instance_removal {")
 
             fp_rule_file.write("\n\t\tsub {")
-            fp_rule_file.write("\n\t\t\tU1 GATE_NODE_N [ connected = \"0\"];")
-            fp_rule_file.write("\n\t\t\tU2 IC_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\t\tU1 GATE_NODE_N [ connected := 0];")
+            fp_rule_file.write("\n\t\t\tU2 IC_INSTANCE [ connected := 1](U1.OUT1->IN1);")
             fp_rule_file.write("\n\t\t}")
 
-            fp_rule_file.write("\n\t\tdel U2 IC_INSTANCE [ connected = \"1\"](U1.OUT1->IN1);")
+            fp_rule_file.write("\n\t\tdel U2 IC_INSTANCE [ connected = 1](U1.OUT1->IN1);")
 
             fp_rule_file.write("\n\t}")
             #####################################################################################################
@@ -368,19 +373,19 @@ for i in range(len(list_of_no_gates)):
                                 fp_rule_file.write(" INPUT_G")
                                 input_attributes_dictionary["gateType"] = "INPUT"
                                 input_attributes_dictionary["connected"] = 1
-                                writing_attributes_func(fp_rule_file,input_attributes_dictionary)
+                                writing_attributes_func(fp_rule_file,input_attributes_dictionary,within_sub=True)
                                 fp_rule_file.write(";")
                             else:
                                 fp_rule_file.write("\n\t\t\tGATE_"+input_node)
                                 fp_rule_file.write(" GATE_NODE_N")
-                                ports_attributes_dictionary["connected"] = "0"
-                                writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                                ports_attributes_dictionary["connected"] = 0
+                                writing_attributes_func(fp_rule_file,ports_attributes_dictionary,within_sub=True)
                                 fp_rule_file.write(";")
 
                             fp_rule_file.write("\n\t\t\tIN_PORT_"+input_node)
                             fp_rule_file.write(" IC_INSTANCE")
-                            ports_attributes_dictionary["connected"] = "1"
-                            writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                            ports_attributes_dictionary["connected"] = 1
+                            writing_attributes_func(fp_rule_file,ports_attributes_dictionary,within_sub=True)
                             fp_rule_file.write("(")
                             if primary_input_rule == 0:
                                 fp_rule_file.write("IN_"+input_node+".OUT1 -> IN1")
@@ -389,13 +394,13 @@ for i in range(len(list_of_no_gates)):
                             fp_rule_file.write(");") 
 
                         if "CLOCK" in graph_dict_inst:
-                            fp_rule_file.write("\n\t\t\tBM_CLK CLK_G[ gateType = \"INPUT\"];")
+                            fp_rule_file.write("\n\t\t\tBM_CLK CLK_G[ gateType := \"INPUT\"];")
 
                         if "RESET" in graph_dict_inst:
-                            fp_rule_file.write("\n\t\t\tBM_RST RST_G[ gateType = \"INPUT\"];")
+                            fp_rule_file.write("\n\t\t\tBM_RST RST_G[ gateType := \"INPUT\"];")
 			        
 
-                        fp_rule_file.write("\n\t\t\tP_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected = \"1\"](")
+                        fp_rule_file.write("\n\t\t\tP_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected := 1](")
                            
                         for input_num,input_node in enumerate(graph_dict_inst["INPUT_NODES"]):
                             if(input_num == len(graph_def_inst_dict["INPUT_NODES"]) - 1):
@@ -415,8 +420,8 @@ for i in range(len(list_of_no_gates)):
                         for output_node in graph_dict_inst["OUTPUT_NODES"]:
                             fp_rule_file.write("\n\t\t\tOUT_PORT_"+output_node)
                             fp_rule_file.write(" IC_INSTANCE")
-                            ports_attributes_dictionary["connected"] = "1"
-                            writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                            ports_attributes_dictionary["connected"] = 1
+                            writing_attributes_func(fp_rule_file,ports_attributes_dictionary,within_sub=True)
                             fp_rule_file.write("(")
                             fp_rule_file.write("P_inst_"+str(graph_num)+"."+str(output_node)+" -> "+"IN1")
                             fp_rule_file.write(");") 
@@ -432,7 +437,7 @@ for i in range(len(list_of_no_gates)):
                             fp_rule_file.write("P_inst_"+str(graph_num)+"."+str(output_node)+" -> "+"IN1")
                             fp_rule_file.write(");")
 
-                        fp_rule_file.write("\n\t\tdel P_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected = \"1\"](")
+                        fp_rule_file.write("\n\t\tdel P_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[connected = 1](")
                            
                         for input_num,input_node in enumerate(graph_dict_inst["INPUT_NODES"]):
                             if(input_num == len(graph_def_inst_dict["INPUT_NODES"]) - 1):
@@ -452,7 +457,7 @@ for i in range(len(list_of_no_gates)):
                         for input_node in graph_dict_inst["INPUT_NODES"]:
                             fp_rule_file.write("\n\t\tdel IN_PORT_"+input_node)
                             fp_rule_file.write(" IC_INSTANCE")
-                            ports_attributes_dictionary["connected"] = "1"
+                            ports_attributes_dictionary["connected"] = 1
                             writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                             fp_rule_file.write("(")
                             if primary_input_rule == 0:
@@ -469,7 +474,7 @@ for i in range(len(list_of_no_gates)):
                             if str(graph_node_attributes[node_name]) != "DFF":
                                 fp_rule_file.write(" GATE_NODE_N")
                                 gate_attributes_dictionary["gateType"] = str(graph_node_attributes[node_name])
-                                gate_attributes_dictionary["connected"] = "0"
+                                gate_attributes_dictionary["connected"] = 0
                                 writing_attributes_func(fp_rule_file,gate_attributes_dictionary)
                                 fp_rule_file.write("(")
                                 prev_nodes=graph_inst.predecessors(node_name)
@@ -546,7 +551,7 @@ for i in range(len(list_of_no_gates)):
                     fp_rule_file.write(" INPUT_G")
                     input_attributes_dictionary["gateType"] = "INPUT"
                     input_attributes_dictionary["connected"] = 0
-                    writing_attributes_func(fp_rule_file,input_attributes_dictionary)
+                    writing_attributes_func(fp_rule_file,input_attributes_dictionary,within_sub=True)
                     fp_rule_file.write(";")
 
                 for input_node in clk_list:
@@ -554,7 +559,7 @@ for i in range(len(list_of_no_gates)):
                         fp_rule_file.write("\n\t\t\tBM_CLK")
                         fp_rule_file.write(" CLK_G")
                         r_attributes_dictionary["gateType"] = "INPUT"
-                        writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                        writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                         fp_rule_file.write(";")
 
                 for input_node in rst_list:
@@ -562,7 +567,7 @@ for i in range(len(list_of_no_gates)):
                         fp_rule_file.write("\n\t\t\tBM_RST")
                         fp_rule_file.write(" RST_G")
                         r_attributes_dictionary["gateType"] = "INPUT"
-                        writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                        writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                         fp_rule_file.write(";")
 
                 fp_rule_file.write("\n\t\t}")   
@@ -576,13 +581,13 @@ for i in range(len(list_of_no_gates)):
 
                     fp_rule_file.write("\n\t\tadd IN_PORT_"+input_node)
                     fp_rule_file.write(" IC_INSTANCE")
-                    ports_attributes_dictionary["connected"] = "1"
+                    ports_attributes_dictionary["connected"] = 1
                     writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                     fp_rule_file.write("(")
                     fp_rule_file.write(input_node+".OUT1 -> IN1")
                     fp_rule_file.write(");")     
 
-                fp_rule_file.write("\n\t\tadd P_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[ connected = \"0\"](")
+                fp_rule_file.write("\n\t\tadd P_inst_"+str(graph_num)+" PAT_"+str(graph_num)+"[ connected = 0](")
                    
                 for input_num,input_node in enumerate(graph_dict_inst["INPUT_NODES"]):
                     if(input_num == len(graph_def_inst_dict["INPUT_NODES"]) - 1):
@@ -604,7 +609,7 @@ for i in range(len(list_of_no_gates)):
                 for output_num, output_node in enumerate(graph_dict_inst["OUTPUT_NODES"]):
                     fp_rule_file.write("\n\t\tadd OUT_PORT_"+str(output_num))
                     fp_rule_file.write(" IC_INSTANCE")
-                    ports_attributes_dictionary["connected"] = "0"
+                    ports_attributes_dictionary["connected"] = 0
                     writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                     fp_rule_file.write("(")
                     fp_rule_file.write("P_inst_"+str(graph_num)+"."+str(output_node)+" -> "+"IN1")
@@ -673,15 +678,15 @@ for i in range(len(list_of_no_gates)):
                     ###############################LHS MATCH###################################################
                     fp_rule_file.write("\n\t\tsub {")
 
-                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+" PAT_"+str(lhs_graph_num)+"[ connected = \"0\"];")
+                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+" PAT_"+str(lhs_graph_num)+"[ connected := 0];")
 
                     dict_pat_out = {}
 
                     for output_num, output_node in enumerate(lhs_output_nodes):
                         fp_rule_file.write("\n\t\t\tOUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num))
                         fp_rule_file.write(" IC_INSTANCE")
-                        ports_attributes_dictionary["connected"] = "0"
-                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                        ports_attributes_dictionary["connected"] = 0
+                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary,within_sub=True)
                         fp_rule_file.write("(")
                         fp_rule_file.write("P_inst_"+str(lhs_graph_num)+"."+str(output_node)+" -> "+"IN1")
                         fp_rule_file.write(");")                
@@ -689,7 +694,7 @@ for i in range(len(list_of_no_gates)):
                         fp_rule_file.write("\n\t\t\tR_"+str(output_num)+"_l")
                         fp_rule_file.write(" R_G")
                         r_attributes_dictionary["gateType"] = "R"
-                        writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                        writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                         fp_rule_file.write("(")
                         fp_rule_file.write("OUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num)+".OUT1 -> IN1")
                         fp_rule_file.write(");")
@@ -701,7 +706,7 @@ for i in range(len(list_of_no_gates)):
                             fp_rule_file.write("\n\t\t\tBM_CLK")
                             fp_rule_file.write(" CLK_G")
                             r_attributes_dictionary["gateType"] = "INPUT"
-                            writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                            writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                             fp_rule_file.write(";")
 
                     for rhs_rst_node in rhs_rst_list:
@@ -709,7 +714,7 @@ for i in range(len(list_of_no_gates)):
                             fp_rule_file.write("\n\t\t\tBM_RST")
                             fp_rule_file.write(" RST_G")
                             r_attributes_dictionary["gateType"] = "INPUT"
-                            writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                            writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                             fp_rule_file.write(";")
 
                     fp_rule_file.write("\n\t\t}")
@@ -717,14 +722,14 @@ for i in range(len(list_of_no_gates)):
 
 
                     ############################################RHS MATCH#####################################################
-                    fp_rule_file.write("\n\t\tP_inst_"+str(lhs_graph_num)+"[ connected = \"1\"];")
+                    fp_rule_file.write("\n\t\tP_inst_"+str(lhs_graph_num)+"[ connected = 1];")
                     for output_num, output_node in enumerate(lhs_output_nodes):
                         fp_rule_file.write("\n\t\tOUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num))
-                        ports_attributes_dictionary["connected"] = "1"
+                        ports_attributes_dictionary["connected"] = 1
                         writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                         fp_rule_file.write(";")
 
-                    fp_rule_file.write("\n\t\tadd P_inst_"+str(rhs_graph_num)+" PAT_"+str(rhs_graph_num)+"[ connected = \"0\"](")
+                    fp_rule_file.write("\n\t\tadd P_inst_"+str(rhs_graph_num)+" PAT_"+str(rhs_graph_num)+"[ connected = 0](")
                     for input_num,input_node in enumerate(rhs_input_nodes):
                         lhs_connected_index = rhs_nodes_to_be_considered.index(input_node)
                         lhs_output_node_inst = lhs_nodes_to_be_considered[lhs_connected_index]
@@ -748,7 +753,7 @@ for i in range(len(list_of_no_gates)):
                     for output_num, output_node in enumerate(rhs_output_nodes):
                         fp_rule_file.write("\n\t\tadd OUT_PORT_"+str(output_num)+"_"+str(rhs_graph_num))
                         fp_rule_file.write(" IC_INSTANCE")
-                        ports_attributes_dictionary["connected"] = "0"
+                        ports_attributes_dictionary["connected"] = 0
                         writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                         fp_rule_file.write("(")
                         fp_rule_file.write("P_inst_"+str(rhs_graph_num)+"."+str(output_node)+" -> "+"IN1")
@@ -774,13 +779,13 @@ for i in range(len(list_of_no_gates)):
                 ###################################Pattern Clear#####################################################
                     fp_rule_file.write("\n\n\trule pattern_clear_"+str(lhs_graph_num)+" {")
                     fp_rule_file.write("\n\t\tsub {")
-                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+" PAT_"+str(lhs_graph_num)+"[ connected = \"1\"];")
+                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+" PAT_"+str(lhs_graph_num)+"[ connected := 1];")
 
                     for output_num, output_node in enumerate(lhs_output_nodes):
                         fp_rule_file.write("\n\t\t\tOUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num))
                         fp_rule_file.write(" IC_INSTANCE")
-                        ports_attributes_dictionary["connected"] = "1"
-                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                        ports_attributes_dictionary["connected"] = 1
+                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary,within_sub=True)
                         fp_rule_file.write("(")
                         fp_rule_file.write("P_inst_"+str(lhs_graph_num)+"."+str(output_node)+" -> "+"IN1")
                         fp_rule_file.write(");")                
@@ -788,7 +793,7 @@ for i in range(len(list_of_no_gates)):
                         fp_rule_file.write("\n\t\t\tR_"+str(output_num))
                         fp_rule_file.write(" R_G")
                         r_attributes_dictionary["gateType"] = "R"
-                        writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                        writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                         fp_rule_file.write("(")
                         fp_rule_file.write("OUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num)+".OUT1 -> IN1")
                         fp_rule_file.write(");") 
@@ -811,13 +816,13 @@ for i in range(len(list_of_no_gates)):
                 ###################################Final Pattern Clear#####################################################
                     fp_rule_file.write("\n\n\trule final_layer_pattern_clear_"+str(lhs_graph_num)+" {")
                     fp_rule_file.write("\n\t\tsub {")
-                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+" PAT_"+str(lhs_graph_num)+"[ connected = \"0\"];")
+                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+" PAT_"+str(lhs_graph_num)+"[ connected := 0];")
 
                     for output_num, output_node in enumerate(lhs_output_nodes):
                         fp_rule_file.write("\n\t\t\tOUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num))
                         fp_rule_file.write(" IC_INSTANCE")
-                        ports_attributes_dictionary["connected"] = "0"
-                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
+                        ports_attributes_dictionary["connected"] = 0
+                        writing_attributes_func(fp_rule_file,ports_attributes_dictionary,within_sub=True)
                         fp_rule_file.write("(")
                         fp_rule_file.write("P_inst_"+str(lhs_graph_num)+"."+str(output_node)+" -> "+"IN1")
                         fp_rule_file.write(");")                
@@ -825,7 +830,7 @@ for i in range(len(list_of_no_gates)):
                         fp_rule_file.write("\n\t\t\tR_"+str(output_num))
                         fp_rule_file.write(" R_G")
                         r_attributes_dictionary["gateType"] = "R"
-                        writing_attributes_func(fp_rule_file,r_attributes_dictionary)
+                        writing_attributes_func(fp_rule_file,r_attributes_dictionary,within_sub=True)
                         fp_rule_file.write("(")
                         fp_rule_file.write("OUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num)+".OUT1 -> IN1")
                         fp_rule_file.write(");") 
@@ -833,11 +838,11 @@ for i in range(len(list_of_no_gates)):
 
                     fp_rule_file.write("\n\t\t}")
 
-                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+"[ connected = \"1\"];")
+                    fp_rule_file.write("\n\t\t\tP_inst_"+str(lhs_graph_num)+"[ connected = 1];")
 
                     for output_num, output_node in enumerate(lhs_output_nodes):
                         fp_rule_file.write("\n\t\tOUT_PORT_"+str(output_num)+"_"+str(lhs_graph_num))
-                        ports_attributes_dictionary["connected"] = "1"
+                        ports_attributes_dictionary["connected"] = 1
                         writing_attributes_func(fp_rule_file,ports_attributes_dictionary)
                         fp_rule_file.write(";") 
 
@@ -855,7 +860,7 @@ for i in range(len(list_of_no_gates)):
                 ###################################################RULE R Change######################################################
                 fp_rule_file.write("\n\n\trule r_attribute_change {")
                 fp_rule_file.write("\n\t\tsub {")
-                fp_rule_file.write("\n\t\t\tR_G_1 R_G[gateType = \"T\"];")
+                fp_rule_file.write("\n\t\t\tR_G_1 R_G[gateType := \"T\"];")
                 fp_rule_file.write("\n\t\t}")
                 fp_rule_file.write("\n\t\tR_G_1 [gateType = \"R\"];")
                 fp_rule_file.write("\n\t}")
@@ -865,7 +870,7 @@ for i in range(len(list_of_no_gates)):
                 ###################################################RULE CLEARANCE######################################################
                 fp_rule_file.write("\n\n\trule rule_clear {")
                 fp_rule_file.write("\n\t\tsub {")
-                fp_rule_file.write("\n\t\t\tR_G_1 R_G[gateType = \"T\"];")
+                fp_rule_file.write("\n\t\t\tR_G_1 R_G[gateType := \"T\"];")
                 fp_rule_file.write("\n\t\t}")
                 fp_rule_file.write("\n\t\tdel R_G_1 R_G[gateType = \"T\"];")
                 fp_rule_file.write("\n\t}")
@@ -874,9 +879,9 @@ for i in range(len(list_of_no_gates)):
                 ###################################################INPUT RULE CLEARANCE#################################################
                 fp_rule_file.write("\n\n\trule input_attribute_change {")
                 fp_rule_file.write("\n\t\tsub {")
-                fp_rule_file.write("\n\t\t\tIN_1 INPUT_G[ gateType = \"INPUT\" , connected = \"1\"];")
+                fp_rule_file.write("\n\t\t\tIN_1 INPUT_G[ gateType := \"INPUT\" , connected := 1];")
                 fp_rule_file.write("\n\t\t}")
-                fp_rule_file.write("\n\t\tIN_1 [ gateType = \"INPUT\" , connected = \"0\"];")
+                fp_rule_file.write("\n\t\tIN_1 [ gateType = \"INPUT\" , connected = 0];")
                 fp_rule_file.write("\n\t}")
                 #######################################################################################################################
 
@@ -993,7 +998,9 @@ for i in range(len(list_of_no_gates)):
                 
 
     AGLVal = AGL2GGX("./benchmarks_generated/txt_files/"+output_file+".txt")()
-    LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
-    GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
-    formatting_benchmark_circuit_verilog(output_file)
-    dc_shell_input_file_write_up(output_file)
+#    LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
+#    AGLVal = AGL2GGX("./benchmarks_generated/txt_files/AndTree.txt")()
+#    LoadGGX("./benchmarks_generated/txt_files/AndTree.ggx")()
+#    GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
+#    formatting_benchmark_circuit_verilog(output_file)
+#    dc_shell_input_file_write_up(output_file)

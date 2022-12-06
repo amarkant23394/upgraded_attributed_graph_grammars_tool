@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document version="1.0">
+    <GraphTransformationSystem ID="I0" directed="true" name="GraGra" parallel="false">
+        <TaggedValue Tag="AttrHandler" TagValue="Java Expr">
+            <TaggedValue Tag="Package" TagValue="java.lang"/>
+            <TaggedValue Tag="Package" TagValue="java.util"/>
+        </TaggedValue>
+        <TaggedValue Tag="CSP" TagValue="true"/>
+        <TaggedValue Tag="injective" TagValue="true"/>
+        <TaggedValue Tag="dangling" TagValue="true"/>
+        <TaggedValue Tag="identification" TagValue="true"/>
+        <TaggedValue Tag="NACs" TagValue="true"/>
+        <TaggedValue Tag="PACs" TagValue="true"/>
+        <TaggedValue Tag="GACs" TagValue="true"/>
+        <TaggedValue Tag="ruleSequence" TagValue="true"/>
+        <TaggedValue Tag="breakAllLayer" TagValue="true"/>
+        <TaggedValue Tag="TypeGraphLevel" TagValue="DISABLED"/>
+        <Types>
+            <NodeType ID="I1" abstract="false" name="and%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+                <AttrType ID="I3" attrname="bit" typename="int" visible="true"/>
+                <AttrType ID="I4" attrname="connected"
+                    typename="boolean" visible="true"/>
+                <AttrType ID="I5" attrname="CL" typename="boolean" visible="true"/>
+                <AttrType ID="I6" attrname="NL" typename="boolean" visible="true"/>
+                <AttrType ID="I7" attrname="isInstance"
+                    typename="boolean" visible="true"/>
+            </NodeType>
+            <NodeType ID="I8" abstract="false" name="and_OUT1%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+                <AttrType ID="I10" attrname="isInstance"
+                    typename="boolean" visible="true"/>
+            </NodeType>
+            <NodeType ID="I11" abstract="false" name="and_IN1%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+                <AttrType ID="I13" attrname="isInstance"
+                    typename="boolean" visible="true"/>
+            </NodeType>
+            <NodeType ID="I14" abstract="false" name="and_IN2%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+                <AttrType ID="I16" attrname="isInstance"
+                    typename="boolean" visible="true"/>
+            </NodeType>
+            <NodeType ID="I17" abstract="false" name="Input%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+                <AttrType ID="I19" attrname="isInstance"
+                    typename="boolean" visible="true"/>
+            </NodeType>
+            <NodeType ID="I20" abstract="false" name="Input_OUT1%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+                <AttrType ID="I22" attrname="isInstance"
+                    typename="boolean" visible="true"/>
+            </NodeType>
+            <EdgeType ID="I23" abstract="false" name=" %:SOLID_LINE:java.awt.Color[r=0,g=0,b=0]:[EDGE]:"/>
+        </Types>
+        <Graph ID="I24" kind="HOST" name="Graph1">
+            <Node ID="I25" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I28" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I31" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I34" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I37" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I43" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I46" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I49" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I52" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I55" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I58" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I61" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I64" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I70" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I73" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I76" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I79" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I82" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I85" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I88" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I91" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I97" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I100" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I103" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I106" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I109" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I112" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I115" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I118" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I124" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I127" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I130" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I133" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I136" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I139" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I142" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I145" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I151" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I154" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I157" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I160" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I163" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I166" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I169" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I172" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I178" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I181" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I184" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I187" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I190" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I193" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I196" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I199" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I205" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I208" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I211" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I214" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I217" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I220" type="I17">
+                <Attribute constant="true" type="I19">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I223" type="I20">
+                <Attribute constant="true" type="I22">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I226" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I232" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I235" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I238" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I241" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I247" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I250" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I253" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I256" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I262" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I265" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I268" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I271" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I277" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I280" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I283" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I286" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I292" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I295" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I298" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I301" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I307" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I310" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I313" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I316" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I322" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I325" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I328" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I331" type="I1">
+                <Attribute constant="true" type="I4">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I5">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I6">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+                <Attribute constant="true" type="I7">
+                    <Value>
+                        <boolean>true</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I337" type="I8">
+                <Attribute constant="true" type="I10">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I340" type="I11">
+                <Attribute constant="true" type="I13">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Node ID="I343" type="I14">
+                <Attribute constant="true" type="I16">
+                    <Value>
+                        <boolean>false</boolean>
+                    </Value>
+                </Attribute>
+            </Node>
+            <Edge ID="I346" source="I25" target="I28" type="I23"/>
+            <Edge ID="I347" source="I28" target="I46" type="I23"/>
+            <Edge ID="I348" source="I31" target="I34" type="I23"/>
+            <Edge ID="I349" source="I34" target="I49" type="I23"/>
+            <Edge ID="I350" source="I52" target="I55" type="I23"/>
+            <Edge ID="I351" source="I55" target="I73" type="I23"/>
+            <Edge ID="I352" source="I58" target="I61" type="I23"/>
+            <Edge ID="I353" source="I61" target="I76" type="I23"/>
+            <Edge ID="I354" source="I79" target="I82" type="I23"/>
+            <Edge ID="I355" source="I82" target="I100" type="I23"/>
+            <Edge ID="I356" source="I85" target="I88" type="I23"/>
+            <Edge ID="I357" source="I88" target="I103" type="I23"/>
+            <Edge ID="I358" source="I106" target="I109" type="I23"/>
+            <Edge ID="I359" source="I109" target="I127" type="I23"/>
+            <Edge ID="I360" source="I112" target="I115" type="I23"/>
+            <Edge ID="I361" source="I115" target="I130" type="I23"/>
+            <Edge ID="I362" source="I133" target="I136" type="I23"/>
+            <Edge ID="I363" source="I136" target="I154" type="I23"/>
+            <Edge ID="I364" source="I139" target="I142" type="I23"/>
+            <Edge ID="I365" source="I142" target="I157" type="I23"/>
+            <Edge ID="I366" source="I160" target="I163" type="I23"/>
+            <Edge ID="I367" source="I163" target="I181" type="I23"/>
+            <Edge ID="I368" source="I166" target="I169" type="I23"/>
+            <Edge ID="I369" source="I169" target="I184" type="I23"/>
+            <Edge ID="I370" source="I187" target="I190" type="I23"/>
+            <Edge ID="I371" source="I190" target="I208" type="I23"/>
+            <Edge ID="I372" source="I193" target="I196" type="I23"/>
+            <Edge ID="I373" source="I196" target="I211" type="I23"/>
+            <Edge ID="I374" source="I214" target="I217" type="I23"/>
+            <Edge ID="I375" source="I217" target="I235" type="I23"/>
+            <Edge ID="I376" source="I220" target="I223" type="I23"/>
+            <Edge ID="I377" source="I223" target="I238" type="I23"/>
+            <Edge ID="I378" source="I145" target="I151" type="I23"/>
+            <Edge ID="I379" source="I151" target="I250" type="I23"/>
+            <Edge ID="I380" source="I154" target="I145" type="I23"/>
+            <Edge ID="I381" source="I157" target="I145" type="I23"/>
+            <Edge ID="I382" source="I37" target="I43" type="I23"/>
+            <Edge ID="I383" source="I43" target="I253" type="I23"/>
+            <Edge ID="I384" source="I46" target="I37" type="I23"/>
+            <Edge ID="I385" source="I49" target="I37" type="I23"/>
+            <Edge ID="I386" source="I118" target="I124" type="I23"/>
+            <Edge ID="I387" source="I124" target="I265" type="I23"/>
+            <Edge ID="I388" source="I127" target="I118" type="I23"/>
+            <Edge ID="I389" source="I130" target="I118" type="I23"/>
+            <Edge ID="I390" source="I199" target="I205" type="I23"/>
+            <Edge ID="I391" source="I205" target="I268" type="I23"/>
+            <Edge ID="I392" source="I208" target="I199" type="I23"/>
+            <Edge ID="I393" source="I211" target="I199" type="I23"/>
+            <Edge ID="I394" source="I64" target="I70" type="I23"/>
+            <Edge ID="I395" source="I70" target="I280" type="I23"/>
+            <Edge ID="I396" source="I73" target="I64" type="I23"/>
+            <Edge ID="I397" source="I76" target="I64" type="I23"/>
+            <Edge ID="I398" source="I91" target="I97" type="I23"/>
+            <Edge ID="I399" source="I97" target="I283" type="I23"/>
+            <Edge ID="I400" source="I100" target="I91" type="I23"/>
+            <Edge ID="I401" source="I103" target="I91" type="I23"/>
+            <Edge ID="I402" source="I172" target="I178" type="I23"/>
+            <Edge ID="I403" source="I178" target="I295" type="I23"/>
+            <Edge ID="I404" source="I181" target="I172" type="I23"/>
+            <Edge ID="I405" source="I184" target="I172" type="I23"/>
+            <Edge ID="I406" source="I226" target="I232" type="I23"/>
+            <Edge ID="I407" source="I232" target="I298" type="I23"/>
+            <Edge ID="I408" source="I235" target="I226" type="I23"/>
+            <Edge ID="I409" source="I238" target="I226" type="I23"/>
+            <Edge ID="I410" source="I256" target="I262" type="I23"/>
+            <Edge ID="I411" source="I262" target="I310" type="I23"/>
+            <Edge ID="I412" source="I265" target="I256" type="I23"/>
+            <Edge ID="I413" source="I268" target="I256" type="I23"/>
+            <Edge ID="I414" source="I286" target="I292" type="I23"/>
+            <Edge ID="I415" source="I292" target="I313" type="I23"/>
+            <Edge ID="I416" source="I295" target="I286" type="I23"/>
+            <Edge ID="I417" source="I298" target="I286" type="I23"/>
+            <Edge ID="I418" source="I271" target="I277" type="I23"/>
+            <Edge ID="I419" source="I277" target="I325" type="I23"/>
+            <Edge ID="I420" source="I280" target="I271" type="I23"/>
+            <Edge ID="I421" source="I283" target="I271" type="I23"/>
+            <Edge ID="I422" source="I241" target="I247" type="I23"/>
+            <Edge ID="I423" source="I247" target="I328" type="I23"/>
+            <Edge ID="I424" source="I250" target="I241" type="I23"/>
+            <Edge ID="I425" source="I253" target="I241" type="I23"/>
+            <Edge ID="I426" source="I316" target="I322" type="I23"/>
+            <Edge ID="I427" source="I322" target="I340" type="I23"/>
+            <Edge ID="I428" source="I325" target="I316" type="I23"/>
+            <Edge ID="I429" source="I328" target="I316" type="I23"/>
+            <Edge ID="I430" source="I301" target="I307" type="I23"/>
+            <Edge ID="I431" source="I307" target="I343" type="I23"/>
+            <Edge ID="I432" source="I310" target="I301" type="I23"/>
+            <Edge ID="I433" source="I313" target="I301" type="I23"/>
+            <Edge ID="I434" source="I331" target="I337" type="I23"/>
+            <Edge ID="I435" source="I340" target="I331" type="I23"/>
+            <Edge ID="I436" source="I343" target="I331" type="I23"/>
+        </Graph>
+        <Rule ID="I437" formula="true" name="AND_Init">
+            <Graph ID="I439" kind="LHS" name="LeftOf_AND_Init"/>
+            <Graph ID="I440" kind="RHS" name="RightOf_AND_Init">
+                <Node ID="I441" type="I17">
+                    <Attribute constant="true" type="I19">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I444" type="I20">
+                    <Attribute constant="true" type="I22">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I447" type="I17">
+                    <Attribute constant="true" type="I19">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I450" type="I20">
+                    <Attribute constant="true" type="I22">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I453" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I459" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I462" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I465" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Edge ID="I468" source="I441" target="I444" type="I23"/>
+                <Edge ID="I469" source="I444" target="I462" type="I23"/>
+                <Edge ID="I470" source="I447" target="I450" type="I23"/>
+                <Edge ID="I471" source="I450" target="I465" type="I23"/>
+                <Edge ID="I472" source="I453" target="I459" type="I23"/>
+                <Edge ID="I473" source="I462" target="I453" type="I23"/>
+                <Edge ID="I474" source="I465" target="I453" type="I23"/>
+            </Graph>
+            <Morphism comment="Formula: true" name="AND_Init"/>
+            <TaggedValue Tag="layer" TagValue="0"/>
+            <TaggedValue Tag="priority" TagValue="0"/>
+        </Rule>
+        <Rule ID="I475" formula="true" name="Main_Rule">
+            <Graph ID="I477" kind="LHS" name="LeftOf_Main_Rule">
+                <Node ID="I478" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I484" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I487" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I490" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I493" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I499" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I502" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I505" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Edge ID="I508" source="I478" target="I484" type="I23"/>
+                <Edge ID="I509" source="I487" target="I478" type="I23"/>
+                <Edge ID="I510" source="I490" target="I478" type="I23"/>
+                <Edge ID="I511" source="I493" target="I499" type="I23"/>
+                <Edge ID="I512" source="I502" target="I493" type="I23"/>
+                <Edge ID="I513" source="I505" target="I493" type="I23"/>
+            </Graph>
+            <Graph ID="I514" kind="RHS" name="RightOf_Main_Rule">
+                <Node ID="I515" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I521" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I524" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I527" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I530" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I536" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I539" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I542" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I545" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I551" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I554" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I557" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Edge ID="I560" source="I515" target="I521" type="I23"/>
+                <Edge ID="I561" source="I521" target="I554" type="I23"/>
+                <Edge ID="I562" source="I524" target="I515" type="I23"/>
+                <Edge ID="I563" source="I527" target="I515" type="I23"/>
+                <Edge ID="I564" source="I530" target="I536" type="I23"/>
+                <Edge ID="I565" source="I536" target="I557" type="I23"/>
+                <Edge ID="I566" source="I539" target="I530" type="I23"/>
+                <Edge ID="I567" source="I542" target="I530" type="I23"/>
+                <Edge ID="I568" source="I545" target="I551" type="I23"/>
+                <Edge ID="I569" source="I554" target="I545" type="I23"/>
+                <Edge ID="I570" source="I557" target="I545" type="I23"/>
+            </Graph>
+            <Morphism comment="Formula: true" name="Main_Rule">
+                <Mapping image="I515" orig="I478"/>
+                <Mapping image="I521" orig="I484"/>
+                <Mapping image="I524" orig="I487"/>
+                <Mapping image="I527" orig="I490"/>
+                <Mapping image="I530" orig="I493"/>
+                <Mapping image="I536" orig="I499"/>
+                <Mapping image="I539" orig="I502"/>
+                <Mapping image="I542" orig="I505"/>
+            </Morphism>
+            <TaggedValue Tag="layer" TagValue="0"/>
+            <TaggedValue Tag="priority" TagValue="0"/>
+        </Rule>
+        <Rule ID="I571" formula="true" name="Change_Level">
+            <Graph ID="I573" kind="LHS" name="LeftOf_Change_Level">
+                <Node ID="I574" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I580" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I583" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I586" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Edge ID="I589" source="I574" target="I580" type="I23"/>
+                <Edge ID="I590" source="I583" target="I574" type="I23"/>
+                <Edge ID="I591" source="I586" target="I574" type="I23"/>
+            </Graph>
+            <Graph ID="I592" kind="RHS" name="RightOf_Change_Level">
+                <Node ID="I593" type="I1">
+                    <Attribute constant="true" type="I4">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I5">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I6">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                    <Attribute constant="true" type="I7">
+                        <Value>
+                            <boolean>true</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I599" type="I8">
+                    <Attribute constant="true" type="I10">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I602" type="I11">
+                    <Attribute constant="true" type="I13">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Node ID="I605" type="I14">
+                    <Attribute constant="true" type="I16">
+                        <Value>
+                            <boolean>false</boolean>
+                        </Value>
+                    </Attribute>
+                </Node>
+                <Edge ID="I608" source="I593" target="I599" type="I23"/>
+                <Edge ID="I609" source="I602" target="I593" type="I23"/>
+                <Edge ID="I610" source="I605" target="I593" type="I23"/>
+            </Graph>
+            <Morphism comment="Formula: true" name="Change_Level">
+                <Mapping image="I593" orig="I574"/>
+                <Mapping image="I599" orig="I580"/>
+                <Mapping image="I602" orig="I583"/>
+                <Mapping image="I605" orig="I586"/>
+            </Morphism>
+            <TaggedValue Tag="layer" TagValue="0"/>
+            <TaggedValue Tag="priority" TagValue="0"/>
+        </Rule>
+        <Matches/>
+        <RuleSequences>
+            <Sequence name="Rulesequence1">
+                <Graph id="I24"/>
+                <Subsequence iterations="8">
+                    <Item iterations="1" rule="AND_Init"/>
+                </Subsequence>
+                <Subsequence iterations="4">
+                    <Item iterations="*" rule="Main_Rule"/>
+                    <Item iterations="*" rule="Change_Level"/>
+                </Subsequence>
+            </Sequence>
+        </RuleSequences>
+    </GraphTransformationSystem>
+</Document>

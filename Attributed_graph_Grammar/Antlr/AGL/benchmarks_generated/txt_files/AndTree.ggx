@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Document version="1.0">
+	<GraphTransformationSystem ID="I1" directed="true" name="GraGra" parallel="false">
+		<TaggedValue Tag="AttrHandler" TagValue="Java Expr">
+			<TaggedValue Tag="Package" TagValue="java.lang"/>
+			<TaggedValue Tag="Package" TagValue="java.util"/>
+		</TaggedValue>
+		<TaggedValue Tag="CSP" TagValue="true"/>
+		<TaggedValue Tag="injective" TagValue="true"/>
+		<TaggedValue Tag="dangling" TagValue="true"/>
+		<TaggedValue Tag="identification" TagValue="true"/>
+		<TaggedValue Tag="NACs" TagValue="true"/>
+		<TaggedValue Tag="PACs" TagValue="true"/>
+		<TaggedValue Tag="GACs" TagValue="true"/>
+		<TaggedValue Tag="ruleSequence" TagValue="true"/>
+		<TaggedValue Tag="breakAllLayer" TagValue="true"/>
+		<TaggedValue Tag="showGraphAfterStep" TagValue="true"/>
+		<TaggedValue Tag="TypeGraphLevel" TagValue="DISABLED"/>
+		<Types>
+			<NodeType ID="I2" abstarct="false" name="and%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+				<AttrType ID="I3" attrname="bit" typename="int" visible="true"/>
+				<AttrType ID="I4" attrname="connected" typename="boolean" visible="true"/>
+				<AttrType ID="I5" attrname="CL" typename="boolean" visible="true"/>
+				<AttrType ID="I6" attrname="NL" typename="boolean" visible="true"/>
+				<AttrType ID="I7" attrname="isInstance" typename="boolean" visible="true"/>
+			</NodeType>
+			<NodeType ID="I8" abstarct="false" name="and_OUT1%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+				<AttrType ID="I9" attrname="isInstance" typename="boolean" visible="true"/>
+			</NodeType>
+			<NodeType ID="I10" abstarct="false" name="and_IN1%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+				<AttrType ID="I11" attrname="isInstance" typename="boolean" visible="true"/>
+			</NodeType>
+			<NodeType ID="I12" abstarct="false" name="and_IN2%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+				<AttrType ID="I13" attrname="isInstance" typename="boolean" visible="true"/>
+			</NodeType>
+			<NodeType ID="I14" abstarct="false" name="Input%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+				<AttrType ID="I15" attrname="isInstance" typename="boolean" visible="true"/>
+			</NodeType>
+			<NodeType ID="I16" abstarct="false" name="Input_OUT1%:RECT:java.awt.Color[r=0,g=0,b=0]:[NODE]:">
+				<AttrType ID="I17" attrname="isInstance" typename="boolean" visible="true"/>
+			</NodeType>
+			<EdgeType ID="I18" abstarct="false" name=" %:SOLID_LINE:java.awt.Color[r=0,g=0,b=0]:[EDGE]:"/>
+		</Types>
+		<Graph ID="I19" kind="HOST" name="Graph1"/>
+		<Rule ID="I20" formula="true" name="AND_Init">
+			<Graph ID="I21" kind="LHS" name="Left"/>
+			<Graph ID="I22" kind="RHS" name="Right">
+				<Node ID="I23" type="I14">
+					<Attribute constant="true" type="I15">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I24" type="I16">
+					<Attribute constant="true" type="I17">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I25" type="I14">
+					<Attribute constant="true" type="I15">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I26" type="I16">
+					<Attribute constant="true" type="I17">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I27" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I28" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I29" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I30" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Edge ID="I31" source="I23" target="I24" type="I18"/>
+				<Edge ID="I32" source="I24" target="I29" type="I18"/>
+				<Edge ID="I33" source="I25" target="I26" type="I18"/>
+				<Edge ID="I34" source="I26" target="I30" type="I18"/>
+				<Edge ID="I35" source="I27" target="I28" type="I18"/>
+				<Edge ID="I36" source="I29" target="I27" type="I18"/>
+				<Edge ID="I37" source="I30" target="I27" type="I18"/>
+			</Graph>
+			<Morphism name="AND_Init"/>
+			<TaggedValue Tag="layer" TagValue="0"/>
+			<TaggedValue Tag="Priority" TagValue="0"/>
+		</Rule>
+		<Rule ID="I38" formula="true" name="Main_Rule">
+			<Parameter name="U1_connected" type="bool"/>
+			<Parameter name="U2_connected" type="bool"/>
+			<Graph ID="I39" kind="LHS" name="Left">
+				<Node ID="I40" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I41" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I42" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I43" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I44" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I45" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I46" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I47" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Edge ID="I48" source="I40" target="I41" type="I18"/>
+				<Edge ID="I49" source="I42" target="I40" type="I18"/>
+				<Edge ID="I50" source="I43" target="I40" type="I18"/>
+				<Edge ID="I51" source="I44" target="I45" type="I18"/>
+				<Edge ID="I52" source="I46" target="I44" type="I18"/>
+				<Edge ID="I53" source="I47" target="I44" type="I18"/>
+			</Graph>
+			<Graph ID="I54" kind="RHS" name="Right">
+				<Node ID="I55" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I56" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I57" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I58" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I59" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I60" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I61" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I62" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I63" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I64" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I65" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I66" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Edge ID="I67" source="I55" target="I56" type="I18"/>
+				<Edge ID="I68" source="I56" target="I65" type="I18"/>
+				<Edge ID="I69" source="I57" target="I55" type="I18"/>
+				<Edge ID="I70" source="I58" target="I55" type="I18"/>
+				<Edge ID="I71" source="I59" target="I60" type="I18"/>
+				<Edge ID="I72" source="I60" target="I66" type="I18"/>
+				<Edge ID="I73" source="I61" target="I59" type="I18"/>
+				<Edge ID="I74" source="I62" target="I59" type="I18"/>
+				<Edge ID="I75" source="I63" target="I64" type="I18"/>
+				<Edge ID="I76" source="I65" target="I63" type="I18"/>
+				<Edge ID="I77" source="I66" target="I63" type="I18"/>
+			</Graph>
+			<Morphism name="Main_Rule">
+				<Mapping image="I55" orig="I40"/>
+				<Mapping image="I56" orig="I41"/>
+				<Mapping image="I57" orig="I42"/>
+				<Mapping image="I58" orig="I43"/>
+				<Mapping image="I59" orig="I44"/>
+				<Mapping image="I60" orig="I45"/>
+				<Mapping image="I61" orig="I46"/>
+				<Mapping image="I62" orig="I47"/>
+			</Morphism>
+			<TaggedValue Tag="layer" TagValue="0"/>
+			<TaggedValue Tag="Priority" TagValue="0"/>
+		</Rule>
+		<Rule ID="I78" formula="true" name="Change_Level">
+			<Parameter name="U1_CL" type="bool"/>
+			<Parameter name="U1_NL" type="bool"/>
+			<Graph ID="I79" kind="LHS" name="Left">
+				<Node ID="I80" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I81" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I82" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I83" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Edge ID="I84" source="I80" target="I81" type="I18"/>
+				<Edge ID="I85" source="I82" target="I80" type="I18"/>
+				<Edge ID="I86" source="I83" target="I80" type="I18"/>
+			</Graph>
+			<Graph ID="I87" kind="RHS" name="Right">
+				<Node ID="I88" type="I2">
+					<Attribute constant="true" type="I7">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I4">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I5">
+						<Value>
+							<boolean>true</boolean>
+						</Value>
+					</Attribute>
+					<Attribute constant="true" type="I6">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I89" type="I8">
+					<Attribute constant="true" type="I9">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I90" type="I10">
+					<Attribute constant="true" type="I11">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Node ID="I91" type="I12">
+					<Attribute constant="true" type="I13">
+						<Value>
+							<boolean>false</boolean>
+						</Value>
+					</Attribute>
+				</Node>
+				<Edge ID="I92" source="I88" target="I89" type="I18"/>
+				<Edge ID="I93" source="I90" target="I88" type="I18"/>
+				<Edge ID="I94" source="I91" target="I88" type="I18"/>
+			</Graph>
+			<Morphism name="Change_Level">
+				<Mapping image="I88" orig="I80"/>
+				<Mapping image="I89" orig="I81"/>
+				<Mapping image="I90" orig="I82"/>
+				<Mapping image="I91" orig="I83"/>
+			</Morphism>
+			<TaggedValue Tag="layer" TagValue="0"/>
+			<TaggedValue Tag="Priority" TagValue="0"/>
+		</Rule>
+		<RuleSequences>
+			<Sequence name="Rulesequence1">
+				<Graph id="I19"/>
+				<Subsequence iterations="8">
+					<Item iterations="1" rule="AND_Init"/>
+				</Subsequence>
+				<Subsequence iterations="4">
+					<Item iterations="*" rule="Main_Rule"/>
+					<Item iterations="*" rule="Change_Level"/>
+				</Subsequence>
+			</Sequence>
+		</RuleSequences>
+	</GraphTransformationSystem>
+</Document>

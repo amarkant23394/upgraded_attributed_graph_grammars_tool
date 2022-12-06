@@ -1,9 +1,0 @@
-module test_I1780(I1215,I1294,I1301,I1780);
-input I1215,I1294,I1301;
-output I1780;
-wire I1342;
-not I_0(I1342,I1301);
-DFFARX1 I_1(I1215,I1294,I1342,,,I1780,);
-endmodule
-
-

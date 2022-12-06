@@ -1,22 +1,42 @@
-module test_I7492(I5659,I7139,I1477,I6992,I1470,I7492);
-input I5659,I7139,I1477,I6992,I1470;
+module test_I7492(I3368,I5659,I6992,I5450,I7139,I1470_clk,I1477_rst,I7492);
+input I3368,I5659,I6992,I5450,I7139,I1470_clk,I1477_rst;
 output I7492;
-wire I7173,I7009,I5073,I7156,I5594,I7238,I7427,I5088,I7410,I6907,I5082,I7221,I5105,I6924;
-nor I_0(I7173,I7156,I7009);
-not I_1(I7009,I6992);
-DFFARX1 I_2(I1470,I5105,,,I5073,);
-DFFARX1 I_3(I7139,I1470,I6907,,,I7156,);
-DFFARX1 I_4(I1470,I5105,,,I5594,);
-and I_5(I7238,I7221,I7173);
+wire I7410,I6907_rst,I5512,I5088,I6924,I5073,I7427,I5082,I7156,I5594,I7221,I7173,I7238,I5105_rst,I7009;
+DFFARX1 I_0 (I5082,I1470_clk,I6907_rst,I7410);
+not I_1(I6907_rst,I1477_rst);
+DFFARX1 I_2 (I3368,I1470_clk,I5105_rst,I5512);
+DFFARX1 I_3 (I5659,I1470_clk,I5105_rst,I5088);
+not I_4(I6924,I5073);
+DFFARX1 I_5 (I5450,I1470_clk,I5105_rst,I5073);
 not I_6(I7427,I7410);
-DFFARX1 I_7(I5659,I1470,I5105,,,I5088,);
-DFFARX1 I_8(I5082,I1470,I6907,,,I7410,);
-not I_9(I6907,I1477);
-not I_10(I5082,I5594);
-nand I_11(I7221,I6924,I5088);
-not I_12(I5105,I1477);
-not I_13(I6924,I5073);
-or I_14(I7492,I7427,I7238);
+not I_7(I5082,I5594);
+DFFARX1 I_8 (I7139,I1470_clk,I6907_rst,I7156);
+DFFARX1 I_9 (I5512,I1470_clk,I5105_rst,I5594);
+nand I_10(I7221,I6924,I5088);
+nor I_11(I7173,I7156,I7009);
+or I_12(I7492,I7427,I7238);
+and I_13(I7238,I7221,I7173);
+not I_14(I5105_rst,I1477_rst);
+not I_15(I7009,I6992);
 endmodule
 
 
+
+//DFF Module (with asynch reset)
+module DFFARX1(d, clock, reset, q);
+	input d, clock, reset;
+	output q;
+	wire clock_inv, l1_x, l1_y, l1, l1_inv;
+	wire l2_x, l2_y, q_inv, q_sync;
+	not  dff0 (clock_inv, clock);
+	nand dff1 (l1_x, d, clock_inv);
+	nand dff2 (l1_y, l1_x, clock_inv);
+	nand dff3 (l1, l1_x, l1_inv);
+	nand dff4 (l1_inv, l1_y, l1);
+	nand dff5 (l2_x, l1, clock);
+	nand dff6 (l2_y, l2_x, clock);
+	nand dff7 (q_sync, l2_x, q_inv);
+	nand dff8 (q_inv, l2_y, q_sync);
+	and  dff9 (q, q_sync, reset);
+	and dff10 (q, q_sync, reset);
+endmodule

@@ -59,15 +59,18 @@ class NX2Verilog:
                 successors = list(self.graph.successors(eachnode))
                 predecessors = list(self.graph.predecessors(eachnode))
                 
+                
                 successorsTypes = [self.graph.nodes[each]["type"]for each in successors]
                 predecessorsTypes = [self.graph.nodes[each]["type"]for each in predecessors]
                 
                 
                 
                 if len(predecessors) == 0: 
-                    self.inputs.append(successors[0])
-                    self.nodeNames[successors[0]] = None 
-                    if self.instances[eachnode].get_type() == "input": 
+                    try : 
+                        self.inputs.append(successors[0])
+                        self.nodeNames[successors[0]] = None 
+                    except : pass 
+                    if self.instances[eachnode].get_type().lower() == "input": 
                         del self.instances[eachnode]
                     else: 
                         del self.instances[eachnode]
@@ -83,10 +86,12 @@ class NX2Verilog:
                     
                 if len(successors) == 0 : 
                     try:
-                        inputPort2Ouput = self.graph.predecessors(eachnode)[0]
-                        outputPort = self.graph.predecessors(inputPort2Ouput)[0]
+                        inputPort2Ouput = list(self.graph.predecessors(eachnode))[0]
+                        outputPort = list(self.graph.predecessors(inputPort2Ouput))[0]
                         self.outputs.append(outputPort)
                         self.nodeNames[outputPort] = None 
+                        if self.instances[eachnode].get_type().lower() == "output":
+                            del self.instances[eachnode]
                     except: pass 
                 else: 
                     for eachsuccessor in successors: 
@@ -116,7 +121,9 @@ class NX2Verilog:
                             
                             print("Warning : {} has no connection to the input port : {} ".format(gateType ,each.getPortName()))
                         else: 
-                            self.instances[eachnode].addInstanceOrder(pred[0])
+                            try: 
+                                self.instances[eachnode].addInstanceOrder(pred[0])
+                            except : pass 
                             self.nodeNames[pred[0]] = None 
         i = 0        
         for key,val in self.instances.items() :

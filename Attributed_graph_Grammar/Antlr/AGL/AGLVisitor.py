@@ -164,6 +164,21 @@ class AGLVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by AGLParser#binstr2int.
+    def visitBinstr2int(self, ctx:AGLParser.Binstr2intContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AGLParser#binstr2intval.
+    def visitBinstr2intval(self, ctx:AGLParser.Binstr2intvalContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AGLParser#parametricInstanceAttrval.
+    def visitParametricInstanceAttrval(self, ctx:AGLParser.ParametricInstanceAttrvalContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by AGLParser#instanceports.
     def visitInstanceports(self, ctx:AGLParser.InstanceportsContext):
         return self.visitChildren(ctx)
@@ -301,6 +316,11 @@ class AGLVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by AGLParser#expr_val.
     def visitExpr_val(self, ctx:AGLParser.Expr_valContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by AGLParser#parametric_val.
+    def visitParametric_val(self, ctx:AGLParser.Parametric_valContext):
         return self.visitChildren(ctx)
 
 

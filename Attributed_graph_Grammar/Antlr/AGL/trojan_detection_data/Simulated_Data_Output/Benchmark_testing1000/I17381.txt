@@ -1,0 +1,13 @@
+000 0
+001 0
+010 1
+011 1
+100 0
+101 0
+110 1
+111 1
+
+The results :-
+Mean value = 0.3333333333333333
+Median value = 0.0
+Triviality value = 0.5

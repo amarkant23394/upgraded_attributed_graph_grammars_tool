@@ -1,0 +1,213 @@
+module Benchmark_rules100{
+	define GATE_NODE_N [ gateType : String , connected : int ](  OUT1 : out , IN1 : in , IN2 : in , IN3 : in);
+	define INPUT_G  [gateType : String , connected : int ](OUT1 : out);
+	define R_G  [gateType : String](OUT1 : out , IN1 : in);
+	define CLK_G  [gateType : String ](OUT1 : out);
+	define RST_G  [gateType : String ](OUT1 : out);
+	define IC_INSTANCE [connected : int](IN1 : in, OUT1 : out);
+	define PAT_0  [connected : int ] (IN_1_0_l_0 : in , IN_2_0_l_0 : in , IN_4_0_l_0 : in , IN_1_1_l_0 : in , IN_2_1_l_0 : in , IN_3_1_l_0 : in , IN_6_1_l_0 : in , IN_1_5_l_0 : in , IN_2_5_l_0 : in , IN_3_5_l_0 : in , IN_6_5_l_0 : in , n_429_or_0_3_r_0 : out , G78_3_r_0 : out , n_576_3_r_0 : out , n_102_3_r_0 : out , n_547_3_r_0 : out , G42_4_r_0 : out , n_572_4_r_0 : out , n_573_4_r_0 : out , n_549_4_r_0 : out , n_569_4_r_0 : out , n_452_4_r_0 : out , CLK : in , RST : in);
+	define PAT_1  [connected : int ] (IN_1_2_l_1 : in , IN_2_2_l_1 : in , G1_3_l_1 : in , G2_3_l_1 : in , IN_2_3_l_1 : in , IN_4_3_l_1 : in , IN_5_3_l_1 : in , IN_7_3_l_1 : in , IN_8_3_l_1 : in , IN_10_3_l_1 : in , IN_11_3_l_1 : in , ACVQN2_0_r_1 : out , n_266_and_0_0_r_1 : out , G199_1_r_1 : out , G214_1_r_1 : out , ACVQN1_2_r_1 : out , P6_2_r_1 : out , n_429_or_0_3_r_1 : out , G78_3_r_1 : out , n_576_3_r_1 : out , n_102_3_r_1 : out , n_547_3_r_1 : out , CLK : in , RST : in);
+	define PAT_2  [connected : int ] (IN_1_2_l_2 : in , IN_2_2_l_2 : in , G1_3_l_2 : in , G2_3_l_2 : in , IN_2_3_l_2 : in , IN_4_3_l_2 : in , IN_5_3_l_2 : in , IN_7_3_l_2 : in , IN_8_3_l_2 : in , IN_10_3_l_2 : in , IN_11_3_l_2 : in , ACVQN2_0_r_2 : out , n_266_and_0_0_r_2 : out , G199_1_r_2 : out , G214_1_r_2 : out , n_429_or_0_3_r_2 : out , G78_3_r_2 : out , n_576_3_r_2 : out , n_102_3_r_2 : out , n_547_3_r_2 : out , n_42_5_r_2 : out , G199_5_r_2 : out , CLK : in , RST : in);
+	define PAT_3  [connected : int ] (IN_1_0_l_3 : in , IN_2_0_l_3 : in , IN_4_0_l_3 : in , G18_4_l_3 : in , G15_4_l_3 : in , IN_1_4_l_3 : in , IN_4_4_l_3 : in , IN_5_4_l_3 : in , IN_7_4_l_3 : in , IN_9_4_l_3 : in , IN_10_4_l_3 : in , ACVQN2_0_r_3 : out , n_266_and_0_0_r_3 : out , G199_1_r_3 : out , G214_1_r_3 : out , ACVQN1_2_r_3 : out , P6_2_r_3 : out , n_429_or_0_3_r_3 : out , G78_3_r_3 : out , n_576_3_r_3 : out , n_102_3_r_3 : out , n_547_3_r_3 : out , CLK : in , RST : in);
+	define PAT_4  [connected : int ] (IN_1_0_l_4 : in , IN_2_0_l_4 : in , IN_4_0_l_4 : in , G18_4_l_4 : in , G15_4_l_4 : in , IN_1_4_l_4 : in , IN_4_4_l_4 : in , IN_5_4_l_4 : in , IN_7_4_l_4 : in , IN_9_4_l_4 : in , IN_10_4_l_4 : in , ACVQN2_0_r_4 : out , n_266_and_0_0_r_4 : out , ACVQN1_2_r_4 : out , P6_2_r_4 : out , n_429_or_0_3_r_4 : out , G78_3_r_4 : out , n_576_3_r_4 : out , n_102_3_r_4 : out , n_547_3_r_4 : out , n_42_5_r_4 : out , G199_5_r_4 : out , CLK : in , RST : in);
+	define PAT_5  [connected : int ] (IN_1_2_l_5 : in , IN_2_2_l_5 : in , G1_3_l_5 : in , G2_3_l_5 : in , IN_2_3_l_5 : in , IN_4_3_l_5 : in , IN_5_3_l_5 : in , IN_7_3_l_5 : in , IN_8_3_l_5 : in , IN_10_3_l_5 : in , IN_11_3_l_5 : in , G199_1_r_5 : out , G214_1_r_5 : out , ACVQN1_2_r_5 : out , P6_2_r_5 : out , n_429_or_0_3_r_5 : out , G78_3_r_5 : out , n_576_3_r_5 : out , n_102_3_r_5 : out , n_547_3_r_5 : out , n_42_5_r_5 : out , G199_5_r_5 : out , CLK : in , RST : in);
+	define PAT_6  [connected : int ] (IN_1_2_l_6 : in , IN_2_2_l_6 : in , G1_3_l_6 : in , G2_3_l_6 : in , IN_2_3_l_6 : in , IN_4_3_l_6 : in , IN_5_3_l_6 : in , IN_7_3_l_6 : in , IN_8_3_l_6 : in , IN_10_3_l_6 : in , IN_11_3_l_6 : in , ACVQN2_0_r_6 : out , n_266_and_0_0_r_6 : out , ACVQN1_2_r_6 : out , P6_2_r_6 : out , n_429_or_0_3_r_6 : out , G78_3_r_6 : out , n_576_3_r_6 : out , n_102_3_r_6 : out , n_547_3_r_6 : out , n_42_5_r_6 : out , G199_5_r_6 : out , CLK : in , RST : in);
+	define PAT_7  [connected : int ] (IN_1_0_l_7 : in , IN_2_0_l_7 : in , IN_4_0_l_7 : in , G18_4_l_7 : in , G15_4_l_7 : in , IN_1_4_l_7 : in , IN_4_4_l_7 : in , IN_5_4_l_7 : in , IN_7_4_l_7 : in , IN_9_4_l_7 : in , IN_10_4_l_7 : in , ACVQN2_0_r_7 : out , n_266_and_0_0_r_7 : out , G199_1_r_7 : out , G214_1_r_7 : out , n_429_or_0_3_r_7 : out , G78_3_r_7 : out , n_576_3_r_7 : out , n_102_3_r_7 : out , n_547_3_r_7 : out , n_42_5_r_7 : out , G199_5_r_7 : out , CLK : in , RST : in);
+	define PAT_8  [connected : int ] (IN_1_0_l_8 : in , IN_2_0_l_8 : in , IN_4_0_l_8 : in , IN_1_1_l_8 : in , IN_2_1_l_8 : in , IN_3_1_l_8 : in , IN_6_1_l_8 : in , IN_1_5_l_8 : in , IN_2_5_l_8 : in , IN_3_5_l_8 : in , IN_6_5_l_8 : in , ACVQN2_0_r_8 : out , n_266_and_0_0_r_8 : out , ACVQN1_2_r_8 : out , P6_2_r_8 : out , n_429_or_0_3_r_8 : out , G78_3_r_8 : out , n_576_3_r_8 : out , n_102_3_r_8 : out , n_547_3_r_8 : out , n_42_5_r_8 : out , G199_5_r_8 : out , CLK : in , RST : in);
+	define PAT_9  [connected : int ] (IN_1_0_l_9 : in , IN_2_0_l_9 : in , IN_4_0_l_9 : in , G18_4_l_9 : in , G15_4_l_9 : in , IN_1_4_l_9 : in , IN_4_4_l_9 : in , IN_5_4_l_9 : in , IN_7_4_l_9 : in , IN_9_4_l_9 : in , IN_10_4_l_9 : in , G199_1_r_9 : out , G214_1_r_9 : out , ACVQN1_2_r_9 : out , P6_2_r_9 : out , n_429_or_0_3_r_9 : out , G78_3_r_9 : out , n_576_3_r_9 : out , n_102_3_r_9 : out , n_547_3_r_9 : out , n_42_5_r_9 : out , G199_5_r_9 : out , CLK : in , RST : in);
+	define PAT_10  [connected : int ] (IN_1_0_l_10 : in , IN_2_0_l_10 : in , IN_4_0_l_10 : in , G18_4_l_10 : in , G15_4_l_10 : in , IN_1_4_l_10 : in , IN_4_4_l_10 : in , IN_5_4_l_10 : in , IN_7_4_l_10 : in , IN_9_4_l_10 : in , IN_10_4_l_10 : in , n_429_or_0_3_r_10 : out , G78_3_r_10 : out , n_576_3_r_10 : out , n_102_3_r_10 : out , n_547_3_r_10 : out , G42_4_r_10 : out , n_572_4_r_10 : out , n_573_4_r_10 : out , n_549_4_r_10 : out , n_569_4_r_10 : out , n_452_4_r_10 : out , CLK : in , RST : in);
+	define PAT_11  [connected : int ] (IN_1_0_l_11 : in , IN_2_0_l_11 : in , IN_4_0_l_11 : in , IN_1_1_l_11 : in , IN_2_1_l_11 : in , IN_3_1_l_11 : in , IN_6_1_l_11 : in , IN_1_5_l_11 : in , IN_2_5_l_11 : in , IN_3_5_l_11 : in , IN_6_5_l_11 : in , G199_1_r_11 : out , G214_1_r_11 : out , ACVQN1_2_r_11 : out , P6_2_r_11 : out , n_429_or_0_3_r_11 : out , G78_3_r_11 : out , n_576_3_r_11 : out , n_102_3_r_11 : out , n_547_3_r_11 : out , n_42_5_r_11 : out , G199_5_r_11 : out , CLK : in , RST : in);
+	define PAT_12  [connected : int ] (IN_1_0_l_12 : in , IN_2_0_l_12 : in , IN_4_0_l_12 : in , IN_1_1_l_12 : in , IN_2_1_l_12 : in , IN_3_1_l_12 : in , IN_6_1_l_12 : in , IN_1_5_l_12 : in , IN_2_5_l_12 : in , IN_3_5_l_12 : in , IN_6_5_l_12 : in , ACVQN2_0_r_12 : out , n_266_and_0_0_r_12 : out , G199_1_r_12 : out , G214_1_r_12 : out , n_429_or_0_3_r_12 : out , G78_3_r_12 : out , n_576_3_r_12 : out , n_102_3_r_12 : out , n_547_3_r_12 : out , n_42_5_r_12 : out , G199_5_r_12 : out , CLK : in , RST : in);
+	define PAT_13  [connected : int ] (IN_1_2_l_13 : in , IN_2_2_l_13 : in , G1_3_l_13 : in , G2_3_l_13 : in , IN_2_3_l_13 : in , IN_4_3_l_13 : in , IN_5_3_l_13 : in , IN_7_3_l_13 : in , IN_8_3_l_13 : in , IN_10_3_l_13 : in , IN_11_3_l_13 : in , n_429_or_0_3_r_13 : out , G78_3_r_13 : out , n_576_3_r_13 : out , n_102_3_r_13 : out , n_547_3_r_13 : out , G42_4_r_13 : out , n_572_4_r_13 : out , n_573_4_r_13 : out , n_549_4_r_13 : out , n_569_4_r_13 : out , n_452_4_r_13 : out , CLK : in , RST : in);
+	define PAT_14  [connected : int ] (IN_1_0_l_14 : in , IN_2_0_l_14 : in , IN_4_0_l_14 : in , IN_1_1_l_14 : in , IN_2_1_l_14 : in , IN_3_1_l_14 : in , IN_6_1_l_14 : in , IN_1_5_l_14 : in , IN_2_5_l_14 : in , IN_3_5_l_14 : in , IN_6_5_l_14 : in , ACVQN2_0_r_14 : out , n_266_and_0_0_r_14 : out , G199_1_r_14 : out , G214_1_r_14 : out , ACVQN1_2_r_14 : out , P6_2_r_14 : out , n_429_or_0_3_r_14 : out , G78_3_r_14 : out , n_576_3_r_14 : out , n_102_3_r_14 : out , n_547_3_r_14 : out , CLK : in , RST : in);
+
+	Benchmark_rules100 {}
+
+	rule Input_Init {
+		sub {}
+		add IN_1 INPUT_G [ gateType = "INPUT" , connected = 0];
+	}
+
+	rule Clock_Init {
+		sub {}
+		add IN_1 CLK_G [ gateType = "INPUT"];
+	}
+
+	rule Reset_Init {
+		sub {}
+		add IN_1 RST_G [ gateType = "INPUT"];
+	}
+
+	rule input_connect_5 {
+		sub {
+			IN_1_2_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_2_2_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			G1_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			G2_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_2_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_4_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_5_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_7_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_8_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_10_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			IN_11_3_l_5 INPUT_G[ gateType := "INPUT" , connected := 0];
+			BM_CLK CLK_G[ gateType := "INPUT"];
+			BM_RST RST_G[ gateType := "INPUT"];
+		}
+		IN_1_2_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_1_2_l_5 IC_INSTANCE[ connected = 1](IN_1_2_l_5.OUT1 -> IN1);
+		IN_2_2_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_2_2_l_5 IC_INSTANCE[ connected = 1](IN_2_2_l_5.OUT1 -> IN1);
+		G1_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_G1_3_l_5 IC_INSTANCE[ connected = 1](G1_3_l_5.OUT1 -> IN1);
+		G2_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_G2_3_l_5 IC_INSTANCE[ connected = 1](G2_3_l_5.OUT1 -> IN1);
+		IN_2_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_2_3_l_5 IC_INSTANCE[ connected = 1](IN_2_3_l_5.OUT1 -> IN1);
+		IN_4_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_4_3_l_5 IC_INSTANCE[ connected = 1](IN_4_3_l_5.OUT1 -> IN1);
+		IN_5_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_5_3_l_5 IC_INSTANCE[ connected = 1](IN_5_3_l_5.OUT1 -> IN1);
+		IN_7_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_7_3_l_5 IC_INSTANCE[ connected = 1](IN_7_3_l_5.OUT1 -> IN1);
+		IN_8_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_8_3_l_5 IC_INSTANCE[ connected = 1](IN_8_3_l_5.OUT1 -> IN1);
+		IN_10_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_10_3_l_5 IC_INSTANCE[ connected = 1](IN_10_3_l_5.OUT1 -> IN1);
+		IN_11_3_l_5[ gateType = "INPUT" , connected = 1];
+		add IN_PORT_IN_11_3_l_5 IC_INSTANCE[ connected = 1](IN_11_3_l_5.OUT1 -> IN1);
+		add P_inst_5 PAT_5[ connected = 0](IN_PORT_IN_1_2_l_5.OUT1 -> IN_1_2_l_5 , IN_PORT_IN_2_2_l_5.OUT1 -> IN_2_2_l_5 , IN_PORT_G1_3_l_5.OUT1 -> G1_3_l_5 , IN_PORT_G2_3_l_5.OUT1 -> G2_3_l_5 , IN_PORT_IN_2_3_l_5.OUT1 -> IN_2_3_l_5 , IN_PORT_IN_4_3_l_5.OUT1 -> IN_4_3_l_5 , IN_PORT_IN_5_3_l_5.OUT1 -> IN_5_3_l_5 , IN_PORT_IN_7_3_l_5.OUT1 -> IN_7_3_l_5 , IN_PORT_IN_8_3_l_5.OUT1 -> IN_8_3_l_5 , IN_PORT_IN_10_3_l_5.OUT1 -> IN_10_3_l_5 , IN_PORT_IN_11_3_l_5.OUT1 -> IN_11_3_l_5 , BM_CLK.OUT1 -> CLK , BM_RST.OUT1 -> RST);
+		add OUT_PORT_0 IC_INSTANCE[ connected = 0](P_inst_5.G199_1_r_5 -> IN1);
+		add R_0 R_G[ gateType = "T"](OUT_PORT_0.OUT1 -> IN1);
+		add OUT_PORT_1 IC_INSTANCE[ connected = 0](P_inst_5.G214_1_r_5 -> IN1);
+		add R_1 R_G[ gateType = "T"](OUT_PORT_1.OUT1 -> IN1);
+		add OUT_PORT_2 IC_INSTANCE[ connected = 0](P_inst_5.ACVQN1_2_r_5 -> IN1);
+		add R_2 R_G[ gateType = "T"](OUT_PORT_2.OUT1 -> IN1);
+		add OUT_PORT_3 IC_INSTANCE[ connected = 0](P_inst_5.P6_2_r_5 -> IN1);
+		add R_3 R_G[ gateType = "T"](OUT_PORT_3.OUT1 -> IN1);
+		add OUT_PORT_4 IC_INSTANCE[ connected = 0](P_inst_5.n_429_or_0_3_r_5 -> IN1);
+		add R_4 R_G[ gateType = "T"](OUT_PORT_4.OUT1 -> IN1);
+		add OUT_PORT_5 IC_INSTANCE[ connected = 0](P_inst_5.G78_3_r_5 -> IN1);
+		add R_5 R_G[ gateType = "T"](OUT_PORT_5.OUT1 -> IN1);
+		add OUT_PORT_6 IC_INSTANCE[ connected = 0](P_inst_5.n_576_3_r_5 -> IN1);
+		add R_6 R_G[ gateType = "T"](OUT_PORT_6.OUT1 -> IN1);
+		add OUT_PORT_7 IC_INSTANCE[ connected = 0](P_inst_5.n_102_3_r_5 -> IN1);
+		add R_7 R_G[ gateType = "T"](OUT_PORT_7.OUT1 -> IN1);
+		add OUT_PORT_8 IC_INSTANCE[ connected = 0](P_inst_5.n_547_3_r_5 -> IN1);
+		add R_8 R_G[ gateType = "T"](OUT_PORT_8.OUT1 -> IN1);
+		add OUT_PORT_9 IC_INSTANCE[ connected = 0](P_inst_5.n_42_5_r_5 -> IN1);
+		add R_9 R_G[ gateType = "T"](OUT_PORT_9.OUT1 -> IN1);
+		add OUT_PORT_10 IC_INSTANCE[ connected = 0](P_inst_5.G199_5_r_5 -> IN1);
+		add R_10 R_G[ gateType = "T"](OUT_PORT_10.OUT1 -> IN1);
+		}
+
+	rule r_attribute_change {
+		sub {
+			R_G_1 R_G[gateType := "T"];
+		}
+		R_G_1 [gateType = "R"];
+	}
+
+	rule rule_clear {
+		sub {
+			R_G_1 R_G[gateType := "T"];
+		}
+		del R_G_1 R_G[gateType = "T"];
+	}
+
+	rule input_attribute_change {
+		sub {
+			IN_1 INPUT_G[ gateType := "INPUT" , connected := 1];
+		}
+		IN_1 [ gateType = "INPUT" , connected = 0];
+	}
+
+	rulesequence {
+		subsequence : 1 {
+			Input_Init : 11;
+		}
+		subsequence : 1 {
+			Clock_Init : 1;
+		}
+		subsequence : 1 {
+			Reset_Init : 1;
+		}
+		subsequence : 1 {
+			input_connect_14 : 1;
+			r_attribute_change : *;
+			pattern_connect_14_3 : 1;
+			pattern_clear_14 : 1;
+			r_attribute_change : *;
+			pattern_connect_3_5 : 1;
+			pattern_clear_3 : 1;
+			r_attribute_change : *;
+			pattern_connect_5_6 : 1;
+			pattern_clear_5 : 1;
+			r_attribute_change : *;
+			final_layer_pattern_clear_6 : 1;
+		}
+		subsequence : 1 {
+			primary_input_connected_pattern_substitute_0 : *;
+			primary_input_connected_pattern_substitute_1 : *;
+			primary_input_connected_pattern_substitute_2 : *;
+			primary_input_connected_pattern_substitute_3 : *;
+			primary_input_connected_pattern_substitute_4 : *;
+			primary_input_connected_pattern_substitute_5 : *;
+			primary_input_connected_pattern_substitute_6 : *;
+			primary_input_connected_pattern_substitute_7 : *;
+			primary_input_connected_pattern_substitute_8 : *;
+			primary_input_connected_pattern_substitute_9 : *;
+			primary_input_connected_pattern_substitute_10 : *;
+			primary_input_connected_pattern_substitute_11 : *;
+			primary_input_connected_pattern_substitute_12 : *;
+			primary_input_connected_pattern_substitute_13 : *;
+			primary_input_connected_pattern_substitute_14 : *;
+			pattern_substitute_0 : *;
+			pattern_substitute_1 : *;
+			pattern_substitute_2 : *;
+			pattern_substitute_3 : *;
+			pattern_substitute_4 : *;
+			pattern_substitute_5 : *;
+			pattern_substitute_6 : *;
+			pattern_substitute_7 : *;
+			pattern_substitute_8 : *;
+			pattern_substitute_9 : *;
+			pattern_substitute_10 : *;
+			pattern_substitute_11 : *;
+			pattern_substitute_12 : *;
+			pattern_substitute_13 : *;
+			pattern_substitute_14 : *;
+			pattern_substitute_0 : *;
+			pattern_substitute_1 : *;
+			pattern_substitute_2 : *;
+			pattern_substitute_3 : *;
+			pattern_substitute_4 : *;
+			pattern_substitute_5 : *;
+			pattern_substitute_6 : *;
+			pattern_substitute_7 : *;
+			pattern_substitute_8 : *;
+			pattern_substitute_9 : *;
+			pattern_substitute_10 : *;
+			pattern_substitute_11 : *;
+			pattern_substitute_12 : *;
+			pattern_substitute_13 : *;
+			pattern_substitute_14 : *;
+			pattern_substitute_0 : *;
+			pattern_substitute_1 : *;
+			pattern_substitute_2 : *;
+			pattern_substitute_3 : *;
+			pattern_substitute_4 : *;
+			pattern_substitute_5 : *;
+			pattern_substitute_6 : *;
+			pattern_substitute_7 : *;
+			pattern_substitute_8 : *;
+			pattern_substitute_9 : *;
+			pattern_substitute_10 : *;
+			pattern_substitute_11 : *;
+			pattern_substitute_12 : *;
+			pattern_substitute_13 : *;
+			pattern_substitute_14 : *;
+			nt_connected_IC__instance_removal : *;
+		}
+	}
+}

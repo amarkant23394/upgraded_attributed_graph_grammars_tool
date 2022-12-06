@@ -161,40 +161,133 @@ class AGLData(AGLVisitor):
         return self.visitChildren(ctx)
     
     def visitInstanceattrval(self, ctx:AGLParser.InstanceattrvalContext):
-        if ctx.getText().capitalize() == "True":
-            val= True
-        elif ctx.getText().capitalize() == "False":
-            val= False
-        else: 
-            val = ctx.getText()
+        operator = ctx.parentCtx.children[1].getText()
+        assert not (not self.isLHS and operator == ":="),"The constrains operator ':=' cannot be used outside the sub block"
+        for eachChild in ctx.children: 
+            childType = type(eachChild).__name__
+            if childType == "TerminalNodeImpl": 
+                assert not(self.isLHS and operator == '='),"In Sub block,Assignment operator '=' cannot be used for constaints operator ':="
+                    
+                if ctx.Boolean(): 
+                    val = ctx.getText()
+                    if val == "True" : 
+                        val = True
+                    elif val == "False":
+                        val = False 
+                        
+                if ctx.NUM(): 
+                    val = int(ctx.getText())
+                if ctx.ID(): 
+                    val = ctx.getText()
             
-        if ctx.NUM():
-            val = int(val) 
-        
-        if ctx.Binstr2int():
-            matchobj = re.match(r'binstr2int\((.*)\)', val , re.M|re.I)
-            if matchobj : 
-                val = "Integer.parseInt({},2)".format(matchobj.group(1))
-            else: 
-                raise Exception("Please refer to string to binary conversion syntax")
+                if ctx.STRING_Note(): 
+                    val = ctx.getText()
+                    val = eval(val)
             
-        self.currentInstanceAttr.addVal(val)
-        self.currentInstance.addInstanceAttr(self.currentInstanceAttr)
-        
+                    
+                if self.isModifyAttr: 
+                    leftGraphInstances = self.rules[self.ruleName].getLHS().getInstances() 
+                    rightGraphInstances = self.rules[self.ruleName].getRHS().getInstances()
+                    leftGraphInstanceObj = leftGraphInstances[self.currentInstance.getInstanceName()]
+                    rightGraphInstanceObj = rightGraphInstances[self.currentInstance.getInstanceName()]
+                    instanceName = leftGraphInstanceObj.getInstanceName()
+                    instanceAttrName = self.currentInstanceAttr.items()[0]
+                    instanceAttrVal = "{}_{}".format(instanceName,instanceAttrName)
+                    
+                    dataType = type(val).__name__
+                    self.rules[self.ruleName].addParameters(instanceAttrVal,dataType)
+                    try: 
+                        leftGraphInstanceObj.getInstanceAttrs()[self.currentInstanceAttr.items()[0]]
+                    except:
+                        instanceAttrObj = InstanceAttr(instanceAttrName,instanceAttrVal)
+                        leftGraphInstanceObj.addInstanceAttr(instanceAttrObj)
+                    try: 
+                        rightGraphInstanceObj.getInstanceAttrs()[self.currentInstanceAttr.items()[0]]
+                    except:
+                        instanceAttrObj = InstanceAttr(instanceAttrName,instanceAttrVal)
+                        rightGraphInstanceObj.addInstanceAttr(instanceAttrObj)
+                
+                self.currentInstanceAttr.addVal(val)
+                self.currentInstance.addInstanceAttr(self.currentInstanceAttr)
+                
+            elif childType == "Expr_valContext":   
+                raise Exception("The instance Attribute value cannot be of this form : {}".format(ctx.getText()))
+            
+            elif childType == "Parametric_valContext": 
+                assert not(operator == ':='), "Constrains operator ':=' cannot be used for Assigments\
+                    use '=' for the assignment operation"
+                parametricChildren = ctx.children[0].children
+                string = ''
+                for eachChild in parametricChildren: 
+                    parametricChildType = type(eachChild).__name__
+                    if parametricChildType == "ParametricInstanceAttrvalContext": 
+                        (instanceName,instanceAttr) = eachChild.getText().split(".")
+                        string += "{}_{}".format(instanceName,instanceAttr)
+                    else : 
+                        string+= eachChild.getText()
+                self.currentInstanceAttr.addVal(string)
+                self.currentInstance.addInstanceAttr(self.currentInstanceAttr)
+            
+            elif childType == "Binstr2intContext": 
+                assert not(operator == ':='), "Constrains operator ':=' cannot be used for Assigments\
+                    use '=' for the assignment operation"
+                string = ''
+                for eachChild in ctx.children[0].children: 
+                    binStrChildType = type(eachChild).__name__
+                    if binStrChildType == "Binstr2intvalContext":
+                        binStr2intVal = eachChild.children[0]
+                        binStr2intValType = type(eachChild.children[0]).__name__
+                        if binStr2intValType == "ParametricInstanceAttrvalContext": 
+                            (instanceName,instanceAttr) = binStr2intVal.getText().split(".")
+                            string += "{}_{}".format(instanceName,instanceAttr)
+                        else : 
+                            string += binStr2intVal.getText()
+                        
+                string = "Integer.parseInt({},2)".format(string)
+                
+                self.currentInstanceAttr.addVal(string)
+                self.currentInstance.addInstanceAttr(self.currentInstanceAttr)
+                    
+        return self.visitChildren(ctx)
+    
+    def visitParametricInstanceAttrval(self, ctx:AGLParser.ParametricInstanceAttrvalContext):
+        (instanceName,instanceAttr) = ctx.getText().split(".")
+        leftGraphInstances = self.rules[self.ruleName].getLHS().getInstances() 
+        rightGraphInstances = self.rules[self.ruleName].getRHS().getInstances() 
+        leftGraphInstanceObj = leftGraphInstances[instanceName]
+        rightGraphInstanceObj = rightGraphInstances[instanceName]
+        instanceType = leftGraphInstanceObj.getInstanceType()
         try:
-            definesAttr = self.defines[self.currentInstance.getInstanceType()].getAttributes()
+            definesAttr = self.defines[instanceType].getAttributes()
         except:
-            raise Exception("Node type : {} is not defined".format(self.currentInstance.getInstanceType()))
+            raise Exception("Node type : {} is not defined".format(instance.getInstanceType()))
+        
         try:
-            dataType = definesAttr[self.currentInstanceAttr.items()[0]]
+            dataType = definesAttr[instanceAttr]
         except: 
             raise Exception("Node type : {} is not having the attributes : {}".format(
-                self.currentInstance.getInstanceType(),self.currentInstanceAttr.items()[0]))
-        if  self.currentInstanceAttr.getOperator() == "==":
-            if self.isHostGraph == None :
-                self.rules[self.ruleName].addParameters(self.currentInstanceAttr.items()[1],dataType)
-            else : 
-                raise Exception("The Parameters cannot be assinged in Host")
+                instanceType,instanceAttr))
+        
+        string = "{}_{}".format(instanceName,instanceAttr)
+        
+        
+        if self.isHostGraph == None :
+            self.rules[self.ruleName].addParameters(string,dataType)
+        else : 
+            raise Exception("The Parameters cannot be assinged in Host")
+            
+        try: 
+            leftGraphInstanceObj.getInstanceAttrs()[instanceAttr]
+        except:
+            instanceAttrObj = InstanceAttr(instanceAttr,string)
+            leftGraphInstanceObj.addInstanceAttr(instanceAttrObj)
+            
+        try:
+            rightGraphInstanceObj.getInstanceAttrs()[instanceAttr]
+        except: 
+            instanceAttrObj = InstanceAttr(instanceAttr,string)
+            rightGraphInstanceObj.addInstanceAttr(instanceAttrObj)
+            
         return self.visitChildren(ctx)
     
     def visitAddinstances(self, ctx:AGLParser.AddinstancesContext):
@@ -334,9 +427,34 @@ class AGLData(AGLVisitor):
         return self.visitChildren(ctx)
     
     def visitExpr(self, ctx:AGLParser.ExprContext):
-        expr = ctx.getText().split(";")[:-1]
-        for each in expr: 
-            self.rules[self.ruleName].addAC(each)
+        # expr = ctx.getText().split(";")[:-1]
+        # for each in expr: 
+        #     self.rules[self.ruleName].addAC(each)
+        string = ""
+        for eachchild in  ctx.children: 
+            exprChildType = type(eachchild).__name__
+            
+            if exprChildType == "ConditionalValContext": 
+                condChildren = eachchild.children
+                for eachCondChildren in condChildren: 
+                    if type(eachCondChildren).__name__ != "Parametric_valContext": 
+                        string += eachCondChildren.getText()
+                    else: 
+                        for eachParaChildren in eachCondChildren.children : 
+                            if type(eachParaChildren).__name__ != "ParametricInstanceAttrvalContext": 
+                                string += eachParaChildren.getText()
+                            else : 
+                                (instanceName,instanceAttr) = eachParaChildren.getText().split(".")
+                                string += "{}_{}".format(instanceName,instanceAttr)
+                            
+            
+            elif exprChildType ==  "ConditionaloperatorsContext": 
+                string += eachchild.getText()
+                
+            elif exprChildType == "SemicolonContext": 
+                self.rules[self.ruleName].addAC(string)
+                string = ""
+            
         return self.visitChildren(ctx)
     
     
@@ -438,17 +556,28 @@ class AGLData(AGLVisitor):
 
     
 class AGL2GGX:
-    def __init__(self,AGLfile): 
+    def __init__(self,AGLfile,outputDir = None): 
         self.file = AGLfile 
-        self.aglData = AGLData.Parsing(AGLfile)      
-        self.moduleName = os.path.basename(self.file)
+        self.outputDir = outputDir
+        self.aglData = AGLData.Parsing(AGLfile)
+        self.moduleName = self.aglData.moduleName
         self.moduleName = (self.moduleName.split("."))[0]    
         self.gragra = ggx.GraGra("GraGra")
         self.rules = {}
         self.packages = []
         self.portOders = {}
         self.addDefines()
+        
+    def addOuputDir(self,val): 
+        self.outputDir = val 
+        if not os.path.isdir(self.outputDir): 
+            os.mkdir(self.outputDir)
     
+    def checkOutputDir(self): 
+        if self.outputDir != None: 
+            if not os.path.isdir(self.outputDir): 
+                os.mkdir(self.outputDir)
+            
     def addPackages(self,package): 
         self.packages.append(package)
         
@@ -484,13 +613,13 @@ class AGL2GGX:
                 type_ = instance.getInstanceType()
                 ports = instance.getInstancePorts()
                 attr = instance.getInstanceAttrs()
-                # print("LHS : {}  type : {} port {} Attrs : {}".format(name,type_,ports,attr) )
+                print("LHS : {}  type : {} port {} Attrs : {}".format(name,type_,ports,attr) )
             for name,instance in rule.RHS.getInstances().items():
                 name = instance.getInstanceName()
                 type_ = instance.getInstanceType()
                 ports = instance.getInstancePorts()
                 attr = instance.getInstanceAttrs()
-                # print("RHS : {}  type : {} port {} Attrs : {}".format(name,type_,ports,attr) )
+                print("RHS : {}  type : {} port {} Attrs : {}".format(name,type_,ports,attr) )
             LHS = rule.LHS.graph2Nx()
             RHS = rule.RHS.graph2Nx()
             currentRule = RuleTags("{}".format(ruleName),LHS,RHS)
@@ -524,10 +653,15 @@ class AGL2GGX:
                     
                     
     def __call__(self,packages= None):
+        self.checkOutputDir()
         self.addHost()
         self.addRules()
         self.addRuleSequences()
-        directory = os.path.dirname(self.file)
+        if self.outputDir == None : 
+            directory = os.path.dirname(self.file)
+        else : 
+            directory = self.outputDir
+
         self.outfile = os.path.join(directory,"{}.ggx".format(self.moduleName))
         
         if packages == None: 
@@ -559,7 +693,7 @@ class GGX2Verilog:
 #Testing
 #-----------------------------------------------------------------------------#
 # AGL2GGX("./RULES_GGX.txt")(["Integer.parseInt","Integer.toBinaryString"])
-# AGL2GGX("./converted_rules.txt")()
+# AGL2GGX("./converted_rules.txt","jk")()
 # from GGX2Networkx import GGX2Networkx 
 # g1 = GGX2Networkx("gfg_out.ggx")
 # graph = g1.getGraph()

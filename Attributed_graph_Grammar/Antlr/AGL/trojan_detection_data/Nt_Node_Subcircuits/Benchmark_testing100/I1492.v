@@ -1,9 +1,8 @@
-module test_I1492(I1247,I1279,I1271,I1492);
-input I1247,I1279,I1271;
+module test_I1492(I1207,I1492);
+input I1207;
 output I1492;
-wire I1475;
-nand I_0(I1475,I1247,I1271);
-and I_1(I1492,I1475,I1279);
+wire ;
+not I_0(I1492,I1207);
 endmodule
 
 

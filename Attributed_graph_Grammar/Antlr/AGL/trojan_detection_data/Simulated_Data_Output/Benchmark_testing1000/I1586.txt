@@ -1,0 +1,9 @@
+00 1
+01 0
+10 1
+11 0
+
+The results :-
+Mean value = 0.5
+Median value = 0.5
+Triviality value = 0.5

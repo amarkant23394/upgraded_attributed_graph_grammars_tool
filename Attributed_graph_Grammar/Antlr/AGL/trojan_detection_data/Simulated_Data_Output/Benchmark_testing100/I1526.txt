@@ -1,0 +1,13 @@
+0 0
+1 0
+0 0
+1 0
+0 0
+1 0
+0 0
+1 0
+
+The results :-
+Mean value = 0.0
+Median value = 0.0
+Triviality value = 1.0

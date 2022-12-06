@@ -1,21 +1,42 @@
-module test_I16214(I1477,I1470,I16435,I16214);
-input I1477,I1470,I16435;
+module test_I16214(I13177,I14520,I16435,I14825,I1470_clk,I1477_rst,I16214);
+input I13177,I14520,I16435,I14825,I1470_clk,I1477_rst;
 output I16214;
-wire I14338,I14362,I16452,I16257,I14341,I16291,I16469,I16240,I16274,I16503,I14537,I14370,I14332;
-DFFARX1 I_0(I1470,I14370,,,I14338,);
-DFFARX1 I_1(I1470,I14370,,,I14362,);
-nand I_2(I16214,I16291,I16503);
-and I_3(I16452,I16435,I14362);
-nand I_4(I16257,I14341,I14338);
-DFFARX1 I_5(I1470,I14370,,,I14341,);
-DFFARX1 I_6(I16274,I1470,I16240,,,I16291,);
-DFFARX1 I_7(I16452,I1470,I16240,,,I16469,);
-not I_8(I16240,I1477);
-and I_9(I16274,I16257,I14332);
-not I_10(I16503,I16469);
-DFFARX1 I_11(I1470,I14370,,,I14537,);
-not I_12(I14370,I1477);
-DFFARX1 I_13(I14537,I1470,I14370,,,I14332,);
+wire I16257,I14338,I14537,I16469,I14370_rst,I16291,I16274,I14605,I14341,I14455,I14362,I16452,I16240_rst,I14332,I16503;
+nand I_0(I16257,I14341,I14338);
+DFFARX1 I_1 (I14605,I1470_clk,I14370_rst,I14338);
+DFFARX1 I_2 (I14520,I1470_clk,I14370_rst,I14537);
+DFFARX1 I_3 (I16452,I1470_clk,I16240_rst,I16469);
+not I_4(I14370_rst,I1477_rst);
+nand I_5(I16214,I16291,I16503);
+DFFARX1 I_6 (I16274,I1470_clk,I16240_rst,I16291);
+and I_7(I16274,I16257,I14332);
+and I_8(I14605,I14537);
+DFFARX1 I_9 (I14455,I1470_clk,I14370_rst,I14341);
+DFFARX1 I_10 (I13177,I1470_clk,I14370_rst,I14455);
+DFFARX1 I_11 (I14825,I1470_clk,I14370_rst,I14362);
+and I_12(I16452,I16435,I14362);
+not I_13(I16240_rst,I1477_rst);
+DFFARX1 I_14 (I14537,I1470_clk,I14370_rst,I14332);
+not I_15(I16503,I16469);
 endmodule
 
 
+
+//DFF Module (with asynch reset)
+module DFFARX1(d, clock, reset, q);
+	input d, clock, reset;
+	output q;
+	wire clock_inv, l1_x, l1_y, l1, l1_inv;
+	wire l2_x, l2_y, q_inv, q_sync;
+	not  dff0 (clock_inv, clock);
+	nand dff1 (l1_x, d, clock_inv);
+	nand dff2 (l1_y, l1_x, clock_inv);
+	nand dff3 (l1, l1_x, l1_inv);
+	nand dff4 (l1_inv, l1_y, l1);
+	nand dff5 (l2_x, l1, clock);
+	nand dff6 (l2_y, l2_x, clock);
+	nand dff7 (q_sync, l2_x, q_inv);
+	nand dff8 (q_inv, l2_y, q_sync);
+	and  dff9 (q, q_sync, reset);
+	and dff10 (q, q_sync, reset);
+endmodule

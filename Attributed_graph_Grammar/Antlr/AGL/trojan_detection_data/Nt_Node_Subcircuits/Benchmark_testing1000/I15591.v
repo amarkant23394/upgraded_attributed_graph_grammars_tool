@@ -1,20 +1,42 @@
-module test_I15591(I1477,I11938,I1470,I14278,I15591);
-input I1477,I11938,I1470,I14278;
+module test_I15591(I12058,I11938,I14278,I1470_clk,I1477_rst,I15591);
+input I12058,I11938,I14278,I1470_clk,I1477_rst;
 output I15591;
-wire I13908,I13752,I13743,I15832,I14162,I16052,I15628,I13749,I13775,I15611,I13891,I16069;
-not I_0(I13908,I13891);
-DFFARX1 I_1(I14278,I1470,I13775,,,I13752,);
-DFFARX1 I_2(I13891,I1470,I13775,,,I13743,);
-nand I_3(I15832,I15628,I13749);
-DFFARX1 I_4(I11938,I1470,I13775,,,I14162,);
-DFFARX1 I_5(I13752,I1470,I15611,,,I16052,);
+wire I13775_rst,I15832,I16069,I15611_rst,I13908,I11973_rst,I15628,I13891,I13743,I12075,I13749,I14162,I16052,I11944,I13752;
+not I_0(I13775_rst,I1477_rst);
+nand I_1(I15832,I15628,I13749);
+not I_2(I16069,I16052);
+not I_3(I15611_rst,I1477_rst);
+not I_4(I13908,I13891);
+not I_5(I11973_rst,I1477_rst);
 not I_6(I15628,I13743);
-nand I_7(I13749,I14162,I13908);
-not I_8(I13775,I1477);
-not I_9(I15611,I1477);
-DFFARX1 I_10(I1470,I13775,,,I13891,);
-nor I_11(I15591,I16069,I15832);
-not I_12(I16069,I16052);
+DFFARX1 I_7 (I11944,I1470_clk,I13775_rst,I13891);
+nor I_8(I15591,I16069,I15832);
+DFFARX1 I_9 (I13891,I1470_clk,I13775_rst,I13743);
+DFFARX1 I_10 (I12058,I1470_clk,I11973_rst,I12075);
+nand I_11(I13749,I14162,I13908);
+DFFARX1 I_12 (I11938,I1470_clk,I13775_rst,I14162);
+DFFARX1 I_13 (I13752,I1470_clk,I15611_rst,I16052);
+not I_14(I11944,I12075);
+DFFARX1 I_15 (I14278,I1470_clk,I13775_rst,I13752);
 endmodule
 
 
+
+//DFF Module (with asynch reset)
+module DFFARX1(d, clock, reset, q);
+	input d, clock, reset;
+	output q;
+	wire clock_inv, l1_x, l1_y, l1, l1_inv;
+	wire l2_x, l2_y, q_inv, q_sync;
+	not  dff0 (clock_inv, clock);
+	nand dff1 (l1_x, d, clock_inv);
+	nand dff2 (l1_y, l1_x, clock_inv);
+	nand dff3 (l1, l1_x, l1_inv);
+	nand dff4 (l1_inv, l1_y, l1);
+	nand dff5 (l2_x, l1, clock);
+	nand dff6 (l2_y, l2_x, clock);
+	nand dff7 (q_sync, l2_x, q_inv);
+	nand dff8 (q_inv, l2_y, q_sync);
+	and  dff9 (q, q_sync, reset);
+	and dff10 (q, q_sync, reset);
+endmodule
