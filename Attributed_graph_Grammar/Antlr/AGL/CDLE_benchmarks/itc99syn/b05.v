@@ -1,0 +1,800 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : O-2018.06-SP1
+// Date      : Fri May 29 14:43:40 2020
+/////////////////////////////////////////////////////////////
+
+
+module b05 ( CLOCK, RESET, START, SIGN, DISPMAX1, DISPMAX2, DISPMAX3, DISPNUM1, 
+        DISPNUM2 );
+  output [6:0] DISPMAX1;
+  output [6:0] DISPMAX2;
+  output [6:0] DISPMAX3;
+  output [6:0] DISPNUM1;
+  output [6:0] DISPNUM2;
+  input CLOCK, RESET, START;
+  output SIGN;
+  wire   N464, N468, N469, N470, N471, N472, N473, N474, N475, N476, N477,
+         EN_DISP, RES_DISP, N482, N484, N485, N486, N487, N488, N490, N516,
+         N519, N520, N522, N524, N525, N526, N527, N528, N529, N530, N532,
+         N535, N536, N539, N540, N541, N542, N544, N548, N549, N550, N551,
+         N552, N553, N554, N556, N561, N562, N563, N564, N565, N566, N568,
+         N572, N573, N574, N575, N576, N577, N578, N580, N586, N587, N588,
+         N589, N590, N592, N596, N597, N598, N599, N600, N601, N602, N604,
+         N609, N610, N611, N612, N613, N614, N616, N621, N622, N623, N624,
+         N625, N626, N627, N628, N742, N743, N744, N745, N746, N747, N748,
+         N749, N750, N751, N757, N760, N763, N766, N769, N772, N774, N826,
+         N828, N831, N832, N834, N836, N837, N838, N839, N840, N841, N842,
+         N843, N849, N852, N855, N858, N861, N864, N866, FLAG, N984, N985,
+         N986, N987, N1014, N1015, N1016, N1017, N1024, N1025, N1026, n168,
+         n170, n171, n173, n174, n190, n193, n195, n196, n197, n216, n217,
+         n218, n219, n220, n221, n222, n223, n224, n225, n226, n227, n228,
+         n229, n230, n231, n232, n233, n234, n235, n236, n237, n238, n239,
+         n240, n241, n242, n243, n244, n245, n246, n247, n248, n249, n250,
+         n251, n252, n253, n254, n255, n256, n257, n258, n259, n260, n261,
+         n262, n263, n264, n265, n266, n267, n268, n269, n270, n271, n272,
+         n273, n274, n275, n276, n277, n278, n279, n280, n281, n282, n283,
+         n284, n285, n286, n287, n288, n290, n291, n292, n293, n294, n295,
+         n296, n297, n298, n299, n300, n301, n302, n303, n304, n305, n306,
+         n307, n308, n309, n310, n311, n312, n313, n314, n315, n316, n317,
+         n318, n319, n320, n321, n322, n323, n324, n325, n326, n327, n328,
+         n329, n330, n331, n332, n333, n334, n335, n336, n337, n338, n339,
+         n340, n341, n342, n343, n344, n345, n346, n347, n348, n349, n350,
+         n351, n352, n353, n354, n355, n356, n357, n358, n359, n360, n361,
+         n362, n363, n364, n365, n366, n367, n368, n369, n370, n371, n372,
+         n373, n374, n375, n376, n377, n378, n379, n380, n381, n382, n383,
+         n384, n385, n386, n387, n388, n389, n390, n391, n392, n393, n394,
+         n395, n396, n397, n398, n399, n400, n401, n402, n403, n404, n405,
+         n406, n407, n408, n409, n410, n411, n412, n413, n414, n415, n416,
+         n417, n418, n419, n420, n421, n422, n423, n424, n425, n426, n427,
+         n428, n429, n430, n431, n432, n433, n434, n435, n436, n437, n438,
+         n439, n440, n441, n442, n443, n444, n445, n446, n447, n448, n449,
+         n450, n451, n452, n453, n454, n455, n456, n457, n458, n459, n460,
+         n461, n462, n463, n464, n465, n466, n467, n468, n469, n470, n471,
+         n472, n473, n474, n475, n476, n477, n478, n479, n480, n481, n482,
+         n483, n484, n485, n486, n487, n488, n489, n490, n491, n492, n493,
+         n494, n495, n496, n497, n498, n499, n500, n501, n502, n503, n504,
+         n505, n506, n507, n508, n509, n510, n511, n512, n513, n514, n515,
+         n516, n517, n518, n519, n520, n521, n522, n523, n524, n525, n526,
+         n527, n528, n529, n530, n531, n532, n533, n534, n535, n536, n537,
+         n538, n539, n540, n541, n542, n543, n544, n545, n546, n547, n548,
+         n549, n550, n551, n552, n553, n554, n555, n556, n557, n558, n559,
+         n560, n561, n562, n563, n564, n565, n566, n567, n568, n569, n570,
+         n571, n572, n573, n574, n575, n576, n577, n578, n579, n580, n581,
+         n582, n583, n584, n585, n586, n587, n588, n589, n590, n591, n592,
+         n593, n594, n595, n596, n597, n598, n599, n600, n601, n602, n603,
+         n604, n605, n606, n607, n608, n609, n610, n611, n612, n613, n614,
+         n615, n616, n617, n618, n619, n620, n621, n622, n623, n624, n625,
+         n626, n627, n628, n629, n630, n631, n632, n633, n634, n635, n636,
+         n637, n638, n639, n640, n641, n642, n643, n644, n645, n646, n647,
+         n648, n649, n650, n651, n652, n653, n654, n655, n656, n657, n658,
+         n659, n660, n661, n662, n663, n664, n665, n666, n667, n668, n669,
+         n670, n671, n672, n673, n674, n675, n676, n677, n678, n679, n680,
+         n681, n682, n683, n684, n685, n686;
+  wire   [4:0] MAR;
+  wire   [8:0] TEMP;
+  wire   [8:0] AC1;
+  wire   [8:0] MAX;
+  wire   [4:0] NUM;
+  wire   [2:0] STATO;
+  assign DISPMAX1[6] = DISPNUM1[6];
+  assign DISPNUM1[2] = DISPNUM1[5];
+  assign DISPNUM1[0] = DISPNUM1[5];
+  assign DISPNUM1[1] = DISPNUM1[5];
+  assign DISPMAX1[5] = DISPNUM1[4];
+  assign DISPMAX1[1] = DISPNUM1[4];
+  assign DISPMAX1[0] = DISPNUM1[4];
+  assign DISPMAX1[2] = DISPNUM1[4];
+  assign DISPNUM1[3] = DISPNUM1[4];
+  assign DISPMAX1[3] = DISPNUM1[4];
+  assign DISPMAX1[4] = DISPNUM1[4];
+
+  DFFARX1 \MAR_reg[0]  ( .D(n415), .CLK(CLOCK), .RSTB(n426), .Q(MAR[0]), .QN(
+        n197) );
+  DFFARX1 \STATO_reg[0]  ( .D(N1024), .CLK(CLOCK), .RSTB(n426), .Q(STATO[0]), 
+        .QN(n171) );
+  DFFARX1 \STATO_reg[1]  ( .D(N1025), .CLK(CLOCK), .RSTB(n426), .Q(STATO[1]), 
+        .QN(n170) );
+  DFFARX1 \STATO_reg[2]  ( .D(N1026), .CLK(CLOCK), .RSTB(n426), .Q(STATO[2]), 
+        .QN(n168) );
+  DFFARX1 \MAR_reg[4]  ( .D(n414), .CLK(CLOCK), .RSTB(n426), .Q(MAR[4]), .QN(
+        n190) );
+  DFFARX1 \MAR_reg[1]  ( .D(n412), .CLK(CLOCK), .RSTB(n426), .Q(MAR[1]), .QN(
+        n196) );
+  DFFARX1 \MAR_reg[2]  ( .D(n411), .CLK(CLOCK), .RSTB(n426), .Q(MAR[2]), .QN(
+        n195) );
+  DFFARX1 \MAR_reg[3]  ( .D(n410), .CLK(CLOCK), .RSTB(n426), .Q(MAR[3]), .QN(
+        n193) );
+  DFFARX1 RES_DISP_reg ( .D(n413), .CLK(CLOCK), .RSTB(n426), .Q(RES_DISP), 
+        .QN(n173) );
+  DFFARX1 EN_DISP_reg ( .D(n409), .CLK(CLOCK), .RSTB(n426), .Q(EN_DISP), .QN(
+        n174) );
+  DFFARX1 \NUM_reg[4]  ( .D(n394), .CLK(CLOCK), .RSTB(n427), .Q(NUM[4]), .QN(
+        n421) );
+  AO22X1 U185 ( .IN1(n216), .IN2(n217), .IN3(N482), .IN4(n441), .Q(n385) );
+  AO22X1 U186 ( .IN1(MAX[7]), .IN2(n441), .IN3(N469), .IN4(n217), .Q(n386) );
+  AO22X1 U187 ( .IN1(MAX[6]), .IN2(n441), .IN3(N470), .IN4(n217), .Q(n387) );
+  AO22X1 U188 ( .IN1(MAX[5]), .IN2(n441), .IN3(N471), .IN4(n217), .Q(n388) );
+  AO22X1 U189 ( .IN1(MAX[4]), .IN2(n441), .IN3(N472), .IN4(n217), .Q(n389) );
+  AO22X1 U190 ( .IN1(MAX[3]), .IN2(n441), .IN3(N473), .IN4(n217), .Q(n390) );
+  AO22X1 U191 ( .IN1(MAX[2]), .IN2(n441), .IN3(N474), .IN4(n217), .Q(n391) );
+  AO22X1 U192 ( .IN1(MAX[1]), .IN2(n441), .IN3(N475), .IN4(n217), .Q(n392) );
+  AO22X1 U193 ( .IN1(N484), .IN2(n441), .IN3(N476), .IN4(n217), .Q(n393) );
+  NAND3X0 U194 ( .IN1(n220), .IN2(n420), .IN3(N477), .QN(n219) );
+  AO22X1 U195 ( .IN1(NUM[4]), .IN2(n439), .IN3(N987), .IN4(n221), .Q(n394) );
+  AO22X1 U196 ( .IN1(NUM[3]), .IN2(n439), .IN3(N986), .IN4(n221), .Q(n395) );
+  AO22X1 U197 ( .IN1(NUM[2]), .IN2(n439), .IN3(N985), .IN4(n221), .Q(n396) );
+  AO22X1 U198 ( .IN1(N828), .IN2(n439), .IN3(n481), .IN4(n221), .Q(n397) );
+  AO22X1 U199 ( .IN1(NUM[1]), .IN2(n439), .IN3(N984), .IN4(n221), .Q(n398) );
+  AO22X1 U200 ( .IN1(n440), .IN2(FLAG), .IN3(n220), .IN4(n224), .Q(n399) );
+  AO21X1 U201 ( .IN1(n220), .IN2(n420), .IN3(n223), .Q(n224) );
+  NAND3X0 U202 ( .IN1(FLAG), .IN2(n460), .IN3(N464), .QN(n226) );
+  AO22X1 U203 ( .IN1(N476), .IN2(n227), .IN3(TEMP[0]), .IN4(n458), .Q(n400) );
+  AO22X1 U204 ( .IN1(N475), .IN2(n227), .IN3(TEMP[1]), .IN4(n458), .Q(n401) );
+  AO22X1 U205 ( .IN1(N474), .IN2(n227), .IN3(TEMP[2]), .IN4(n458), .Q(n402) );
+  AO22X1 U206 ( .IN1(N473), .IN2(n227), .IN3(TEMP[3]), .IN4(n458), .Q(n403) );
+  AO22X1 U207 ( .IN1(N472), .IN2(n227), .IN3(TEMP[4]), .IN4(n458), .Q(n404) );
+  AO22X1 U208 ( .IN1(N471), .IN2(n227), .IN3(TEMP[5]), .IN4(n458), .Q(n405) );
+  AO22X1 U209 ( .IN1(N470), .IN2(n227), .IN3(TEMP[6]), .IN4(n458), .Q(n406) );
+  AO22X1 U210 ( .IN1(N469), .IN2(n227), .IN3(TEMP[7]), .IN4(n458), .Q(n407) );
+  AO21X1 U211 ( .IN1(TEMP[8]), .IN2(n458), .IN3(n216), .Q(n408) );
+  AND2X1 U212 ( .IN1(n227), .IN2(N468), .Q(n216) );
+  AO22X1 U213 ( .IN1(n461), .IN2(n437), .IN3(EN_DISP), .IN4(n228), .Q(n409) );
+  OA21X1 U214 ( .IN1(n229), .IN2(n230), .IN3(n438), .Q(n228) );
+  AO22X1 U215 ( .IN1(n231), .IN2(MAR[3]), .IN3(N1016), .IN4(n459), .Q(n410) );
+  AO22X1 U216 ( .IN1(n231), .IN2(MAR[2]), .IN3(N1015), .IN4(n459), .Q(n411) );
+  AO22X1 U217 ( .IN1(n231), .IN2(MAR[1]), .IN3(N1014), .IN4(n459), .Q(n412) );
+  AO22X1 U218 ( .IN1(n461), .IN2(n232), .IN3(RES_DISP), .IN4(n438), .Q(n413)
+         );
+  AO22X1 U219 ( .IN1(n231), .IN2(MAR[4]), .IN3(N1017), .IN4(n459), .Q(n414) );
+  AO22X1 U220 ( .IN1(n231), .IN2(MAR[0]), .IN3(n197), .IN4(n459), .Q(n415) );
+  AO21X1 U221 ( .IN1(N482), .IN2(n174), .IN3(DISPNUM1[6]), .Q(SIGN) );
+  AO22X1 U225 ( .IN1(N831), .IN2(N826), .IN3(NUM[3]), .IN4(n478), .Q(N839) );
+  AO22X1 U226 ( .IN1(n480), .IN2(N826), .IN3(NUM[2]), .IN4(n478), .Q(N838) );
+  AO22X1 U227 ( .IN1(n479), .IN2(N826), .IN3(NUM[1]), .IN4(n478), .Q(N837) );
+  AO22X1 U228 ( .IN1(N828), .IN2(N826), .IN3(N828), .IN4(n478), .Q(N836) );
+  OR2X1 U230 ( .IN1(n235), .IN2(n236), .Q(n234) );
+  AO221X1 U231 ( .IN1(N566), .IN2(n237), .IN3(N602), .IN4(n238), .IN5(n239), 
+        .Q(n236) );
+  AO22X1 U232 ( .IN1(N542), .IN2(N532), .IN3(N578), .IN4(n240), .Q(n239) );
+  AO221X1 U233 ( .IN1(N628), .IN2(n241), .IN3(N614), .IN4(n493), .IN5(n242), 
+        .Q(n235) );
+  AO22X1 U234 ( .IN1(N590), .IN2(n243), .IN3(N554), .IN4(n244), .Q(n242) );
+  AO22X1 U235 ( .IN1(N529), .IN2(N520), .IN3(n245), .IN4(n490), .Q(N749) );
+  OR2X1 U236 ( .IN1(n246), .IN2(n247), .Q(n245) );
+  AO221X1 U237 ( .IN1(N565), .IN2(n237), .IN3(N601), .IN4(n238), .IN5(n248), 
+        .Q(n247) );
+  AO22X1 U238 ( .IN1(N541), .IN2(N532), .IN3(N577), .IN4(n240), .Q(n248) );
+  AO221X1 U239 ( .IN1(N627), .IN2(n241), .IN3(N613), .IN4(n493), .IN5(n249), 
+        .Q(n246) );
+  AO22X1 U240 ( .IN1(N589), .IN2(n243), .IN3(N553), .IN4(n244), .Q(n249) );
+  AO22X1 U241 ( .IN1(N528), .IN2(N520), .IN3(n250), .IN4(n490), .Q(N748) );
+  OR2X1 U242 ( .IN1(n251), .IN2(n252), .Q(n250) );
+  AO221X1 U243 ( .IN1(N564), .IN2(n237), .IN3(N600), .IN4(n238), .IN5(n253), 
+        .Q(n252) );
+  AO22X1 U244 ( .IN1(N540), .IN2(N532), .IN3(N576), .IN4(n240), .Q(n253) );
+  AO221X1 U245 ( .IN1(N626), .IN2(n241), .IN3(N612), .IN4(n493), .IN5(n254), 
+        .Q(n251) );
+  AO22X1 U246 ( .IN1(N588), .IN2(n243), .IN3(N552), .IN4(n244), .Q(n254) );
+  AO22X1 U247 ( .IN1(N527), .IN2(N520), .IN3(n255), .IN4(n490), .Q(N747) );
+  OR2X1 U248 ( .IN1(n256), .IN2(n257), .Q(n255) );
+  AO221X1 U249 ( .IN1(N563), .IN2(n237), .IN3(N599), .IN4(n238), .IN5(n258), 
+        .Q(n257) );
+  AO22X1 U250 ( .IN1(N539), .IN2(N532), .IN3(N575), .IN4(n240), .Q(n258) );
+  AO221X1 U251 ( .IN1(N625), .IN2(n241), .IN3(N611), .IN4(n493), .IN5(n259), 
+        .Q(n256) );
+  AO22X1 U252 ( .IN1(N587), .IN2(n243), .IN3(N551), .IN4(n244), .Q(n259) );
+  AO22X1 U253 ( .IN1(N526), .IN2(N520), .IN3(n260), .IN4(n490), .Q(N746) );
+  OR2X1 U254 ( .IN1(n261), .IN2(n262), .Q(n260) );
+  AO221X1 U255 ( .IN1(N562), .IN2(n237), .IN3(N598), .IN4(n238), .IN5(n263), 
+        .Q(n262) );
+  AO22X1 U256 ( .IN1(n416), .IN2(N532), .IN3(N574), .IN4(n240), .Q(n263) );
+  AO221X1 U257 ( .IN1(N624), .IN2(n241), .IN3(N610), .IN4(n493), .IN5(n264), 
+        .Q(n261) );
+  AO22X1 U258 ( .IN1(N586), .IN2(n243), .IN3(N550), .IN4(n244), .Q(n264) );
+  AO22X1 U259 ( .IN1(N525), .IN2(N520), .IN3(n265), .IN4(n490), .Q(N745) );
+  OR2X1 U260 ( .IN1(n266), .IN2(n267), .Q(n265) );
+  AO221X1 U261 ( .IN1(N561), .IN2(n237), .IN3(N597), .IN4(n238), .IN5(n268), 
+        .Q(n267) );
+  AO22X1 U262 ( .IN1(n428), .IN2(N532), .IN3(N573), .IN4(n240), .Q(n268) );
+  AO221X1 U263 ( .IN1(N623), .IN2(n241), .IN3(N609), .IN4(n493), .IN5(n269), 
+        .Q(n266) );
+  AO22X1 U264 ( .IN1(n419), .IN2(n243), .IN3(N549), .IN4(n244), .Q(n269) );
+  AO22X1 U265 ( .IN1(N524), .IN2(N520), .IN3(n270), .IN4(n490), .Q(N744) );
+  OR2X1 U266 ( .IN1(n271), .IN2(n272), .Q(n270) );
+  AO221X1 U267 ( .IN1(n429), .IN2(n237), .IN3(N596), .IN4(n238), .IN5(n273), 
+        .Q(n272) );
+  AO22X1 U268 ( .IN1(N536), .IN2(N532), .IN3(N572), .IN4(n240), .Q(n273) );
+  AO221X1 U269 ( .IN1(N622), .IN2(n241), .IN3(n429), .IN4(n493), .IN5(n274), 
+        .Q(n271) );
+  AO22X1 U270 ( .IN1(N536), .IN2(n243), .IN3(N548), .IN4(n244), .Q(n274) );
+  AO22X1 U271 ( .IN1(n513), .IN2(N520), .IN3(n275), .IN4(n490), .Q(N743) );
+  OR2X1 U272 ( .IN1(n276), .IN2(n277), .Q(n275) );
+  AO221X1 U273 ( .IN1(n425), .IN2(n237), .IN3(n513), .IN4(n238), .IN5(n278), 
+        .Q(n277) );
+  AO22X1 U274 ( .IN1(n425), .IN2(N532), .IN3(n513), .IN4(n240), .Q(n278) );
+  AO221X1 U275 ( .IN1(N621), .IN2(n241), .IN3(n425), .IN4(n493), .IN5(n279), 
+        .Q(n276) );
+  AO22X1 U276 ( .IN1(N535), .IN2(n243), .IN3(n513), .IN4(n244), .Q(n279) );
+  AO22X1 U277 ( .IN1(N522), .IN2(N520), .IN3(n280), .IN4(n490), .Q(N742) );
+  OR2X1 U278 ( .IN1(n281), .IN2(n282), .Q(n280) );
+  AO221X1 U279 ( .IN1(N522), .IN2(n237), .IN3(N522), .IN4(n238), .IN5(n283), 
+        .Q(n282) );
+  AO22X1 U280 ( .IN1(N522), .IN2(N532), .IN3(N522), .IN4(n240), .Q(n283) );
+  AND2X1 U281 ( .IN1(N568), .IN2(n284), .Q(n240) );
+  AND3X1 U282 ( .IN1(n285), .IN2(n501), .IN3(N592), .Q(n238) );
+  AND3X1 U283 ( .IN1(n494), .IN2(n497), .IN3(N556), .Q(n237) );
+  AO221X1 U284 ( .IN1(N522), .IN2(n241), .IN3(N522), .IN4(n493), .IN5(n286), 
+        .Q(n281) );
+  AO22X1 U285 ( .IN1(N522), .IN2(n243), .IN3(N522), .IN4(n244), .Q(n286) );
+  AND2X1 U286 ( .IN1(N580), .IN2(n285), .Q(n243) );
+  AND2X1 U287 ( .IN1(n288), .IN2(n505), .Q(n241) );
+  AND2X1 U298 ( .IN1(N490), .IN2(N482), .Q(N519) );
+  AND2X1 U299 ( .IN1(N490), .IN2(N482), .Q(N516) );
+  AO22X1 U302 ( .IN1(N486), .IN2(N482), .IN3(MAX[2]), .IN4(n515), .Q(N536) );
+  AO22X1 U303 ( .IN1(N485), .IN2(N482), .IN3(MAX[1]), .IN4(n515), .Q(N535) );
+  AO22X1 U304 ( .IN1(N484), .IN2(N482), .IN3(N484), .IN4(n515), .Q(N522) );
+  NAND4X0 U305 ( .IN1(n290), .IN2(n291), .IN3(n292), .IN4(n293), .QN(N476) );
+  OA22X1 U306 ( .IN1(n196), .IN2(n294), .IN3(MAR[4]), .IN4(n295), .Q(n293) );
+  AO22X1 U307 ( .IN1(n297), .IN2(n298), .IN3(n299), .IN4(MAR[3]), .Q(n296) );
+  NAND4X0 U308 ( .IN1(n448), .IN2(n455), .IN3(n300), .IN4(n301), .QN(N475) );
+  OA21X1 U309 ( .IN1(n197), .IN2(n462), .IN3(n302), .Q(n301) );
+  NAND3X0 U310 ( .IN1(MAR[2]), .IN2(n196), .IN3(n303), .QN(n302) );
+  NAND3X0 U311 ( .IN1(MAR[3]), .IN2(n304), .IN3(MAR[1]), .QN(n300) );
+  AO21X1 U312 ( .IN1(n197), .IN2(n190), .IN3(MAR[2]), .Q(n304) );
+  AO221X1 U313 ( .IN1(n305), .IN2(n193), .IN3(n445), .IN4(n462), .IN5(n306), 
+        .Q(N474) );
+  NAND4X0 U314 ( .IN1(n309), .IN2(n448), .IN3(n310), .IN4(n311), .QN(N473) );
+  OA22X1 U315 ( .IN1(MAR[0]), .IN2(n312), .IN3(n190), .IN4(n455), .Q(n311) );
+  NAND3X0 U316 ( .IN1(MAR[2]), .IN2(n193), .IN3(n308), .QN(n310) );
+  NAND3X0 U317 ( .IN1(n314), .IN2(n196), .IN3(MAR[0]), .QN(n309) );
+  AO21X1 U318 ( .IN1(MAR[2]), .IN2(MAR[3]), .IN3(n303), .Q(n314) );
+  AO21X1 U319 ( .IN1(MAR[1]), .IN2(n315), .IN3(n316), .Q(N472) );
+  NOR3X0 U320 ( .IN1(n317), .IN2(MAR[4]), .IN3(MAR[1]), .QN(n316) );
+  OA21X1 U321 ( .IN1(MAR[2]), .IN2(MAR[0]), .IN3(n454), .Q(n317) );
+  AO221X1 U322 ( .IN1(n318), .IN2(MAR[2]), .IN3(n463), .IN4(MAR[3]), .IN5(n456), .Q(n315) );
+  NAND3X0 U323 ( .IN1(n319), .IN2(n193), .IN3(MAR[0]), .QN(n290) );
+  NAND4X0 U324 ( .IN1(n320), .IN2(n291), .IN3(n321), .IN4(n322), .QN(N471) );
+  AOI222X1 U325 ( .IN1(n196), .IN2(n297), .IN3(n298), .IN4(n323), .IN5(n324), 
+        .IN6(MAR[4]), .QN(n322) );
+  NAND3X0 U326 ( .IN1(MAR[2]), .IN2(n197), .IN3(MAR[1]), .QN(n321) );
+  NAND3X0 U327 ( .IN1(n195), .IN2(n190), .IN3(n454), .QN(n320) );
+  AO221X1 U328 ( .IN1(n297), .IN2(MAR[4]), .IN3(n457), .IN4(MAR[3]), .IN5(n325), .Q(N470) );
+  AO221X1 U329 ( .IN1(MAR[2]), .IN2(n324), .IN3(n305), .IN4(n195), .IN5(n445), 
+        .Q(n325) );
+  AO21X1 U330 ( .IN1(MAR[4]), .IN2(n196), .IN3(n457), .Q(n305) );
+  AO21X1 U331 ( .IN1(n196), .IN2(n193), .IN3(n297), .Q(n324) );
+  NAND4X0 U332 ( .IN1(n291), .IN2(n295), .IN3(n307), .IN4(n326), .QN(N469) );
+  OA21X1 U333 ( .IN1(n308), .IN2(n294), .IN3(n312), .Q(n326) );
+  NAND3X0 U334 ( .IN1(n195), .IN2(n190), .IN3(MAR[3]), .QN(n312) );
+  NAND3X0 U335 ( .IN1(n195), .IN2(n193), .IN3(MAR[4]), .QN(n307) );
+  AO221X1 U336 ( .IN1(n327), .IN2(n297), .IN3(n457), .IN4(MAR[3]), .IN5(n313), 
+        .Q(N468) );
+  NAND3X0 U337 ( .IN1(MAR[0]), .IN2(n190), .IN3(MAR[1]), .QN(n291) );
+  XNOR2X1 U338 ( .IN1(MAR[4]), .IN2(n195), .Q(n319) );
+  NAND3X0 U339 ( .IN1(n459), .IN2(START), .IN3(n451), .QN(n328) );
+  NAND3X0 U340 ( .IN1(STATO[0]), .IN2(n168), .IN3(STATO[1]), .QN(n222) );
+  OA21X1 U341 ( .IN1(n230), .IN2(n451), .IN3(n225), .Q(n231) );
+  NAND4X0 U342 ( .IN1(n330), .IN2(n331), .IN3(n218), .IN4(n233), .QN(N1024) );
+  NAND3X0 U343 ( .IN1(n170), .IN2(n168), .IN3(n171), .QN(n233) );
+  NAND3X0 U344 ( .IN1(n171), .IN2(n168), .IN3(STATO[1]), .QN(n218) );
+  AO21X1 U345 ( .IN1(n329), .IN2(n230), .IN3(START), .Q(n331) );
+  NAND3X0 U346 ( .IN1(n170), .IN2(n168), .IN3(STATO[0]), .QN(n329) );
+  NAND3X0 U347 ( .IN1(MAR[2]), .IN2(n323), .IN3(n308), .QN(n229) );
+  NAND3X0 U348 ( .IN1(n171), .IN2(n170), .IN3(STATO[2]), .QN(n230) );
+  NOR3X0 U349 ( .IN1(n333), .IN2(n334), .IN3(n173), .QN(n332) );
+  OA21X1 U350 ( .IN1(N861), .IN2(N864), .IN3(n474), .Q(n334) );
+  OA21X1 U351 ( .IN1(n335), .IN2(n336), .IN3(DISPNUM1[4]), .Q(DISPNUM2[5]) );
+  NOR3X0 U352 ( .IN1(n337), .IN2(N858), .IN3(N849), .QN(n335) );
+  OA21X1 U353 ( .IN1(n341), .IN2(n342), .IN3(DISPNUM1[4]), .Q(DISPNUM2[3]) );
+  OA21X1 U354 ( .IN1(n343), .IN2(n340), .IN3(DISPNUM1[4]), .Q(DISPNUM2[2]) );
+  NAND3X0 U355 ( .IN1(n418), .IN2(n474), .IN3(n473), .QN(n342) );
+  AND3X1 U356 ( .IN1(n338), .IN2(n475), .IN3(n477), .Q(n343) );
+  OA21X1 U357 ( .IN1(n344), .IN2(n333), .IN3(DISPNUM1[4]), .Q(DISPNUM2[1]) );
+  AO21X1 U358 ( .IN1(N858), .IN2(n474), .IN3(n336), .Q(n333) );
+  NAND3X0 U359 ( .IN1(n473), .IN2(n418), .IN3(n345), .QN(n336) );
+  OR2X1 U360 ( .IN1(n341), .IN2(N849), .Q(n345) );
+  NOR3X0 U361 ( .IN1(n464), .IN2(N843), .IN3(n346), .QN(DISPNUM2[0]) );
+  OA21X1 U362 ( .IN1(N849), .IN2(n347), .IN3(n418), .Q(n346) );
+  NOR3X0 U363 ( .IN1(n349), .IN2(N858), .IN3(N855), .QN(n348) );
+  OA21X1 U364 ( .IN1(N866), .IN2(N864), .IN3(n475), .Q(n349) );
+  NOR3X0 U365 ( .IN1(n351), .IN2(n352), .IN3(n173), .QN(n350) );
+  OA21X1 U366 ( .IN1(N769), .IN2(N772), .IN3(n486), .Q(n352) );
+  OA21X1 U367 ( .IN1(n353), .IN2(n354), .IN3(DISPNUM1[4]), .Q(DISPMAX3[5]) );
+  NOR3X0 U368 ( .IN1(n355), .IN2(N766), .IN3(N757), .QN(n353) );
+  OA21X1 U369 ( .IN1(n359), .IN2(n360), .IN3(DISPNUM1[4]), .Q(DISPMAX3[3]) );
+  OA21X1 U370 ( .IN1(n361), .IN2(n358), .IN3(DISPNUM1[4]), .Q(DISPMAX3[2]) );
+  NAND3X0 U371 ( .IN1(n417), .IN2(n486), .IN3(n485), .QN(n360) );
+  AND3X1 U372 ( .IN1(n356), .IN2(n487), .IN3(n489), .Q(n361) );
+  OA21X1 U373 ( .IN1(n362), .IN2(n351), .IN3(DISPNUM1[4]), .Q(DISPMAX3[1]) );
+  AO21X1 U374 ( .IN1(N766), .IN2(n486), .IN3(n354), .Q(n351) );
+  NAND3X0 U375 ( .IN1(n485), .IN2(n417), .IN3(n363), .QN(n354) );
+  OR2X1 U376 ( .IN1(n359), .IN2(N757), .Q(n363) );
+  NOR3X0 U377 ( .IN1(n464), .IN2(N751), .IN3(n364), .QN(DISPMAX3[0]) );
+  OA21X1 U378 ( .IN1(N757), .IN2(n365), .IN3(n417), .Q(n364) );
+  NOR3X0 U379 ( .IN1(n367), .IN2(N766), .IN3(N763), .QN(n366) );
+  OA21X1 U380 ( .IN1(N774), .IN2(N772), .IN3(n487), .Q(n367) );
+  NOR3X0 U381 ( .IN1(n369), .IN2(n370), .IN3(n173), .QN(n368) );
+  OA21X1 U382 ( .IN1(N592), .IN2(N604), .IN3(n497), .Q(n370) );
+  OA21X1 U383 ( .IN1(n371), .IN2(n372), .IN3(DISPNUM1[4]), .Q(DISPMAX2[5]) );
+  NOR3X0 U384 ( .IN1(n373), .IN2(N580), .IN3(N544), .QN(n371) );
+  OA21X1 U385 ( .IN1(N520), .IN2(n287), .IN3(DISPNUM1[4]), .Q(DISPMAX2[4]) );
+  AND3X1 U386 ( .IN1(n501), .IN2(n503), .IN3(n285), .Q(n288) );
+  AND3X1 U387 ( .IN1(n378), .IN2(n490), .IN3(n285), .Q(n377) );
+  AND2X1 U388 ( .IN1(n284), .IN2(n499), .Q(n285) );
+  AND3X1 U389 ( .IN1(n497), .IN2(n498), .IN3(n494), .Q(n284) );
+  NAND3X0 U390 ( .IN1(n501), .IN2(n503), .IN3(n374), .QN(n378) );
+  OA21X1 U391 ( .IN1(n379), .IN2(n369), .IN3(DISPNUM1[4]), .Q(DISPMAX2[1]) );
+  AO21X1 U392 ( .IN1(N580), .IN2(n497), .IN3(n372), .Q(n369) );
+  NAND3X0 U393 ( .IN1(n490), .IN2(n494), .IN3(n380), .QN(n372) );
+  AO21X1 U394 ( .IN1(n499), .IN2(n498), .IN3(N544), .Q(n380) );
+  NOR3X0 U395 ( .IN1(n464), .IN2(N520), .IN3(n381), .QN(DISPMAX2[0]) );
+  OA21X1 U396 ( .IN1(N544), .IN2(n382), .IN3(n494), .Q(n381) );
+  NOR3X0 U397 ( .IN1(n384), .IN2(N580), .IN3(N568), .QN(n383) );
+  OA21X1 U398 ( .IN1(N616), .IN2(N604), .IN3(n503), .Q(n384) );
+  DFFARX1 \TEMP_reg[3]  ( .D(n403), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[3]), 
+        .QN(n468) );
+  DFFARX1 \TEMP_reg[1]  ( .D(n401), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[1]), 
+        .QN(n470) );
+  DFFARX1 \TEMP_reg[2]  ( .D(n402), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[2]), 
+        .QN(n469) );
+  DFFARX1 \TEMP_reg[7]  ( .D(n407), .CLK(CLOCK), .RSTB(n426), .Q(TEMP[7]) );
+  DFFARX1 \TEMP_reg[0]  ( .D(n400), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[0]), 
+        .QN(n471) );
+  DFFARX1 \TEMP_reg[8]  ( .D(n408), .CLK(CLOCK), .RSTB(n426), .Q(TEMP[8]) );
+  DFFARX1 \TEMP_reg[4]  ( .D(n404), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[4]), 
+        .QN(n467) );
+  DFFARX1 \TEMP_reg[6]  ( .D(n406), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[6]), 
+        .QN(n465) );
+  DFFARX1 \TEMP_reg[5]  ( .D(n405), .CLK(CLOCK), .RSTB(n427), .Q(TEMP[5]), 
+        .QN(n466) );
+  DFFARX1 \NUM_reg[3]  ( .D(n395), .CLK(CLOCK), .RSTB(n427), .Q(NUM[3]), .QN(
+        n482) );
+  DFFARX1 \NUM_reg[2]  ( .D(n396), .CLK(CLOCK), .RSTB(n427), .Q(NUM[2]) );
+  DFFARX1 \NUM_reg[1]  ( .D(n398), .CLK(CLOCK), .RSTB(n427), .Q(NUM[1]), .QN(
+        n479) );
+  DFFARX1 \NUM_reg[0]  ( .D(n397), .CLK(CLOCK), .RSTB(n427), .Q(N828), .QN(
+        n481) );
+  DFFARX1 FLAG_reg ( .D(n399), .CLK(CLOCK), .RSTB(n427), .Q(FLAG) );
+  DFFARX1 \MAX_reg[8]  ( .D(n385), .CLK(CLOCK), .RSTB(n426), .Q(N482), .QN(
+        n515) );
+  DFFARX1 \MAX_reg[7]  ( .D(n386), .CLK(CLOCK), .RSTB(n427), .Q(MAX[7]) );
+  DFFARX1 \MAX_reg[6]  ( .D(n387), .CLK(CLOCK), .RSTB(n426), .Q(MAX[6]) );
+  DFFARX1 \MAX_reg[5]  ( .D(n388), .CLK(CLOCK), .RSTB(n427), .Q(MAX[5]) );
+  DFFARX1 \MAX_reg[4]  ( .D(n389), .CLK(CLOCK), .RSTB(n426), .Q(MAX[4]) );
+  DFFARX1 \MAX_reg[3]  ( .D(n390), .CLK(CLOCK), .RSTB(n427), .Q(MAX[3]), .QN(
+        n514) );
+  DFFARX1 \MAX_reg[2]  ( .D(n391), .CLK(CLOCK), .RSTB(n426), .Q(MAX[2]) );
+  DFFARX1 \MAX_reg[1]  ( .D(n392), .CLK(CLOCK), .RSTB(n427), .Q(MAX[1]) );
+  DFFARX1 \MAX_reg[0]  ( .D(n393), .CLK(CLOCK), .RSTB(n426), .Q(N484), .QN(
+        n483) );
+  AOI22X1 U399 ( .IN1(N488), .IN2(N482), .IN3(MAX[4]), .IN4(n515), .QN(n416)
+         );
+  OR2X1 U400 ( .IN1(N750), .IN2(n640), .Q(n417) );
+  INVX0 U401 ( .INP(n628), .ZN(n506) );
+  NAND2X1 U402 ( .IN1(n359), .IN2(n484), .QN(n358) );
+  INVX0 U403 ( .INP(n360), .ZN(n484) );
+  INVX0 U404 ( .INP(n287), .ZN(n493) );
+  NOR2X0 U405 ( .IN1(n632), .IN2(n436), .QN(n628) );
+  INVX0 U406 ( .INP(n563), .ZN(n491) );
+  NOR2X0 U407 ( .IN1(n508), .IN2(N536), .QN(n627) );
+  NOR2X0 U408 ( .IN1(N763), .IN2(N760), .QN(n359) );
+  INVX0 U409 ( .INP(N772), .ZN(n488) );
+  NAND2X1 U410 ( .IN1(N774), .IN2(n488), .QN(n356) );
+  INVX0 U411 ( .INP(N757), .ZN(n486) );
+  INVX0 U412 ( .INP(N769), .ZN(n487) );
+  AO22X1 U413 ( .IN1(N530), .IN2(N520), .IN3(n234), .IN4(n490), .Q(N750) );
+  NOR2X0 U414 ( .IN1(n430), .IN2(n563), .QN(n565) );
+  NOR2X0 U415 ( .IN1(n497), .IN2(N532), .QN(n244) );
+  NOR2X0 U416 ( .IN1(n430), .IN2(n597), .QN(n598) );
+  NOR2X0 U417 ( .IN1(n430), .IN2(n632), .QN(n634) );
+  INVX0 U418 ( .INP(n605), .ZN(n502) );
+  INVX0 U419 ( .INP(N532), .ZN(n494) );
+  INVX0 U420 ( .INP(N580), .ZN(n501) );
+  NAND2X1 U421 ( .IN1(N604), .IN2(n288), .QN(n287) );
+  INVX0 U422 ( .INP(N556), .ZN(n498) );
+  NOR2X0 U423 ( .IN1(n436), .IN2(n496), .QN(n568) );
+  NOR4X0 U424 ( .IN1(n639), .IN2(N747), .IN3(N749), .IN4(N748), .QN(n640) );
+  NOR2X0 U425 ( .IN1(n430), .IN2(n502), .QN(n603) );
+  INVX0 U426 ( .INP(N751), .ZN(n485) );
+  INVX0 U427 ( .INP(N520), .ZN(n490) );
+  NOR2X0 U428 ( .IN1(n430), .IN2(n570), .QN(n573) );
+  INVX0 U429 ( .INP(N604), .ZN(n505) );
+  INVX0 U430 ( .INP(n614), .ZN(n504) );
+  INVX0 U431 ( .INP(N539), .ZN(n496) );
+  NOR2X0 U432 ( .IN1(n581), .IN2(n430), .QN(n582) );
+  NOR2X0 U433 ( .IN1(n430), .IN2(n500), .QN(n599) );
+  INVX0 U434 ( .INP(n598), .ZN(n500) );
+  INVX0 U435 ( .INP(n561), .ZN(n492) );
+  INVX0 U436 ( .INP(n570), .ZN(n495) );
+  NAND2X1 U437 ( .IN1(n341), .IN2(n472), .QN(n340) );
+  INVX0 U438 ( .INP(n342), .ZN(n472) );
+  INVX0 U439 ( .INP(n416), .ZN(n436) );
+  NOR2X0 U440 ( .IN1(n366), .IN2(N760), .QN(n365) );
+  NOR2X0 U441 ( .IN1(n506), .IN2(n434), .QN(n629) );
+  NOR2X0 U442 ( .IN1(N750), .IN2(n654), .QN(N769) );
+  NOR4X0 U443 ( .IN1(n653), .IN2(n652), .IN3(N745), .IN4(N744), .QN(n654) );
+  INVX0 U444 ( .INP(n627), .ZN(n507) );
+  NOR2X0 U445 ( .IN1(N750), .IN2(n643), .QN(N757) );
+  NOR4X0 U446 ( .IN1(n642), .IN2(n641), .IN3(N746), .IN4(N745), .QN(n643) );
+  NOR2X0 U447 ( .IN1(N750), .IN2(n646), .QN(N760) );
+  NOR4X0 U448 ( .IN1(n645), .IN2(n644), .IN3(N746), .IN4(N745), .QN(n646) );
+  NOR2X0 U449 ( .IN1(N750), .IN2(n656), .QN(N772) );
+  NOR4X0 U450 ( .IN1(n655), .IN2(N743), .IN3(N745), .IN4(N744), .QN(n656) );
+  NOR2X0 U451 ( .IN1(N750), .IN2(n649), .QN(N763) );
+  NOR4X0 U452 ( .IN1(n648), .IN2(n647), .IN3(N746), .IN4(N745), .QN(n649) );
+  INVX0 U453 ( .INP(N616), .ZN(n509) );
+  NOR2X0 U454 ( .IN1(n357), .IN2(n464), .QN(DISPMAX3[4]) );
+  NOR4X0 U455 ( .IN1(N769), .IN2(N766), .IN3(n358), .IN4(n488), .QN(n357) );
+  INVX0 U456 ( .INP(n626), .ZN(n508) );
+  NAND2X1 U457 ( .IN1(n629), .IN2(n433), .QN(n630) );
+  INVX0 U458 ( .INP(n433), .ZN(n430) );
+  INVX0 U459 ( .INP(n433), .ZN(n431) );
+  NOR2X0 U460 ( .IN1(n436), .IN2(n428), .QN(n602) );
+  NOR2X0 U461 ( .IN1(n428), .IN2(N536), .QN(n619) );
+  NOR2X0 U462 ( .IN1(n430), .IN2(n584), .QN(N556) );
+  NOR2X0 U463 ( .IN1(n583), .IN2(n423), .QN(n584) );
+  NOR2X0 U464 ( .IN1(n430), .IN2(n601), .QN(N580) );
+  NOR2X0 U465 ( .IN1(n600), .IN2(n423), .QN(n601) );
+  NOR2X0 U466 ( .IN1(n434), .IN2(n622), .QN(n620) );
+  NAND2X1 U467 ( .IN1(n434), .IN2(n510), .QN(n605) );
+  INVX0 U468 ( .INP(n602), .ZN(n510) );
+  NOR2X0 U469 ( .IN1(N750), .IN2(n651), .QN(N766) );
+  NOR4X0 U470 ( .IN1(n650), .IN2(N744), .IN3(N746), .IN4(N745), .QN(n651) );
+  NOR2X0 U471 ( .IN1(n416), .IN2(n619), .QN(n622) );
+  NOR2X0 U472 ( .IN1(n416), .IN2(n595), .QN(n596) );
+  INVX0 U473 ( .INP(N544), .ZN(n497) );
+  NOR2X0 U474 ( .IN1(n431), .IN2(n567), .QN(N532) );
+  NOR2X0 U475 ( .IN1(n431), .IN2(n566), .QN(n567) );
+  NOR2X0 U476 ( .IN1(N750), .IN2(n638), .QN(N751) );
+  NOR4X0 U477 ( .IN1(n637), .IN2(N747), .IN3(N749), .IN4(N748), .QN(n638) );
+  INVX0 U478 ( .INP(N592), .ZN(n503) );
+  NOR4X0 U479 ( .IN1(N745), .IN2(N744), .IN3(N743), .IN4(N742), .QN(n658) );
+  NOR4X0 U480 ( .IN1(N749), .IN2(N748), .IN3(N747), .IN4(N746), .QN(n657) );
+  INVX0 U481 ( .INP(N568), .ZN(n499) );
+  NAND2X1 U482 ( .IN1(n620), .IN2(n433), .QN(n621) );
+  NAND2X1 U483 ( .IN1(n428), .IN2(N536), .QN(n585) );
+  NOR2X0 U484 ( .IN1(n428), .IN2(n579), .QN(n577) );
+  NOR2X0 U485 ( .IN1(n431), .IN2(n555), .QN(N520) );
+  NOR2X0 U486 ( .IN1(n431), .IN2(n554), .QN(n555) );
+  INVX0 U487 ( .INP(n433), .ZN(n432) );
+  NOR2X0 U488 ( .IN1(n612), .IN2(n434), .QN(n614) );
+  NOR2X0 U489 ( .IN1(n430), .IN2(n618), .QN(N604) );
+  NOR4X0 U490 ( .IN1(n424), .IN2(n432), .IN3(n434), .IN4(n617), .QN(n618) );
+  NOR2X0 U491 ( .IN1(n559), .IN2(n434), .QN(n561) );
+  NAND2X1 U492 ( .IN1(n587), .IN2(n433), .QN(n588) );
+  NOR2X0 U493 ( .IN1(n416), .IN2(n585), .QN(n586) );
+  NOR2X0 U494 ( .IN1(n433), .IN2(n560), .QN(n563) );
+  INVX0 U495 ( .INP(n556), .ZN(n512) );
+  NOR2X0 U496 ( .IN1(n561), .IN2(n433), .QN(n562) );
+  NOR2X0 U497 ( .IN1(n436), .IN2(n511), .QN(n578) );
+  INVX0 U498 ( .INP(n577), .ZN(n511) );
+  NAND2X1 U499 ( .IN1(n614), .IN2(n433), .QN(n615) );
+  NAND2X1 U500 ( .IN1(N539), .IN2(n416), .QN(n571) );
+  NAND2X1 U501 ( .IN1(n433), .IN2(n605), .QN(n606) );
+  NOR2X0 U502 ( .IN1(n383), .IN2(N556), .QN(n382) );
+  NAND2X1 U503 ( .IN1(N616), .IN2(n505), .QN(n374) );
+  NOR2X0 U504 ( .IN1(n377), .IN2(n464), .QN(DISPMAX2[2]) );
+  NOR2X0 U505 ( .IN1(n375), .IN2(n464), .QN(DISPMAX2[3]) );
+  NOR4X0 U506 ( .IN1(N544), .IN2(N532), .IN3(N520), .IN4(n376), .QN(n375) );
+  NOR2X0 U507 ( .IN1(N568), .IN2(N556), .QN(n376) );
+  NOR2X0 U508 ( .IN1(n348), .IN2(N852), .QN(n347) );
+  INVX0 U509 ( .INP(N469), .ZN(n449) );
+  NOR2X0 U510 ( .IN1(N855), .IN2(N852), .QN(n341) );
+  INVX0 U511 ( .INP(N864), .ZN(n476) );
+  NAND2X1 U512 ( .IN1(N866), .IN2(n476), .QN(n338) );
+  INVX0 U513 ( .INP(N849), .ZN(n474) );
+  NOR2X0 U514 ( .IN1(n339), .IN2(n464), .QN(DISPNUM2[4]) );
+  NOR4X0 U515 ( .IN1(N861), .IN2(N858), .IN3(n340), .IN4(n476), .QN(n339) );
+  INVX0 U516 ( .INP(N843), .ZN(n473) );
+  INVX0 U517 ( .INP(N861), .ZN(n475) );
+  INVX0 U518 ( .INP(n227), .ZN(n458) );
+  INVX0 U519 ( .INP(n232), .ZN(n438) );
+  NOR2X0 U520 ( .IN1(n509), .IN2(n425), .QN(n626) );
+  NOR2X0 U521 ( .IN1(n430), .IN2(n625), .QN(N616) );
+  NOR4X0 U522 ( .IN1(n434), .IN2(n424), .IN3(n436), .IN4(n624), .QN(n625) );
+  NOR2X0 U523 ( .IN1(N769), .IN2(n356), .QN(n355) );
+  NOR4X0 U524 ( .IN1(N774), .IN2(N772), .IN3(N769), .IN4(N757), .QN(n362) );
+  INVX0 U525 ( .INP(n419), .ZN(n428) );
+  INVX0 U526 ( .INP(n435), .ZN(n434) );
+  NOR2X0 U527 ( .IN1(n430), .IN2(n576), .QN(N544) );
+  NOR2X0 U528 ( .IN1(n430), .IN2(n609), .QN(N592) );
+  NOR4X0 U529 ( .IN1(n424), .IN2(n432), .IN3(n434), .IN4(n608), .QN(n609) );
+  NOR2X0 U530 ( .IN1(n430), .IN2(n593), .QN(N568) );
+  NOR2X0 U531 ( .IN1(n592), .IN2(n423), .QN(n593) );
+  INVX0 U532 ( .INP(N519), .ZN(n433) );
+  NOR2X0 U533 ( .IN1(n425), .IN2(N536), .QN(n594) );
+  INVX0 U534 ( .INP(N766), .ZN(n489) );
+  NOR2X0 U535 ( .IN1(n222), .IN2(n439), .QN(n221) );
+  NOR2X0 U536 ( .IN1(n471), .IN2(N476), .QN(n516) );
+  INVX0 U537 ( .INP(n217), .ZN(n441) );
+  NOR2X0 U538 ( .IN1(N536), .IN2(N535), .QN(n556) );
+  NOR2X0 U539 ( .IN1(n222), .IN2(N464), .QN(n220) );
+  INVX0 U540 ( .INP(n223), .ZN(n439) );
+  INVX0 U541 ( .INP(n516), .ZN(n450) );
+  INVX0 U542 ( .INP(n299), .ZN(n455) );
+  INVX0 U543 ( .INP(n308), .ZN(n462) );
+  INVX0 U544 ( .INP(n528), .ZN(n442) );
+  INVX0 U545 ( .INP(n313), .ZN(n448) );
+  NOR2X0 U546 ( .IN1(N592), .IN2(n374), .QN(n373) );
+  NAND2X1 U547 ( .IN1(N536), .IN2(N535), .QN(n610) );
+  INVX0 U548 ( .INP(N535), .ZN(n513) );
+  INVX0 U549 ( .INP(n291), .ZN(n457) );
+  INVX0 U550 ( .INP(N473), .ZN(n446) );
+  INVX0 U551 ( .INP(N475), .ZN(n447) );
+  NOR2X0 U552 ( .IN1(n419), .IN2(n610), .QN(n611) );
+  INVX0 U553 ( .INP(n319), .ZN(n463) );
+  INVX0 U554 ( .INP(n297), .ZN(n454) );
+  INVX0 U555 ( .INP(n295), .ZN(n445) );
+  INVX0 U556 ( .INP(n290), .ZN(n456) );
+  NOR4X0 U557 ( .IN1(N616), .IN2(N604), .IN3(N592), .IN4(N544), .QN(n379) );
+  OR2X1 U558 ( .IN1(N842), .IN2(n667), .Q(n418) );
+  AND2X1 U559 ( .IN1(N834), .IN2(N826), .Q(N842) );
+  NOR2X0 U560 ( .IN1(N842), .IN2(n676), .QN(N861) );
+  NOR4X0 U561 ( .IN1(n675), .IN2(N839), .IN3(N841), .IN4(N840), .QN(n676) );
+  NOR2X0 U562 ( .IN1(N842), .IN2(n669), .QN(N849) );
+  NOR4X0 U563 ( .IN1(N841), .IN2(N840), .IN3(N839), .IN4(n668), .QN(n669) );
+  NOR2X0 U564 ( .IN1(N861), .IN2(n338), .QN(n337) );
+  NOR2X0 U565 ( .IN1(N842), .IN2(n671), .QN(N852) );
+  NOR4X0 U566 ( .IN1(N841), .IN2(N840), .IN3(N839), .IN4(n670), .QN(n671) );
+  NOR2X0 U567 ( .IN1(N842), .IN2(n678), .QN(N864) );
+  NOR4X0 U568 ( .IN1(n677), .IN2(N839), .IN3(N841), .IN4(N840), .QN(n678) );
+  NOR2X0 U569 ( .IN1(N842), .IN2(n673), .QN(N855) );
+  NOR4X0 U570 ( .IN1(N841), .IN2(N840), .IN3(N839), .IN4(n672), .QN(n673) );
+  AND2X1 U571 ( .IN1(N834), .IN2(N826), .Q(N841) );
+  NOR2X0 U572 ( .IN1(N842), .IN2(n666), .QN(N843) );
+  INVX0 U573 ( .INP(N471), .ZN(n452) );
+  INVX0 U574 ( .INP(N826), .ZN(n478) );
+  NOR2X0 U575 ( .IN1(N842), .IN2(n674), .QN(N858) );
+  NOR4X0 U576 ( .IN1(N841), .IN2(N840), .IN3(N839), .IN4(N838), .QN(n674) );
+  INVX0 U577 ( .INP(n661), .ZN(n480) );
+  NOR2X0 U578 ( .IN1(N842), .IN2(n680), .QN(N866) );
+  NOR4X0 U579 ( .IN1(n679), .IN2(N836), .IN3(N838), .IN4(N837), .QN(n680) );
+  INVX0 U580 ( .INP(N858), .ZN(n477) );
+  NOR4X0 U581 ( .IN1(N866), .IN2(N864), .IN3(N861), .IN4(N849), .QN(n344) );
+  INVX0 U582 ( .INP(DISPNUM1[4]), .ZN(n464) );
+  NAND2X1 U583 ( .IN1(n218), .IN2(n222), .QN(n227) );
+  INVX0 U584 ( .INP(n230), .ZN(n459) );
+  INVX0 U585 ( .INP(n329), .ZN(n461) );
+  NAND2X1 U586 ( .IN1(n231), .IN2(n218), .QN(N1025) );
+  INVX0 U587 ( .INP(n229), .ZN(n451) );
+  NOR2X0 U588 ( .IN1(n464), .IN2(N826), .QN(DISPNUM1[5]) );
+  NAND2X1 U589 ( .IN1(n233), .IN2(n225), .QN(n232) );
+  AOI22X1 U590 ( .IN1(N487), .IN2(N482), .IN3(MAX[3]), .IN4(n515), .QN(n419)
+         );
+  NAND2X1 U591 ( .IN1(n549), .IN2(n514), .QN(n550) );
+  NOR2X0 U592 ( .IN1(EN_DISP), .IN2(n350), .QN(DISPMAX3[6]) );
+  NOR2X0 U593 ( .IN1(N484), .IN2(MAX[1]), .QN(n548) );
+  NAND2X1 U594 ( .IN1(MAR[4]), .IN2(n296), .QN(n292) );
+  NOR2X0 U595 ( .IN1(MAR[0]), .IN2(MAR[3]), .QN(n297) );
+  NAND2X1 U596 ( .IN1(n218), .IN2(n219), .QN(n217) );
+  NAND2X1 U597 ( .IN1(n225), .IN2(n226), .QN(n223) );
+  INVX0 U598 ( .INP(n222), .ZN(n460) );
+  NAND2X1 U599 ( .IN1(n294), .IN2(n307), .QN(n306) );
+  NOR2X0 U600 ( .IN1(MAR[4]), .IN2(MAR[3]), .QN(n303) );
+  NOR2X0 U601 ( .IN1(n196), .IN2(n190), .QN(n308) );
+  NAND2X1 U602 ( .IN1(n323), .IN2(n195), .QN(n295) );
+  NOR2X0 U603 ( .IN1(n193), .IN2(n197), .QN(n323) );
+  NOR2X0 U604 ( .IN1(n298), .IN2(MAR[0]), .QN(n299) );
+  NOR2X0 U605 ( .IN1(n190), .IN2(n295), .QN(n313) );
+  NAND2X1 U606 ( .IN1(n195), .IN2(n196), .QN(n298) );
+  NAND2X1 U607 ( .IN1(n297), .IN2(MAR[2]), .QN(n294) );
+  NOR2X0 U608 ( .IN1(N469), .IN2(n528), .QN(n529) );
+  NOR2X0 U609 ( .IN1(n682), .IN2(n482), .QN(n683) );
+  NAND2X1 U610 ( .IN1(NUM[1]), .IN2(N828), .QN(n681) );
+  INVX0 U611 ( .INP(n224), .ZN(n440) );
+  OR4X1 U612 ( .IN1(n532), .IN2(n531), .IN3(AC1[5]), .IN4(AC1[4]), .Q(n420) );
+  NOR2X0 U613 ( .IN1(n483), .IN2(N476), .QN(n534) );
+  NOR2X0 U614 ( .IN1(MAR[0]), .IN2(n303), .QN(n318) );
+  NOR2X0 U615 ( .IN1(EN_DISP), .IN2(n368), .QN(DISPMAX2[6]) );
+  INVX0 U616 ( .INP(N474), .ZN(n444) );
+  INVX0 U617 ( .INP(N472), .ZN(n453) );
+  INVX0 U618 ( .INP(N470), .ZN(n443) );
+  NOR2X0 U619 ( .IN1(MAR[1]), .IN2(n463), .QN(n327) );
+  NAND2X1 U620 ( .IN1(n421), .IN2(n422), .QN(N826) );
+  OAI21X1 U621 ( .IN1(NUM[2]), .IN2(NUM[1]), .IN3(NUM[3]), .QN(n422) );
+  NOR2X0 U622 ( .IN1(EN_DISP), .IN2(n332), .QN(DISPNUM2[6]) );
+  AO22X1 U623 ( .IN1(N832), .IN2(N826), .IN3(NUM[4]), .IN4(n478), .Q(N840) );
+  NOR2X0 U624 ( .IN1(n173), .IN2(EN_DISP), .QN(DISPNUM1[4]) );
+  NAND2X1 U625 ( .IN1(n459), .IN2(n229), .QN(n330) );
+  NAND2X1 U626 ( .IN1(n222), .IN2(n328), .QN(N1026) );
+  NAND2X1 U627 ( .IN1(START), .IN2(n461), .QN(n225) );
+  NOR2X0 U628 ( .IN1(EN_DISP), .IN2(RES_DISP), .QN(DISPNUM1[6]) );
+  NOR2X0 U629 ( .IN1(n685), .IN2(n193), .QN(n686) );
+  NAND2X1 U630 ( .IN1(MAR[1]), .IN2(MAR[0]), .QN(n684) );
+  INVX0 U631 ( .INP(n228), .ZN(n437) );
+  NOR3X0 U632 ( .IN1(n424), .IN2(n436), .IN3(n434), .QN(n633) );
+  AND2X1 U633 ( .IN1(n587), .IN2(n435), .Q(n590) );
+  OR3X1 U634 ( .IN1(n622), .IN2(n434), .IN3(n423), .Q(n623) );
+  INVX0 U635 ( .INP(n433), .ZN(n423) );
+  INVX0 U636 ( .INP(n433), .ZN(n424) );
+  AO22X1 U637 ( .IN1(N485), .IN2(N482), .IN3(MAX[1]), .IN4(n515), .Q(n425) );
+  INVX0 U638 ( .INP(RESET), .ZN(n426) );
+  INVX0 U639 ( .INP(RESET), .ZN(n427) );
+  INVX0 U640 ( .INP(N536), .ZN(n429) );
+  INVX0 U641 ( .INP(N516), .ZN(n435) );
+  AO21X1 U642 ( .IN1(N476), .IN2(n471), .IN3(n516), .Q(AC1[0]) );
+  XNOR3X1 U643 ( .IN1(n470), .IN2(N475), .IN3(n516), .Q(AC1[1]) );
+  OR2X1 U644 ( .IN1(n450), .IN2(N475), .Q(n517) );
+  AO22X1 U645 ( .IN1(N475), .IN2(n450), .IN3(n517), .IN4(n470), .Q(n519) );
+  XNOR3X1 U646 ( .IN1(N474), .IN2(TEMP[2]), .IN3(n519), .Q(AC1[2]) );
+  OR2X1 U647 ( .IN1(n519), .IN2(N474), .Q(n518) );
+  AO22X1 U648 ( .IN1(N474), .IN2(n519), .IN3(n518), .IN4(n469), .Q(n521) );
+  XNOR3X1 U649 ( .IN1(TEMP[3]), .IN2(N473), .IN3(n521), .Q(AC1[3]) );
+  OR2X1 U650 ( .IN1(n521), .IN2(N473), .Q(n520) );
+  AO22X1 U651 ( .IN1(N473), .IN2(n521), .IN3(n520), .IN4(n468), .Q(n523) );
+  XNOR3X1 U652 ( .IN1(N472), .IN2(TEMP[4]), .IN3(n523), .Q(AC1[4]) );
+  OR2X1 U653 ( .IN1(n523), .IN2(N472), .Q(n522) );
+  AO22X1 U654 ( .IN1(N472), .IN2(n523), .IN3(n522), .IN4(n467), .Q(n525) );
+  XNOR3X1 U655 ( .IN1(TEMP[5]), .IN2(N471), .IN3(n525), .Q(AC1[5]) );
+  OR2X1 U656 ( .IN1(n525), .IN2(N471), .Q(n524) );
+  AO22X1 U657 ( .IN1(N471), .IN2(n525), .IN3(n524), .IN4(n466), .Q(n527) );
+  XNOR3X1 U658 ( .IN1(N470), .IN2(TEMP[6]), .IN3(n527), .Q(AC1[6]) );
+  OR2X1 U659 ( .IN1(n527), .IN2(N470), .Q(n526) );
+  AO22X1 U660 ( .IN1(N470), .IN2(n527), .IN3(n526), .IN4(n465), .Q(n528) );
+  XNOR3X1 U661 ( .IN1(TEMP[7]), .IN2(n449), .IN3(n442), .Q(AC1[7]) );
+  OA22X1 U662 ( .IN1(TEMP[7]), .IN2(n529), .IN3(n442), .IN4(n449), .Q(n530) );
+  XOR3X1 U663 ( .IN1(TEMP[8]), .IN2(N468), .IN3(n530), .Q(N464) );
+  OR4X1 U664 ( .IN1(AC1[1]), .IN2(AC1[0]), .IN3(AC1[3]), .IN4(AC1[2]), .Q(n532) );
+  OR3X1 U665 ( .IN1(N464), .IN2(AC1[7]), .IN3(AC1[6]), .Q(n531) );
+  AND2X1 U666 ( .IN1(n447), .IN2(n534), .Q(n533) );
+  OA22X1 U667 ( .IN1(n534), .IN2(n447), .IN3(MAX[1]), .IN4(n533), .Q(n536) );
+  AND2X1 U668 ( .IN1(n444), .IN2(n536), .Q(n535) );
+  OA22X1 U669 ( .IN1(n536), .IN2(n444), .IN3(MAX[2]), .IN4(n535), .Q(n538) );
+  AND2X1 U670 ( .IN1(n446), .IN2(n538), .Q(n537) );
+  OA22X1 U671 ( .IN1(n538), .IN2(n446), .IN3(MAX[3]), .IN4(n537), .Q(n540) );
+  AND2X1 U672 ( .IN1(n453), .IN2(n540), .Q(n539) );
+  OA22X1 U673 ( .IN1(n540), .IN2(n453), .IN3(MAX[4]), .IN4(n539), .Q(n542) );
+  AND2X1 U674 ( .IN1(n452), .IN2(n542), .Q(n541) );
+  OA22X1 U675 ( .IN1(n542), .IN2(n452), .IN3(MAX[5]), .IN4(n541), .Q(n544) );
+  AND2X1 U676 ( .IN1(n443), .IN2(n544), .Q(n543) );
+  OA22X1 U677 ( .IN1(n544), .IN2(n443), .IN3(MAX[6]), .IN4(n543), .Q(n545) );
+  AND2X1 U678 ( .IN1(n449), .IN2(n545), .Q(n546) );
+  OA22X1 U679 ( .IN1(MAX[7]), .IN2(n546), .IN3(n545), .IN4(n449), .Q(n547) );
+  XOR3X1 U680 ( .IN1(N482), .IN2(N468), .IN3(n547), .Q(N477) );
+  XOR2X1 U681 ( .IN1(MAX[1]), .IN2(N484), .Q(N485) );
+  XNOR2X1 U682 ( .IN1(MAX[2]), .IN2(n548), .Q(N486) );
+  NOR3X0 U683 ( .IN1(MAX[1]), .IN2(MAX[2]), .IN3(N484), .QN(n549) );
+  XNOR2X1 U684 ( .IN1(MAX[3]), .IN2(n549), .Q(N487) );
+  XOR2X1 U685 ( .IN1(n550), .IN2(MAX[4]), .Q(N488) );
+  OR2X1 U686 ( .IN1(MAX[4]), .IN2(MAX[3]), .Q(n551) );
+  OR4X1 U687 ( .IN1(N485), .IN2(N484), .IN3(n551), .IN4(MAX[2]), .Q(N490) );
+  OR2X1 U688 ( .IN1(N535), .IN2(N536), .Q(n552) );
+  AND3X1 U689 ( .IN1(n428), .IN2(n552), .IN3(n436), .Q(n553) );
+  OA21X1 U690 ( .IN1(n423), .IN2(n553), .IN3(n432), .Q(n554) );
+  AO21X1 U691 ( .IN1(N536), .IN2(N535), .IN3(n556), .Q(N524) );
+  XOR2X1 U692 ( .IN1(n428), .IN2(n512), .Q(N525) );
+  AND2X1 U693 ( .IN1(n512), .IN2(n428), .Q(n557) );
+  XOR2X1 U694 ( .IN1(n436), .IN2(n557), .Q(N526) );
+  AND2X1 U695 ( .IN1(n436), .IN2(n428), .Q(n558) );
+  AND2X1 U696 ( .IN1(n558), .IN2(n512), .Q(n559) );
+  AOI21X1 U697 ( .IN1(n558), .IN2(n512), .IN3(n434), .QN(n560) );
+  AO21X1 U698 ( .IN1(n432), .IN2(n559), .IN3(n560), .Q(N527) );
+  MUX21X1 U699 ( .IN1(n492), .IN2(n560), .S(n431), .Q(N528) );
+  MUX21X1 U700 ( .IN1(n491), .IN2(n562), .S(n423), .Q(N529) );
+  AO21X1 U701 ( .IN1(n432), .IN2(n492), .IN3(n432), .Q(n564) );
+  MUX21X1 U702 ( .IN1(n565), .IN2(n564), .S(n431), .Q(N530) );
+  OA21X1 U703 ( .IN1(n423), .IN2(n436), .IN3(n432), .Q(n566) );
+  XOR2X1 U704 ( .IN1(n416), .IN2(n434), .Q(N539) );
+  MUX21X1 U705 ( .IN1(n571), .IN2(n568), .S(n423), .Q(N540) );
+  OA21X1 U706 ( .IN1(n496), .IN2(n436), .IN3(n432), .Q(n570) );
+  AND2X1 U707 ( .IN1(n571), .IN2(n432), .Q(n569) );
+  MUX21X1 U708 ( .IN1(n495), .IN2(n569), .S(n431), .Q(N541) );
+  AO21X1 U709 ( .IN1(n432), .IN2(n571), .IN3(n432), .Q(n572) );
+  MUX21X1 U710 ( .IN1(n573), .IN2(n572), .S(n431), .Q(N542) );
+  AND2X1 U711 ( .IN1(N536), .IN2(n425), .Q(n574) );
+  OR4X1 U712 ( .IN1(n428), .IN2(n574), .IN3(n434), .IN4(n436), .Q(n575) );
+  AOI21X1 U713 ( .IN1(n432), .IN2(n575), .IN3(n432), .QN(n576) );
+  XOR2X1 U714 ( .IN1(N536), .IN2(N535), .Q(N548) );
+  AND2X1 U715 ( .IN1(N536), .IN2(N535), .Q(n579) );
+  AO21X1 U716 ( .IN1(n428), .IN2(n579), .IN3(n577), .Q(N549) );
+  XOR2X1 U717 ( .IN1(n436), .IN2(n577), .Q(N550) );
+  XOR2X1 U718 ( .IN1(n434), .IN2(n578), .Q(N551) );
+  OR4X1 U719 ( .IN1(n579), .IN2(n428), .IN3(n436), .IN4(n434), .Q(n580) );
+  XOR2X1 U720 ( .IN1(n580), .IN2(n423), .Q(N552) );
+  AND2X1 U721 ( .IN1(n432), .IN2(n580), .Q(n581) );
+  XNOR2X1 U722 ( .IN1(n581), .IN2(n423), .Q(N553) );
+  XOR2X1 U723 ( .IN1(n431), .IN2(n582), .Q(N554) );
+  AND4X1 U724 ( .IN1(n423), .IN2(n436), .IN3(n428), .IN4(N536), .Q(n583) );
+  XNOR2X1 U725 ( .IN1(n428), .IN2(n429), .Q(N561) );
+  XNOR2X1 U726 ( .IN1(n436), .IN2(n585), .Q(N562) );
+  XOR2X1 U727 ( .IN1(n434), .IN2(n586), .Q(N563) );
+  NAND4X0 U728 ( .IN1(n428), .IN2(n434), .IN3(n436), .IN4(N536), .QN(n587) );
+  XNOR2X1 U729 ( .IN1(n587), .IN2(n433), .Q(N564) );
+  AO21X1 U730 ( .IN1(n432), .IN2(n588), .IN3(n590), .Q(N565) );
+  OR2X1 U731 ( .IN1(n588), .IN2(n424), .Q(n589) );
+  MUX21X1 U732 ( .IN1(n590), .IN2(n589), .S(n431), .Q(N566) );
+  OR3X1 U733 ( .IN1(n428), .IN2(N536), .IN3(N535), .Q(n591) );
+  AND3X1 U734 ( .IN1(n436), .IN2(n591), .IN3(n423), .Q(n592) );
+  XOR2X1 U735 ( .IN1(N536), .IN2(n513), .Q(N572) );
+  XOR2X1 U736 ( .IN1(n428), .IN2(n594), .Q(N573) );
+  NOR3X0 U737 ( .IN1(N536), .IN2(n428), .IN3(n425), .QN(n595) );
+  XOR2X1 U738 ( .IN1(n416), .IN2(n595), .Q(N574) );
+  XOR2X1 U739 ( .IN1(n434), .IN2(n596), .Q(N575) );
+  AND2X1 U740 ( .IN1(n423), .IN2(n596), .Q(n597) );
+  AO21X1 U741 ( .IN1(n432), .IN2(n597), .IN3(n598), .Q(N576) );
+  XOR2X1 U742 ( .IN1(n431), .IN2(n598), .Q(N577) );
+  XOR2X1 U743 ( .IN1(n431), .IN2(n599), .Q(N578) );
+  OA21X1 U744 ( .IN1(n428), .IN2(n436), .IN3(n423), .Q(n600) );
+  AO21X1 U745 ( .IN1(n436), .IN2(n428), .IN3(n602), .Q(N586) );
+  XNOR2X1 U746 ( .IN1(n434), .IN2(n602), .Q(N587) );
+  XNOR2X1 U747 ( .IN1(n424), .IN2(n502), .Q(N588) );
+  MUX21X1 U748 ( .IN1(n603), .IN2(n432), .S(n431), .Q(n604) );
+  AO21X1 U749 ( .IN1(n502), .IN2(n432), .IN3(n604), .Q(N589) );
+  AND2X1 U750 ( .IN1(n605), .IN2(n433), .Q(n607) );
+  MUX21X1 U751 ( .IN1(n607), .IN2(n606), .S(n431), .Q(N590) );
+  AND4X1 U752 ( .IN1(n436), .IN2(n428), .IN3(N536), .IN4(n425), .Q(n608) );
+  XOR2X1 U753 ( .IN1(N536), .IN2(n425), .Q(N596) );
+  XOR2X1 U754 ( .IN1(n419), .IN2(n610), .Q(N597) );
+  XOR2X1 U755 ( .IN1(n436), .IN2(n611), .Q(N598) );
+  AND4X1 U756 ( .IN1(N536), .IN2(n436), .IN3(n428), .IN4(n425), .Q(n612) );
+  AO21X1 U757 ( .IN1(n434), .IN2(n612), .IN3(n614), .Q(N599) );
+  MUX21X1 U758 ( .IN1(n614), .IN2(n504), .S(n431), .Q(N600) );
+  OR2X1 U759 ( .IN1(n504), .IN2(n424), .Q(n613) );
+  AO22X1 U760 ( .IN1(n614), .IN2(n433), .IN3(n432), .IN4(n613), .Q(N601) );
+  AND2X1 U761 ( .IN1(n433), .IN2(n614), .Q(n616) );
+  MUX21X1 U762 ( .IN1(n616), .IN2(n615), .S(n431), .Q(N602) );
+  OA21X1 U763 ( .IN1(N536), .IN2(n428), .IN3(n436), .Q(n617) );
+  AO21X1 U764 ( .IN1(n428), .IN2(N536), .IN3(n619), .Q(N609) );
+  XOR2X1 U765 ( .IN1(n416), .IN2(n619), .Q(N610) );
+  AO21X1 U766 ( .IN1(n423), .IN2(n622), .IN3(n620), .Q(N611) );
+  XOR2X1 U767 ( .IN1(n431), .IN2(n620), .Q(N612) );
+  XNOR2X1 U768 ( .IN1(n424), .IN2(n621), .Q(N613) );
+  XNOR2X1 U769 ( .IN1(n623), .IN2(n423), .Q(N614) );
+  OA21X1 U770 ( .IN1(n425), .IN2(N536), .IN3(n428), .Q(n624) );
+  AO21X1 U771 ( .IN1(N535), .IN2(n509), .IN3(n626), .Q(N621) );
+  AO21X1 U772 ( .IN1(N536), .IN2(n508), .IN3(n627), .Q(N622) );
+  XOR3X1 U773 ( .IN1(N616), .IN2(n428), .IN3(n627), .Q(N623) );
+  OA21X1 U774 ( .IN1(n509), .IN2(n428), .IN3(n507), .Q(n632) );
+  AO21X1 U775 ( .IN1(n436), .IN2(n632), .IN3(n628), .Q(N624) );
+  AO21X1 U776 ( .IN1(n434), .IN2(n506), .IN3(n629), .Q(N625) );
+  XOR2X1 U777 ( .IN1(n431), .IN2(n629), .Q(N626) );
+  XNOR2X1 U778 ( .IN1(n424), .IN2(n630), .Q(N627) );
+  OAI21X1 U779 ( .IN1(N536), .IN2(N535), .IN3(n428), .QN(n631) );
+  NAND3X0 U780 ( .IN1(N616), .IN2(n631), .IN3(n633), .QN(n635) );
+  AO22X1 U781 ( .IN1(n432), .IN2(n635), .IN3(n634), .IN4(n633), .Q(N628) );
+  OR3X1 U782 ( .IN1(N744), .IN2(N743), .IN3(N742), .Q(n636) );
+  AO21X1 U783 ( .IN1(N745), .IN2(n636), .IN3(N746), .Q(n637) );
+  OR2X1 U784 ( .IN1(N746), .IN2(N745), .Q(n639) );
+  OR3X1 U785 ( .IN1(N749), .IN2(N748), .IN3(N747), .Q(n642) );
+  AND3X1 U786 ( .IN1(N743), .IN2(N742), .IN3(N744), .Q(n641) );
+  OR3X1 U787 ( .IN1(N749), .IN2(N748), .IN3(N747), .Q(n645) );
+  AND2X1 U788 ( .IN1(N744), .IN2(N743), .Q(n644) );
+  OR3X1 U789 ( .IN1(N749), .IN2(N748), .IN3(N747), .Q(n648) );
+  OA21X1 U790 ( .IN1(N742), .IN2(N743), .IN3(N744), .Q(n647) );
+  OR3X1 U791 ( .IN1(N749), .IN2(N748), .IN3(N747), .Q(n650) );
+  OR4X1 U792 ( .IN1(N747), .IN2(N746), .IN3(N749), .IN4(N748), .Q(n653) );
+  AND2X1 U793 ( .IN1(N743), .IN2(N742), .Q(n652) );
+  OR4X1 U794 ( .IN1(N747), .IN2(N746), .IN3(N749), .IN4(N748), .Q(n655) );
+  AOI21X1 U795 ( .IN1(n658), .IN2(n657), .IN3(N750), .QN(N774) );
+  XOR2X1 U796 ( .IN1(NUM[1]), .IN2(NUM[2]), .Q(n661) );
+  AND2X1 U797 ( .IN1(NUM[2]), .IN2(NUM[1]), .Q(n663) );
+  XNOR2X1 U798 ( .IN1(NUM[3]), .IN2(n480), .Q(n662) );
+  XOR2X1 U799 ( .IN1(n663), .IN2(n662), .Q(N831) );
+  OAI21X1 U800 ( .IN1(n661), .IN2(n663), .IN3(NUM[3]), .QN(n660) );
+  OA21X1 U801 ( .IN1(n663), .IN2(n661), .IN3(NUM[3]), .Q(n659) );
+  MUX21X1 U802 ( .IN1(n660), .IN2(n659), .S(NUM[4]), .Q(N832) );
+  AOI221X1 U803 ( .IN1(n663), .IN2(n662), .IN3(NUM[3]), .IN4(n661), .IN5(
+        NUM[4]), .QN(N834) );
+  OR2X1 U804 ( .IN1(N838), .IN2(N837), .Q(n664) );
+  OA21X1 U805 ( .IN1(N836), .IN2(n664), .IN3(N839), .Q(n665) );
+  NOR3X0 U806 ( .IN1(n665), .IN2(N841), .IN3(N840), .QN(n666) );
+  NOR3X0 U807 ( .IN1(N839), .IN2(N841), .IN3(N840), .QN(n667) );
+  AND3X1 U808 ( .IN1(N837), .IN2(N836), .IN3(N838), .Q(n668) );
+  AND2X1 U809 ( .IN1(N838), .IN2(N837), .Q(n670) );
+  OA21X1 U810 ( .IN1(N836), .IN2(N837), .IN3(N838), .Q(n672) );
+  AO21X1 U811 ( .IN1(N837), .IN2(N836), .IN3(N838), .Q(n675) );
+  OR2X1 U812 ( .IN1(N838), .IN2(N837), .Q(n677) );
+  OR3X1 U813 ( .IN1(N841), .IN2(N840), .IN3(N839), .Q(n679) );
+  XNOR2X1 U814 ( .IN1(NUM[1]), .IN2(n481), .Q(N984) );
+  XNOR2X1 U815 ( .IN1(NUM[2]), .IN2(n681), .Q(N985) );
+  NAND3X0 U816 ( .IN1(NUM[1]), .IN2(N828), .IN3(NUM[2]), .QN(n682) );
+  XNOR2X1 U817 ( .IN1(NUM[3]), .IN2(n682), .Q(N986) );
+  XOR2X1 U818 ( .IN1(NUM[4]), .IN2(n683), .Q(N987) );
+  XNOR2X1 U819 ( .IN1(MAR[1]), .IN2(n197), .Q(N1014) );
+  XNOR2X1 U820 ( .IN1(MAR[2]), .IN2(n684), .Q(N1015) );
+  NAND3X0 U821 ( .IN1(MAR[1]), .IN2(MAR[0]), .IN3(MAR[2]), .QN(n685) );
+  XNOR2X1 U822 ( .IN1(MAR[3]), .IN2(n685), .Q(N1016) );
+  XOR2X1 U823 ( .IN1(MAR[4]), .IN2(n686), .Q(N1017) );
+endmodule
+

@@ -2355,3 +2355,19 @@ s2354(01Dec2022:18:38:32):  xrun -q ./trojan_detection_data/test_bench_files/Ben
 s2355(01Dec2022:18:39:00):  xrun -q ./trojan_detection_data/test_bench_files/Benchmark_testing100/I2589.sv ./trojan_detection_data/Nt_Node_Subcircuits/Benchmark_testing100/I2589.v 
 s2356(01Dec2022:18:39:38):  xrun -q ./trojan_detection_data/test_bench_files/Benchmark_testing100/I2589.sv ./trojan_detection_data/Nt_Node_Subcircuits/Benchmark_testing100/I2589.v 
 s2357(01Dec2022:18:40:11):  xrun -q ./trojan_detection_data/test_bench_files/Benchmark_testing100/I2589.sv ./trojan_detection_data/Nt_Node_Subcircuits/Benchmark_testing100/I2589.v 
+s2358(06Dec2022:19:57:09):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I1684.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I1684.v +access+rw 
+s2359(06Dec2022:19:57:17):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I2056.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I2056.v +access+rw 
+s2360(06Dec2022:19:57:22):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I3220.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I3220.v +access+rw 
+s2361(06Dec2022:19:57:25):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I2107.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I2107.v +access+rw 
+s2362(06Dec2022:19:57:30):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I2189.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I2189.v +access+rw 
+s2363(06Dec2022:19:57:34):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I1997.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I1997.v +access+rw 
+s2364(06Dec2022:19:57:38):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I2617.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I2617.v +access+rw 
+s2365(06Dec2022:19:57:42):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I3211.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I3211.v +access+rw 
+s2366(06Dec2022:19:57:46):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I1307.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I1307.v +access+rw 
+s2367(06Dec2022:19:57:50):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I1970.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I1970.v +access+rw 
+s2368(06Dec2022:19:57:54):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I2699.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I2699.v +access+rw 
+s2369(06Dec2022:19:57:58):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I2090.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I2090.v +access+rw 
+s2370(06Dec2022:19:58:02):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I1577.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I1577.v +access+rw 
+s2371(06Dec2022:19:58:06):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I3461.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I3461.v +access+rw 
+s2372(06Dec2022:19:58:11):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I1800.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I1800.v +access+rw 
+s2373(06Dec2022:19:58:15):  xrun -q ./temp_trojan/test_bench_files/Benchmark_testing100/I3396.sv ./temp_trojan/Nt_Node_Subcircuits/Benchmark_testing100/I3396.v +access+rw 

@@ -7,7 +7,6 @@ Created on Mon Nov  8 10:01:00 2021
 
 import os 
 import logging
-#from practice import filereading
 import sys
 
 #For reading the files
@@ -61,5 +60,3 @@ class TestBench_Generator:
         fp.write("endmodule")
         fp.close()
         logging.info("Ended")
-        
-#ls = TestBench_Generator('./out', './c432_uptb', './output', 36, 22, 'c432')
