@@ -33,8 +33,8 @@ class FanciTrojanDetection:
         extracted_node_directory_path = output_top_directory+"/Nt_Node_Subcircuits/"
         FormatPerNodeSubCircuit(extracted_node_directory_path)
         self.generate_simulated_file(extracted_node_directory_path,output_top_directory)
-#        simulated_data_directory_path = output_top_directory+"/Simulated_Data_Output/"
-#        self.heuristics_calculation_from_simulated_output(simulated_data_directory_path,output_top_directory,mm_threshold,tri_threshold)
+        simulated_data_directory_path = output_top_directory+"/Simulated_Data_Output/"
+        self.heuristics_calculation_from_simulated_output(simulated_data_directory_path,output_top_directory,mean_median_threshold,trivial_threshold)
 
     def generate_simulated_file(self,input_path,output_t_directory):
         for subdir, dirs, files in os.walk(input_path):
@@ -100,6 +100,10 @@ class FanciTrojanDetection:
                 for file in files:
                     verilog_file_path = os.path.join(subdir, file)
                     print(verilog_file_path)
+                    file_path = "/".join(verilog_file_path.split("/")[-2:])
+                    file_path = file_path.rstrip(".v")
+                    random_select_input_top_directory = output_t_directory+"/random_selected_input/"
+                    random_select_file_path = random_select_input_top_directory + file_path
                     simulated_output_lines = []
                     with open(verilog_file_path,'r')as fp_file:
                         simulated_output_lines = fp_file.readlines()
@@ -109,53 +113,89 @@ class FanciTrojanDetection:
                     no_of_inputs = len(no_of_inputs)
 
                     control_vector = np.zeros((no_of_inputs,), dtype=float)
-                    output_vector = np.zeros((len(simulated_output_lines),), dtype=int)
+                    output_dict = {}
                     input_multi_vector = np.zeros((len(simulated_output_lines),no_of_inputs), dtype=int)
 
                     for index,simulated_data in enumerate(simulated_output_lines):
-                        output_vector[index] = int((simulated_data.split(" ")[1]).rstrip("\n"))
-                        input_pins_value = (simulated_data.split(" ")[0]).lstrip("")
-                        for pin_index in range(no_of_inputs):
-                            input_multi_vector[index][pin_index] = input_pins_value[pin_index]
+                        dict_value = int((simulated_data.split(" ")[1]).rstrip("\n"))
+                        dict_key = (simulated_data.split(" ")[0]).lstrip("")
+                        output_dict[dict_key] = dict_value 
 
-                    pow_exponent = -1
-                    for pin_index in range(no_of_inputs-1, -1, -1):
-                        pow_exponent += 1
-                        opposite_c_index_buffer = pow(2,pow_exponent)
-                        control_value_sum = 0
-                        for line_index in range(len(simulated_output_lines)):
-                            if input_multi_vector[line_index][pin_index] == 1:
-                                continue
+                    if no_of_inputs > 15:
+                        random_select_nums = []
+                        with open(random_select_file_path,'r')as fp_file:
+                            random_select_file_lines = fp_file.readlines()
 
-                            x_zero = output_vector[line_index]
-                            x_one =  output_vector[line_index+opposite_c_index_buffer]
+                        for ran_ele in random_select_file_lines:
+                            random_select_nums.append(int(ran_ele))
 
-                            if x_zero != x_one:
-                                control_value_sum += 1
+                        for pin_index in range(no_of_inputs-1, -1, -1):
+                            control_value_sum = 0
+                            control_div_value = 0
+                            for i in random_select_nums:
+                                key_ele = '{i:0>{n}b}'.format(i=i, n=no_of_inputs)
 
-                        size_of_truth_table = float(len(simulated_output_lines))/2.0
-                        control_vector[pin_index] = float(control_value_sum)/size_of_truth_table
+                                temp_key = key_ele
+                                if key_ele[pin_index] == '0':
+                                    temp_key = temp_key[:pin_index] + '1' + temp_key[pin_index+1:]
+                                else:
+                                    temp_key = temp_key[:pin_index] + '0' + temp_key[pin_index+1:]
 
+                                x_zero = output_dict[key_ele]
+                                x_one =  output_dict[temp_key]
+
+                                control_div_value += 1
+
+                                if x_zero != x_one:
+                                    control_value_sum += 1
+
+                            control_vector[pin_index] = float(control_value_sum)/float(control_div_value)
+
+                    else:
+                        for pin_index in range(no_of_inputs-1, -1, -1):
+                            control_value_sum = 0
+                            control_div_value = 0
+                            for key_ele in output_dict.keys():
+                                if key_ele[pin_index] == '1':
+                                    continue
+
+                                temp_key = key_ele[:pin_index] + '1' + key_ele[pin_index+1:]
+
+                                x_zero = output_dict[key_ele]
+                                x_one =  output_dict[temp_key]
+
+                                control_div_value += 1
+
+                                if x_zero != x_one:
+                                    control_value_sum += 1
+
+                            control_vector[pin_index] = float(control_value_sum)/float(control_div_value)
                     
                     mean_value = self.mean_vec(control_vector)
                     median_value = self.median_vec(control_vector)
-                    triviality_value = self.triviality_vec(output_vector)
-
+                    triviality_value = self.triviality_vec(list(output_dict.values()))
 
                     final_output_path = output_t_directory + "/final_output_detect/"
 
-                    final_output_file_path = final_output_path+subdir.split("/")[-1]+".txt"
+                    final_output_file_path_mean = final_output_path+subdir.split("/")[-1]+"_mean.txt"
+                    final_output_file_path_median = final_output_path+subdir.split("/")[-1]+"_median.txt"
+                    final_output_file_path_triv = final_output_path+subdir.split("/")[-1]+"_triv.txt"
                     print(final_output_path+subdir.split("/")[-1])
 
-                    if mean_value < mm_threshold and median_value < mm_threshold:
-                        with open(final_output_file_path,'a')as fp_file:
+                    if mean_value < mm_threshold:
+                        with open(final_output_file_path_mean,'a')as fp_file:
+                            fp_file.write(file)
+                            fp_file.write("\n")
+
+                    if median_value < mm_threshold:
+                        with open(final_output_file_path_median,'a')as fp_file:
                             fp_file.write(file)
                             fp_file.write("\n")
 
                     if triviality_value < tri_threshold:
-                        with open(final_output_file_path,'a')as fp_file:
+                        with open(final_output_file_path_triv,'a')as fp_file:
                             fp_file.write(file)
                             fp_file.write("\n")
                         
 
-FanciTrojanDetection(5,"./trojan_input_data","./temp_trojan",1,1)
+FanciTrojanDetection(5,"./trojan_input_data","./tmp_checking_FANCI",(1/8),0.5)

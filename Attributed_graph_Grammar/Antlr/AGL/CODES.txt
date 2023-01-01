@@ -1,0 +1,737 @@
+Function Circuit.Check encountered the following error messages(s):
+E: failed opening file: open ./dev_readVerilog/CDLE_benchmarks/iscas89/ss38584.v: no such file or directory
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit ss38584 successfully written to ./ss38584.bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n_1582 does not have a driver
+  E: (Circuit.Check) Net n_1582 is of invalid gate type Temp
+  E: (Circuit.Check) Net n_1582 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_693 does not have a driver
+  E: (Circuit.Check) Net n_693 is of invalid gate type Temp
+  E: (Circuit.Check) Net n_693 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_696 does not have a driver
+  E: (Circuit.Check) Net n_696 is of invalid gate type Temp
+  E: (Circuit.Check) Net n_696 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_1580 does not have a driver
+  E: (Circuit.Check) Net n_1580 is of invalid gate type Temp
+  E: (Circuit.Check) Net n_1580 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_694 does not have a driver
+  E: (Circuit.Check) Net n_694 is of invalid gate type Temp
+  E: (Circuit.Check) Net n_694 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_695 does not have a driver
+  E: (Circuit.Check) Net n_695 is of invalid gate type Temp
+  E: (Circuit.Check) Net n_695 of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net n_694 does not have a driver
+    E: (Circuit.Check) Net n_694 is of invalid gate type Temp
+    E: (Circuit.Check) Net n_694 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_695 does not have a driver
+    E: (Circuit.Check) Net n_695 is of invalid gate type Temp
+    E: (Circuit.Check) Net n_695 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_1582 does not have a driver
+    E: (Circuit.Check) Net n_1582 is of invalid gate type Temp
+    E: (Circuit.Check) Net n_1582 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_693 does not have a driver
+    E: (Circuit.Check) Net n_693 is of invalid gate type Temp
+    E: (Circuit.Check) Net n_693 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_696 does not have a driver
+    E: (Circuit.Check) Net n_696 is of invalid gate type Temp
+    E: (Circuit.Check) Net n_696 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_1580 does not have a driver
+    E: (Circuit.Check) Net n_1580 is of invalid gate type Temp
+    E: (Circuit.Check) Net n_1580 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Parsing.WriteBench) Could not create bench file: open ./bench_files/b12.bench: no such file or directory
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Parsing.WriteBench) Could not create bench file: open ./bench_files/b12.bench: no such file or directory
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Parsing.WriteBench) Could not create bench file: open ./bench_files/b12.bench: no such file or directory
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit c7552 successfully written to ./c7552.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit s35932 successfully written to ./s35932.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit s27 successfully written to ./s27.bench
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_14_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_8_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_15_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_17_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_10_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_28_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_13_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_20_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_7_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_11_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_3_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_18_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_12_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_19_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_26_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_4_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_6_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_9_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_1_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_31_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_0_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_16_ does not drive any logic
+  W: (Circuit.Check) Net n495 does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_21_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_30_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_29_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_22_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_5_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_27_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_2_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_24_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_23_ does not drive any logic
+  W: (Circuit.Check) Net _wishbone_bd_ram_q_25_ does not drive any logic
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n319 does not have a driver
+  E: (Circuit.Check) Net n319 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n319 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n173 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _rxethmac1_Crc_29_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14579 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_ClkDiv_6_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14573 does not have a driver
+  E: (Circuit.Check) Net n14573 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14573 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_CollValid_5_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_MinFL_6_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n82 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_StateDefer is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14589 does not have a driver
+  E: (Circuit.Check) Net n14589 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14589 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_IPGT_4_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14591 does not have a driver
+  E: (Circuit.Check) Net n14591 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14591 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _rxethmac1_Crc_28_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_MaxFL_10_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txstatem1_n60 does not have a driver
+  E: (Circuit.Check) Net _txethmac1_txstatem1_n60 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txstatem1_n60 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n69 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n344 does not have a driver
+  E: (Circuit.Check) Net n344 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n344 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_26_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_26_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_26_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n70 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_18_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_18_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_18_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n68 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_MaxRet_1_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_IPGT_1_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _rxethmac1_Crc_26_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14581 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14584 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14568 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _maccontrol1_receivecontrol1_PauseTimerEq0_sync1 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14564 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_CollValid_4_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _wishbone_n931 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n327 does not have a driver
+  E: (Circuit.Check) Net n327 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n327 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n83 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_22_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_22_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_22_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_9_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_9_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_9_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_16_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_16_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_16_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _rxethmac1_Crc_30_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n80 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14575 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n76 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_CollValid_3_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n65 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n343 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_CollValid_1_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n72 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n95 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n229 does not have a driver
+  E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n229 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n229 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_Crc_30_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n81 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14576 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14565 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n74 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n90 does not have a driver
+  E: (Circuit.Check) Net _txethmac1_txcrc_n90 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n90 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_MaxFL_9_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _macstatus1_n46 does not have a driver
+  E: (Circuit.Check) Net _macstatus1_n46 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _macstatus1_n46 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_24_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_24_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_24_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n73 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _rxethmac1_rxstatem1_n28 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n79 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n91 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14563 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_27_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_27_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_27_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14585 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14571 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n87 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _wishbone_n906 does not have a driver
+  E: (Circuit.Check) Net _wishbone_n906 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _wishbone_n906 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n78 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_MaxRet_0_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_ClkDiv_5_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _wishbone_tx_burst_en is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_MaxRet_3_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _rxethmac1_Crc_27_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n88 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n96 does not have a driver
+  E: (Circuit.Check) Net _txethmac1_txcrc_n96 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n96 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14570 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n66 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n85 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n229 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14588 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_20_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_20_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_20_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n67 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14582 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_2_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_2_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_2_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14567 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_MaxRet_2_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n487 does not have a driver
+  E: (Circuit.Check) Net n487 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n487 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_6_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_6_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_6_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14569 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_28_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_28_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_28_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14562 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_Crc_31_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14577 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_7_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_7_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_7_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14574 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14590 does not have a driver
+  E: (Circuit.Check) Net n14590 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14590 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _wishbone_n904 does not have a driver
+  E: (Circuit.Check) Net _wishbone_n904 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _wishbone_n904 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n92 does not have a driver
+  E: (Circuit.Check) Net _txethmac1_txcrc_n92 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n92 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_8_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_8_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_8_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_5_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_5_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_5_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n94 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_4_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_4_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_4_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14566 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_23_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_23_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_23_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14586 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14587 does not have a driver
+  E: (Circuit.Check) Net n14587 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14587 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14583 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n77 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_TxBDNum_6_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _rxethmac1_Crc_31_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n488 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n86 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n230 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14593 does not have a driver
+  E: (Circuit.Check) Net n14593 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14593 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_29_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_29_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_29_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n480 does not have a driver
+  E: (Circuit.Check) Net n480 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n480 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_12_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_12_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_12_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_19_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_19_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_19_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_n73 does not have a driver
+  E: (Circuit.Check) Net _txethmac1_n73 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_n73 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_15_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_15_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_15_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_IPGR1_3_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_CrcEn is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n481 does not have a driver
+  E: (Circuit.Check) Net n481 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n481 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_0_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_0_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_0_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n93 does not have a driver
+  E: (Circuit.Check) Net _txethmac1_txcrc_n93 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n93 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_31_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_31_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_31_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_ClkDiv_2_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_10_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_10_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_10_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14580 does not have a driver
+  E: (Circuit.Check) Net n14580 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14580 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_CollValid_0_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _wishbone_WbEn is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n472 does not have a driver
+  E: (Circuit.Check) Net n472 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n472 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _miim1_clkgen_Counter_0_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_25_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_25_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_25_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_IPGR1_2_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_CollValid_2_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_14_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_14_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_14_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n89 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n486 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_txcrc_n84 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net _txethmac1_Crc_29_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_IPGR2_4_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14592 does not have a driver
+  E: (Circuit.Check) Net n14592 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14592 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_30_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_30_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_30_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n75 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_3_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_3_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_3_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_Crc_28_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_17_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_17_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_17_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_21_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_21_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_21_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net _txethmac1_txcrc_n71 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n14572 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n471 does not have a driver
+  E: (Circuit.Check) Net n471 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n471 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n345 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_11_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_11_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_11_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n489 does not have a driver
+  E: (Circuit.Check) Net n489 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net n489 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n14578 is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net BD_WB_DAT_O_1_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_1_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_1_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net BD_WB_DAT_O_13_ does not have a driver
+  E: (Circuit.Check) Net BD_WB_DAT_O_13_ is of invalid gate type Temp
+  E: (Circuit.Check) Net BD_WB_DAT_O_13_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net r_IPGR2_1_ is of invalid gate type \**FFGEN**
+  E: (Circuit.Check) Net r_Pad is of invalid gate type \**FFGEN**
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_16_ does not drive any logic
+    W: (Circuit.Check) Net n495 does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_21_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_30_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_29_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_22_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_5_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_27_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_2_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_24_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_23_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_25_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_14_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_8_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_15_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_17_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_10_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_28_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_13_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_20_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_7_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_11_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_3_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_18_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_12_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_19_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_26_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_4_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_6_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_9_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_1_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_31_ does not drive any logic
+    W: (Circuit.Check) Net _wishbone_bd_ram_q_0_ does not drive any logic
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net BD_WB_DAT_O_5_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_5_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_5_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n94 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_4_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_4_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_4_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14566 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_23_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_23_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_23_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14586 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14587 does not have a driver
+    E: (Circuit.Check) Net n14587 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14587 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14583 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n77 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_TxBDNum_6_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _rxethmac1_Crc_31_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n488 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n86 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n230 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14593 does not have a driver
+    E: (Circuit.Check) Net n14593 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14593 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_29_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_29_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_29_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n480 does not have a driver
+    E: (Circuit.Check) Net n480 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n480 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_12_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_12_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_12_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_19_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_19_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_19_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_n73 does not have a driver
+    E: (Circuit.Check) Net _txethmac1_n73 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_n73 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_15_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_15_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_15_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_IPGR1_3_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_CrcEn is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n481 does not have a driver
+    E: (Circuit.Check) Net n481 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n481 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_0_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_0_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_0_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n93 does not have a driver
+    E: (Circuit.Check) Net _txethmac1_txcrc_n93 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n93 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_31_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_31_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_31_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_ClkDiv_2_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_10_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_10_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_10_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14580 does not have a driver
+    E: (Circuit.Check) Net n14580 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14580 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_CollValid_0_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _wishbone_WbEn is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n472 does not have a driver
+    E: (Circuit.Check) Net n472 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n472 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _miim1_clkgen_Counter_0_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_25_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_25_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_25_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_IPGR1_2_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_CollValid_2_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_14_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_14_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_14_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n89 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n486 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n84 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_Crc_29_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_IPGR2_4_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14592 does not have a driver
+    E: (Circuit.Check) Net n14592 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14592 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_30_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_30_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_30_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n75 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_3_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_3_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_3_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_Crc_28_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_17_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_17_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_17_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_21_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_21_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_21_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n71 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14572 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n471 does not have a driver
+    E: (Circuit.Check) Net n471 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n471 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n345 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_11_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_11_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_11_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n489 does not have a driver
+    E: (Circuit.Check) Net n489 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n489 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14578 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_1_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_1_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_1_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_13_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_13_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_13_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_IPGR2_1_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_Pad is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n319 does not have a driver
+    E: (Circuit.Check) Net n319 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n319 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n173 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _rxethmac1_Crc_29_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14579 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_ClkDiv_6_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14573 does not have a driver
+    E: (Circuit.Check) Net n14573 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14573 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_CollValid_5_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_MinFL_6_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n82 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_StateDefer is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14589 does not have a driver
+    E: (Circuit.Check) Net n14589 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14589 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_IPGT_4_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14591 does not have a driver
+    E: (Circuit.Check) Net n14591 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14591 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _rxethmac1_Crc_28_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_MaxFL_10_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txstatem1_n60 does not have a driver
+    E: (Circuit.Check) Net _txethmac1_txstatem1_n60 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txstatem1_n60 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n69 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n344 does not have a driver
+    E: (Circuit.Check) Net n344 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n344 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_26_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_26_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_26_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n70 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_18_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_18_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_18_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n68 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_MaxRet_1_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_IPGT_1_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _rxethmac1_Crc_26_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14581 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14584 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14568 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _maccontrol1_receivecontrol1_PauseTimerEq0_sync1 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14564 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_CollValid_4_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _wishbone_n931 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n327 does not have a driver
+    E: (Circuit.Check) Net n327 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n327 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n83 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_22_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_22_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_22_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_9_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_9_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_9_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_16_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_16_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_16_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _rxethmac1_Crc_30_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n80 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14575 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n76 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_CollValid_3_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n65 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n343 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_CollValid_1_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n72 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n95 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n229 does not have a driver
+    E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n229 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _maccontrol1_receivecontrol1_n229 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_Crc_30_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n81 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14576 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14565 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n74 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n90 does not have a driver
+    E: (Circuit.Check) Net _txethmac1_txcrc_n90 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n90 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net r_MaxFL_9_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _macstatus1_n46 does not have a driver
+    E: (Circuit.Check) Net _macstatus1_n46 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _macstatus1_n46 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_24_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_24_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_24_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n73 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _rxethmac1_rxstatem1_n28 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n79 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n91 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14563 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_27_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_27_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_27_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14585 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14571 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n87 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _wishbone_n906 does not have a driver
+    E: (Circuit.Check) Net _wishbone_n906 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _wishbone_n906 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n78 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_MaxRet_0_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_ClkDiv_5_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _wishbone_tx_burst_en is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_MaxRet_3_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _rxethmac1_Crc_27_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n88 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n96 does not have a driver
+    E: (Circuit.Check) Net _txethmac1_txcrc_n96 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n96 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14570 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n66 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n85 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n229 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14588 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_20_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_20_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_20_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n67 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14582 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_2_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_2_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_2_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14567 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net r_MaxRet_2_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n487 does not have a driver
+    E: (Circuit.Check) Net n487 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n487 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_6_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_6_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_6_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14569 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_28_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_28_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_28_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14562 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_Crc_31_ is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14577 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net BD_WB_DAT_O_7_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_7_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_7_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n14574 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14590 does not have a driver
+    E: (Circuit.Check) Net n14590 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net n14590 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _wishbone_n904 does not have a driver
+    E: (Circuit.Check) Net _wishbone_n904 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _wishbone_n904 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net _txethmac1_txcrc_n92 does not have a driver
+    E: (Circuit.Check) Net _txethmac1_txcrc_n92 is of invalid gate type \**FFGEN**
+    E: (Circuit.Check) Net _txethmac1_txcrc_n92 of type \**FFGEN** has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net BD_WB_DAT_O_8_ does not have a driver
+    E: (Circuit.Check) Net BD_WB_DAT_O_8_ is of invalid gate type Temp
+    E: (Circuit.Check) Net BD_WB_DAT_O_8_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit usb_funct successfully written to ./usb_funct.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit usb_funct successfully written to ./usb_funct.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit c17 successfully written to ./c17.bench
+

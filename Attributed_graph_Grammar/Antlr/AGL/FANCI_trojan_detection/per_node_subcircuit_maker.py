@@ -28,6 +28,7 @@ class PerNodeSubCircuitMaker:
         tb_input_generation_top_directory = output_top_directory+"/input_for_tb/"
         tb_file_top_directory = output_top_directory+"/test_bench_files/"
         simulated_output_data_top_directory = output_top_directory+"/Simulated_Data_Output/"
+        random_select_input_top_directory = output_top_directory+"/random_selected_input/"
         final_output_top_directory = output_top_directory+"/final_output_detect/"
 
         for file_path in pathlib.Path(input_file_directory).iterdir():
@@ -37,6 +38,7 @@ class PerNodeSubCircuitMaker:
 
                 output_folder = str(pathlib.Path(file_path).name)
 
+                #NT NODE SUBCIRCUITS
                 sub_circuit_output_path_str = ""
                 sub_circuit_output_path_str += sub_circuit_top_directory + output_folder[:-2]
 
@@ -46,7 +48,9 @@ class PerNodeSubCircuitMaker:
 
                 for f in os.listdir(sub_circuit_output_path_str):
                     os.remove(os.path.join(sub_circuit_output_path_str, f))
+                ######################################
 
+                #INPUT BITS TB
                 input_tb_output_path_str = ""
                 input_tb_output_path_str += tb_input_generation_top_directory + output_folder[:-2]
 
@@ -56,7 +60,10 @@ class PerNodeSubCircuitMaker:
 
                 for f in os.listdir(input_tb_output_path_str):
                     os.remove(os.path.join(input_tb_output_path_str, f))
+                ##############################################
 
+
+                #TEST BENCH FOLDER
                 tb_file_output_path_str = ""
                 tb_file_output_path_str += tb_file_top_directory + output_folder[:-2]
 
@@ -67,8 +74,12 @@ class PerNodeSubCircuitMaker:
                 for f in os.listdir(tb_file_output_path_str):
                     os.remove(os.path.join(tb_file_output_path_str, f))
 
+                #########################
+
+
+                #SIMULATED DATA OUTPUT
                 simulated_data_output_path_str = ""
-                simulated_data_output_path_str += final_output_top_directory + output_folder[:-2]
+                simulated_data_output_path_str += simulated_output_data_top_directory + output_folder[:-2]
 
                 # Create target Directory if don't exist
                 if not os.path.exists(simulated_data_output_path_str):
@@ -76,17 +87,31 @@ class PerNodeSubCircuitMaker:
 
                 for f in os.listdir(simulated_data_output_path_str):
                     os.remove(os.path.join(simulated_data_output_path_str, f))
+                ####################################
 
+                #FINAL OUTPUT
                 final_output_path_str = ""
-                final_output_path_str += simulated_output_data_top_directory + output_folder[:-2]
+                final_output_path_str += final_output_top_directory + output_folder[:-2]
 
                 # Create target Directory if don't exist
-                if not os.path.exists(simulated_data_output_path_str):
-                    os.makedirs(simulated_data_output_path_str)
+                if not os.path.exists(final_output_path_str):
+                    os.makedirs(final_output_path_str)
 
-                for f in os.listdir(simulated_data_output_path_str):
-                    os.remove(os.path.join(simulated_data_output_path_str, f))
+                for f in os.listdir(final_output_path_str):
+                    os.remove(os.path.join(final_output_path_str, f))
+                ############################
 
+                #RANDOM SELECT NUMS
+                random_select_path_str = ""
+                random_select_path_str += random_select_input_top_directory + output_folder[:-2]
+
+                # Create target Directory if don't exist
+                if not os.path.exists(random_select_path_str):
+                    os.makedirs(random_select_path_str)
+
+                for f in os.listdir(random_select_path_str):
+                    os.remove(os.path.join(random_select_path_str, f))
+                ############################
 
                 i_graph_obj = verilog_parsing.ReadVerilog(input_f_path_str)     #parsing the verilog file of benchmark and convert it into graph object
                 d_graph_obj = i_graph_obj.getGraph()
@@ -145,6 +170,9 @@ class PerNodeSubCircuitMaker:
                         inst_dff_dict = {}
                         inst_dff_dict["CLOCK"] = clk_list_name
                         inst_dff_dict["RESET"] = rst_list_name
+
+                        if no_of_sub_inputs > 55:
+                            continue
                             
 
                         #########VERILOG SUB FILE#######
@@ -166,6 +194,7 @@ class PerNodeSubCircuitMaker:
                                     fp_rule_file.write(str('{i:0>{n}b}'.format(i=i, n=n)))
                                     fp_rule_file.write("\n")
                         else:
+                            random_select_num_file_path = random_select_path_str +"/"+str(node_name)+".txt"
                             n_of_input_bits = no_of_sub_inputs
                             no_of_inputs_to_be_selected = 15
                             list_of_random_num = list(random.sample(range(2**n_of_input_bits), (2**no_of_inputs_to_be_selected)))
@@ -176,7 +205,8 @@ class PerNodeSubCircuitMaker:
                                 key_ele = '{i:0>{n}b}'.format(i=i, n=n_of_input_bits)
                                 dict_nums[key_ele] = 0
 
-                            for key_ele in dict_nums.copy().keys():
+                            list_of_random_selects = dict_nums.copy().keys() 
+                            for key_ele in list_of_random_selects:
                                 for pin_index in range(n_of_input_bits-1, -1, -1):
                                     temp_key = key_ele
                                     if key_ele[pin_index] == '0':
@@ -184,6 +214,11 @@ class PerNodeSubCircuitMaker:
                                     else:
                                         temp_key = temp_key[:pin_index] + '0' + temp_key[pin_index+1:]
                                     dict_nums[temp_key] = 0
+
+                            with open(random_select_num_file_path,'w')as fp_rule_file:
+                                for e in list_of_random_num:
+                                    fp_rule_file.write(str(e))
+                                    fp_rule_file.write("\n")
 
                             with open(sub_circuit_tb_input_file_path,'w')as fp_rule_file:
                                 for key_ele in sorted(dict_nums.keys()):

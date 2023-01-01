@@ -1,0 +1,51 @@
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit ss38584 successfully written to ./ss38584.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./dev_readVerilog/bench_files/b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit b12 successfully written to ./b12.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit c7552 successfully written to ./c7552.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit s35932 successfully written to ./s35932.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit s27 successfully written to ./s27.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit usb_funct successfully written to ./usb_funct.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit usb_funct successfully written to ./usb_funct.bench
+
+Function Parsing.WriteBench encountered the following info messages(s):
+  I: (Parsing.WriteBench) Circuit c17 successfully written to ./c17.bench
+
