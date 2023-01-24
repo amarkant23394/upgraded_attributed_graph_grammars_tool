@@ -45,7 +45,8 @@ class FanciTrojanDetection:
                     tb_input_generation_top_directory = output_t_directory+"/input_for_tb/"
                     tb_random_input_file_path = tb_input_generation_top_directory + file_path + ".txt"
                     tb_file_top_directory = output_t_directory+"/test_bench_files/"
-                    tb_file_path = tb_file_top_directory + file_path + ".sv"
+#                    tb_file_path = tb_file_top_directory + file_path + ".sv"
+                    tb_file_path = tb_file_top_directory + "testbench_common_file.sv"
                     simulated_output_data_top_directory = output_t_directory+"/Simulated_Data_Output/"
                     simulated_output_file_path = simulated_output_data_top_directory + file_path + ".txt"
                     print(verilog_file_path)
@@ -198,4 +199,4 @@ class FanciTrojanDetection:
                             fp_file.write("\n")
                         
 
-FanciTrojanDetection(5,"./trojan_input_data","./tmp_checking_FANCI",(1/8),0.5)
+FanciTrojanDetection(5,"./trojan_input_data","./temporary",(1/8),0.5)
