@@ -8,6 +8,7 @@ import networkx as nx
 import os 
 import sys
 import re 
+from connection_gen_constants import ConnectionConstants
 
 class ReadBench:
     def __init__(self,filename):
@@ -19,6 +20,7 @@ class ReadBench:
         self.keyinputs = []
         self.filecheck()
         self.extraction()
+        self.validating_flops_adding_clk_rst()
         
         
     def filecheck(self):
@@ -66,8 +68,6 @@ class ReadBench:
                     pass
                 
                     
-                    
-                    
                 gatetype = instanceobj.group(2)
                 obj = re.match(r'\s*(\w+)\s*',gatetype,re.M|re.I)
                 if obj:
@@ -95,6 +95,37 @@ class ReadBench:
                     self.graph.add_edge(eachinput,output)
                     
                 self.instaces.append([output,input_list])
+
+    def validating_flops_adding_clk_rst(self):
+        inst_node_attributes = nx.get_node_attributes(self.graph, "type")
+
+        rst_node = "ckt_rst"
+        rst_input_found = False
+        for node_inst_dict in inst_node_attributes:
+            node_name = str(node_inst_dict)
+            if inst_node_attributes[node_inst_dict].lower() == "input":
+                for rst_name in ConnectionConstants.resetPattern.split("|"):
+                    if rst_name in node_name:
+                        rst_input_found = True
+                        rst_node = node_name
+                        break                 
+        if rst_input_found == True:
+           for inst_rst in self.graph.successors(rst_node):
+                if inst_node_attributes[inst_rst].lower() == "not":
+                    rst_node = inst_rst
+
+        for node_inst_dict in inst_node_attributes:
+            if inst_node_attributes[node_inst_dict].lower() == "dff":
+                node_name = str(node_inst_dict)
+                self.graph.add_node("ckt_clk",type="input",isOutput=False)
+                self.graph.add_edge("ckt_clk",node_name)
+                if rst_input_found == True:
+                    self.graph.add_edge(rst_node,node_name)
+                else:
+                    self.graph.add_node("ckt_rst",type="input",isOutput=False) 
+                    self.graph.add_edge("ckt_rst",node_name)
+        
+        
                 
                     
     def getInputs(self):
@@ -114,4 +145,4 @@ class ReadBench:
 
             
                 
-# fp = ReadBench("D:/GNNUnlock/Netlist_to_graph/Circuits_datasets/ANTI_SAT_DATASET_c7552/Test_c7552_AntiSAT_k_8_2.bench")     
+#fp = ReadBench("./dc_seq_pattern_26.bench")     
