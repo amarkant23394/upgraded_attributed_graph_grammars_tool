@@ -1,9 +1,0 @@
-Function Parsing.WriteBench encountered the following info messages(s):
-  I: (Parsing.WriteBench) Circuit aes_cipher successfully written to ./bench/./aes_cipher.bench
-
-Function Parsing.WriteBench encountered the following info messages(s):
-  I: (Parsing.WriteBench) Circuit s1423 successfully written to ./bench/./s1423.bench
-
-Function Parsing.WriteBench encountered the following info messages(s):
-  I: (Parsing.WriteBench) Circuit sha256core successfully written to ./bench/./sha256core.bench
-
