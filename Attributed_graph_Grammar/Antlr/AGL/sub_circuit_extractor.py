@@ -49,15 +49,19 @@ def extractor_test(self):
             output_filename = str(pathlib.Path(file_path).name)
             output_filename = str(self.output_directory)+"/" + output_filename[0:-2]
             i_graph_obj = Ver2Nx(input_f_path_str)
-#            i_graph_obj = verilog_parsing.ReadVerilog(input_f_path_str)     #parsing the verilog file of benchmark and convert it into graph object
             d_graph_obj = i_graph_obj.getGraph()
             #nx.draw(d_graph_obj,with_labels=True)
             #plt.show()
+            graph_node_attribues=nx.get_node_attributes(d_graph_obj,'type')
+            for node_ele in graph_node_attribues:
+                if graph_node_attribues[node_ele].lower() == "input":
+                    d_graph_obj.remove_node(node_ele)                
+
             graph_nodes = d_graph_obj.nodes()
             d_sub_graph = []
             graph_node_attribues=nx.get_node_attributes(d_graph_obj,'type')
-            gate_level_range = min(30,d_graph_obj.number_of_nodes())
-            for k in range(8,gate_level_range):
+            gate_level_range = min(16,d_graph_obj.number_of_nodes()+1)
+            for k in range(5,gate_level_range):
                 realsub=[]
                 print(input_f_path_str," no. of nodes = ",k,"length of subs = ",len(realsub))
                 for i in d_graph_obj.nodes(): # For each vertex , make a list of its neighbours
@@ -160,4 +164,4 @@ def extend_subgraph_suc(vsub,vext1,k,g,realsub):
         vext1=stack_list.pop(-1)
         vsub=stack_list.pop(-1)   
 
-extractor_obj = Extractor("./graph_extractor_input","./graph_extractor_output")
+extractor_obj = Extractor("./graph_extractor_input_iscas85","./graph_extractor_output_iscas85")
