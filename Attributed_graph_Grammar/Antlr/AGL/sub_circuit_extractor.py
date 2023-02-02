@@ -15,6 +15,7 @@ import json
 import itertools
 import matplotlib.pyplot as plt
 import sys
+from connection_gen_constants import ConnectionConstants
 #Modules
 #-----------------------------------------------------------------------------#
 
@@ -26,8 +27,6 @@ class Extractor:
     def __init__(self,input_directory,output_directory,**kwargs):
         self.input_directory = input_directory
         self.output_directory = output_directory
-        self.single_input_gates = ["NOT","BUF","INV","CLKBUF","INPUT"]
-        self.four_input_gates = ["DFF", "SDFF"]
         self.parser = extractor_test(self)
     
     def __call__(self):
@@ -53,15 +52,31 @@ def extractor_test(self):
             #nx.draw(d_graph_obj,with_labels=True)
             #plt.show()
             graph_node_attribues=nx.get_node_attributes(d_graph_obj,'type')
+            rst_match = False
             for node_ele in graph_node_attribues:
                 if graph_node_attribues[node_ele].lower() == "input":
+                    if rst_match == False:
+                        for rst_name in ConnectionConstants.resetPattern.split("|"):
+                            if rst_name in node_ele:
+                                rst_match = True
+                                break
+              
+                        if rst_match == True:
+                            list_rst_not = [] 
+                            for inst_rst in d_graph_obj.successors(node_ele):
+                                list_rst_not.append(inst_rst)
+                            for inst_rst in list_rst_not:
+                                if graph_node_attribues[inst_rst] == "NOT":
+                                    d_graph_obj.remove_node(inst_rst) 
+
+                    
                     d_graph_obj.remove_node(node_ele)                
 
             graph_nodes = d_graph_obj.nodes()
             d_sub_graph = []
             graph_node_attribues=nx.get_node_attributes(d_graph_obj,'type')
             gate_level_range = min(16,d_graph_obj.number_of_nodes()+1)
-            for k in range(5,gate_level_range):
+            for k in range(7,gate_level_range):
                 realsub=[]
                 print(input_f_path_str," no. of nodes = ",k,"length of subs = ",len(realsub))
                 for i in d_graph_obj.nodes(): # For each vertex , make a list of its neighbours
@@ -91,35 +106,35 @@ def extractor_test(self):
                     output_node_count = 0
                     SG = d_graph_obj.subgraph(sb)
                     nodes_sub = SG.nodes
+#                    node_attribues=nx.get_node_attributes(SG,'type')
+#                    for node_element in nodes_sub:
+#                        node_list = list(nx.bfs_edges(SG,node_element,reverse=True))[:2]
+#                        input_check_matched=0
+#                        if(len(node_list)<4):
+#                            if node_attribues[node_element] in self.single_input_gates:
+#                                input_node_count += (1 - len(node_list)) if (1 - len(node_list)) > 0 else 0
+#                                input_check_matched=1
+#                            if input_check_matched == 0 and node_attribues[node_element] in self.four_input_gates:
+#                                input_node_count += (4 - len(node_list)) if (4 - len(node_list)) > 0 else 0
+#                                input_check_matched=1
+#                            if input_check_matched == 0:
+#                                input_node_count += (2 - len(node_list)) if (2 - len(node_list)) > 0 else 0
+#
+#                        node_list = list(nx.bfs_edges(SG,node_element,reverse=False))[:2]
+#                        if(node_list == []):
+#                            output_node_count += 1
                     node_attribues=nx.get_node_attributes(SG,'type')
-                    for node_element in nodes_sub:
-                        node_list = list(nx.bfs_edges(SG,node_element,reverse=True))[:2]
-                        input_check_matched=0
-                        if(len(node_list)<4):
-                            if node_attribues[node_element] in self.single_input_gates:
-                                input_node_count += (1 - len(node_list)) if (1 - len(node_list)) > 0 else 0
-                                input_check_matched=1
-                            if input_check_matched == 0 and node_attribues[node_element] in self.four_input_gates:
-                                input_node_count += (4 - len(node_list)) if (4 - len(node_list)) > 0 else 0
-                                input_check_matched=1
-                            if input_check_matched == 0:
-                                input_node_count += (2 - len(node_list)) if (2 - len(node_list)) > 0 else 0
-
-                        node_list = list(nx.bfs_edges(SG,node_element,reverse=False))[:2]
-                        if(node_list == []):
-                            output_node_count += 1
-                    node_attribues=nx.get_node_attributes(SG,'type')
-                    grap_dict = nx.to_dict_of_dicts(SG)
+#                    grap_dict = nx.to_dict_of_dicts(SG)
                     list_edge = nx.to_edgelist(SG)
                     l_edge = list(list_edge)
                     dictionary ={
                         "NODES" : list(nodes_sub),
-                        "SUB_GRAPH" : grap_dict,
+#                        "SUB_GRAPH" : grap_dict,
                         "SUB_GRAPH_EDGE_LIST" : l_edge,
                         "NODE_ATTRIBUTES"   : node_attribues,
-                        "INPUT_COUNT" :input_node_count,
-                        "OUTPUT_COUNT" :output_node_count,
-                        "NO_OF_NODES" : len(list(nodes_sub)),
+#                        "INPUT_COUNT" :input_node_count,
+#                        "OUTPUT_COUNT" :output_node_count,
+#                        "NO_OF_NODES" : len(list(nodes_sub)),
                     }
                     json.dump(dictionary, outfile)
                     outfile.write('\n')
@@ -163,5 +178,6 @@ def extend_subgraph_suc(vsub,vext1,k,g,realsub):
                 realsub.append(lst)
         vext1=stack_list.pop(-1)
         vsub=stack_list.pop(-1)   
+  
 
 extractor_obj = Extractor("./graph_extractor_input_iscas85","./graph_extractor_output_iscas85")
