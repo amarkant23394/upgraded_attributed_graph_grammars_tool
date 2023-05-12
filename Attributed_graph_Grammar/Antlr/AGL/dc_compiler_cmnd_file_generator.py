@@ -11,7 +11,7 @@ import pathlib
 import sys
 
 class DcCommandGen:
-    def __init__(self,home_path,tech_path,target_lib_name,symbol_lib_name,module_name,inp_file_name,op_file_name,**kwargs):
+    def __init__(self,module_name,inp_file_name,op_file_name,home_path="/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL",tech_path="/home/marupust/Desktop/research_benchmark/nikhil_bhaiya_files/technology_files",target_lib_name="saed90nm_typ_ht",symbol_lib_name="saed90nm",**kwargs):
         tcl_file_path = "./optimization_param.tcl"
         with open(tcl_file_path,'w')as fp_rule_file:
             fp_rule_file.write("remove_design -designs\n")
@@ -40,4 +40,4 @@ class DcCommandGen:
         cmd = "rm "+tcl_file_path
         os.system(cmd)
 
-dccommandgen_obj = DcCommandGen("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL","/home/marupust/Desktop/research_benchmark/nikhil_bhaiya_files/technology_files","saed90nm_typ_ht","saed90nm","test_final","seq_pattern_5.v","dc_seq_pattern_5.v\n")
+#dccommandgen_obj = DcCommandGen("test_final","seq_pattern_5.v","dc_seq_pattern_5.v\n")

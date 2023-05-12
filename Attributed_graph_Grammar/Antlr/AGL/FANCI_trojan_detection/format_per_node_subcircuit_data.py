@@ -94,7 +94,7 @@ class FormatPerNodeSubCircuit:
                         unformatted_lines[index] = formatted_string                             
                             
 
-                    if line.startswith('DFFARX1'):
+                    if line.startswith('dff'):
                         dffarx1_available = 1
                         gate_type = line.split(" ")[0]
                         remaining = " ".join(line.split(" ")[1:])
@@ -102,12 +102,12 @@ class FormatPerNodeSubCircuit:
                         remaining = "(".join(remaining.split("(")[1:])
 
                         port_split = remaining.split(",")
-                        q_node = port_split[3]
-                        d_input = port_split[0]
-                        clk = port_split[1]
-                        rst = port_split[2]
+                        q_node = port_split[0]
+                        d_input = port_split[1]
+                        clk = port_split[2]
+                        rst = port_split[3].split(")")[0]
 
-                        formatted_string = "{} {} ({},{},{},{});\n".format(gate_type,node_number,d_input,clk,rst,q_node)
+                        formatted_string = "DFFARX1 {} ({},{},{},{});\n".format(node_number,d_input,clk,rst,q_node)
                         unformatted_lines[index] = formatted_string
 
 

@@ -5,7 +5,7 @@ Description :
 """
 
 from numpy import equal
-import verilog_parsing
+from ver_to_nx import Ver2Nx
 import networkx as nx
 import pathlib
 import json
@@ -22,6 +22,34 @@ class PerNodeSubCircuitMaker:
 
     clockPattern="CLK|clock|clk|CK"
     resetPattern="rst|reset|RST|Rst|RN|RSTB"
+
+    def topological_sort_sequential_circuit(self, graph):
+        """
+        Performs topological sorting on a sequential circuit represented as a NetworkX graph.
+
+        Args:
+            graph (networkx.DiGraph): The graph representing the sequential circuit.
+
+        Returns:
+            List: The topologically sorted list of nodes.
+        """
+        visited = set()
+        sorted_nodes = []
+
+        def dfs(node):
+            if node in visited:
+                return
+            visited.add(node)
+
+            for successor in graph.successors(node):
+                dfs(successor)
+
+            sorted_nodes.append(node)
+
+        for node in graph.nodes:
+            dfs(node)
+
+        return list(reversed(sorted_nodes))
 
     def __init__(self,input_cone_depth,input_file_directory,output_top_directory):
         sub_circuit_top_directory = output_top_directory+"/Nt_Node_Subcircuits/"
@@ -113,12 +141,15 @@ class PerNodeSubCircuitMaker:
                     os.remove(os.path.join(random_select_path_str, f))
                 ############################
 
-                i_graph_obj = verilog_parsing.ReadVerilog(input_f_path_str)     #parsing the verilog file of benchmark and convert it into graph object
+#                i_graph_obj = verilog_parsing.ReadVerilog(input_f_path_str)     #parsing the verilog file of benchmark and convert it into graph object
+                i_graph_obj = Ver2Nx(input_f_path_str)
                 d_graph_obj = i_graph_obj.getGraph()
-                graph_nodes = i_graph_obj.getNodes()
+#                d_graph_obj = i_graph_obj.getGraph()
+                graph_nodes = d_graph_obj.nodes()
                 graph_node_attributes=nx.get_node_attributes(d_graph_obj,'type')
                 
-                for node_name in nx.topological_sort(d_graph_obj):
+                print("TOPOLOGICAL SORT BEFORE")
+                for node_name in self.topological_sort_sequential_circuit(d_graph_obj):
                     print("Started Node = ",node_name," Gate type = ",graph_node_attributes[node_name])
                     if graph_node_attributes[node_name] != "INPUT":
                         pair_node_list = list(nx.bfs_edges(d_graph_obj,node_name,reverse=True,depth_limit=input_cone_depth))
@@ -178,12 +209,14 @@ class PerNodeSubCircuitMaker:
                         #########VERILOG SUB FILE#######
                         sub_circuit_verilog_file_path = sub_circuit_output_path_str +"/"+str(node_name)+".v"
                         sub_circuit_module_name = "test_"+str(node_name)
-                        Networkx2Verilog(SG,sub_circuit_module_name, sub_circuit_verilog_file_path, mode = "w",d_ff_dict = inst_dff_dict)
+                        Networkx2Verilog(SG,sub_circuit_module_name, sub_circuit_verilog_file_path, mode = "w")#,d_ff_dict = inst_dff_dict)
                         ################################
 
                         print("input_for_tb_will_start")  
                         print(no_of_sub_inputs)                  
 
+                        if no_of_sub_inputs <= 0:
+                            no_of_sub_inputs = 0
                         #########INPUT FOR TB FILE########
                         sub_circuit_tb_input_file_path = input_tb_output_path_str +"/"+str(node_name)+".txt"
 

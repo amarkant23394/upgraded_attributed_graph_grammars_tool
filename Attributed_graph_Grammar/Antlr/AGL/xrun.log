@@ -1,9 +1,19 @@
-	Top level design units:
-		tb_test_I2945
-xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-xcelium> source /opt/eda/cadence/XCELIUM1809/tools/xcelium/files/xmsimrc
-xcelium> run
-Simulation complete via $finish(1) at time 330 NS + 0
-./temporary/test_bench_files/testbench_common_file.sv:118 $finish;
-xcelium> exit
+buff I_7(node1_trj,n3);
+       |
+xmelab: *E,CUVMUR (./temporary/Nt_Node_Subcircuits/trjINb01/N160_trj.v,12|7): instance 'tb_test_N160_trj.U1.I_7' of design unit 'buff' is unresolved in 'worklib.test_N160_trj:v'.
+buff I_10(node5_trj,line1);
+        |
+xmelab: *E,CUVMUR (./temporary/Nt_Node_Subcircuits/trjINb01/N160_trj.v,15|8): instance 'tb_test_N160_trj.U1.I_10' of design unit 'buff' is unresolved in 'worklib.test_N160_trj:v'.
+buff I_18(node3_trj,n21);
+        |
+xmelab: *E,CUVMUR (./temporary/Nt_Node_Subcircuits/trjINb01/N160_trj.v,23|8): instance 'tb_test_N160_trj.U1.I_18' of design unit 'buff' is unresolved in 'worklib.test_N160_trj:v'.
+buff I_19(node4_trj,n1);
+        |
+xmelab: *E,CUVMUR (./temporary/Nt_Node_Subcircuits/trjINb01/N160_trj.v,24|8): instance 'tb_test_N160_trj.U1.I_19' of design unit 'buff' is unresolved in 'worklib.test_N160_trj:v'.
+buff I_21(node2_trj,n8);
+        |
+xmelab: *E,CUVMUR (./temporary/Nt_Node_Subcircuits/trjINb01/N160_trj.v,26|8): instance 'tb_test_N160_trj.U1.I_21' of design unit 'buff' is unresolved in 'worklib.test_N160_trj:v'.
+buff I_25(node0_trj,n2);
+        |
+xmelab: *E,CUVMUR (./temporary/Nt_Node_Subcircuits/trjINb01/N160_trj.v,30|8): instance 'tb_test_N160_trj.U1.I_25' of design unit 'buff' is unresolved in 'worklib.test_N160_trj:v'.
+xrun: *E,ELBERR: Error during elaboration (status 1), exiting.

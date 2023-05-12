@@ -47,12 +47,4 @@ def formatting_benchmark_circuit_verilog(output_file):
     with open(benchmark_file_path,'w')as dc_fp_file:
         dc_fp_file.writelines(unformatted_lines)
 
-
-#for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/trojan_detection_data/Input_Data").iterdir():
-#    if file_path.is_file():
-#        input_f_path_str = str(file_path)
-#        print("Reading file = ",file_path)
-#        
-#        output_folder = str(pathlib.Path(file_path).name)
-#        formatting_benchmark_circuit_verilog(output_folder[:-2])
         

@@ -614,3 +614,693 @@ Function Parsing.WriteBench encountered the following error messages(s):
     E: (Circuit.Check) Net BD_WB_DAT_O_8_ of type Temp has 0 fan-in --  (should be 2 or more).
   E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
 
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n7 does not have a driver
+  E: (Circuit.Check) Net n7 is of invalid gate type Temp
+  E: (Circuit.Check) Net n7 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net state_0_ does not have a driver
+  E: (Circuit.Check) Net state_0_ is of invalid gate type Temp
+  E: (Circuit.Check) Net state_0_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net state_1_ does not have a driver
+  E: (Circuit.Check) Net state_1_ is of invalid gate type Temp
+  E: (Circuit.Check) Net state_1_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n6 does not have a driver
+  E: (Circuit.Check) Net n6 is of invalid gate type Temp
+  E: (Circuit.Check) Net n6 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net state_2_ does not have a driver
+  E: (Circuit.Check) Net state_2_ is of invalid gate type Temp
+  E: (Circuit.Check) Net state_2_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n8 does not have a driver
+  E: (Circuit.Check) Net n8 is of invalid gate type Temp
+  E: (Circuit.Check) Net n8 of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net state_1_ does not have a driver
+    E: (Circuit.Check) Net state_1_ is of invalid gate type Temp
+    E: (Circuit.Check) Net state_1_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n6 does not have a driver
+    E: (Circuit.Check) Net n6 is of invalid gate type Temp
+    E: (Circuit.Check) Net n6 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net state_2_ does not have a driver
+    E: (Circuit.Check) Net state_2_ is of invalid gate type Temp
+    E: (Circuit.Check) Net state_2_ of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n8 does not have a driver
+    E: (Circuit.Check) Net n8 is of invalid gate type Temp
+    E: (Circuit.Check) Net n8 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n7 does not have a driver
+    E: (Circuit.Check) Net n7 is of invalid gate type Temp
+    E: (Circuit.Check) Net n7 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net state_0_ does not have a driver
+    E: (Circuit.Check) Net state_0_ is of invalid gate type Temp
+    E: (Circuit.Check) Net state_0_ of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.SetClock encountered the following error messages(s):
+  E: (Circuit.SetClock) Node IN_2_0_l is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node IN_2_0_l is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetClock encountered the following error messages(s):
+  E: (Circuit.SetClock) Node IN_3_3_l is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node IN_3_3_l is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetClock encountered the following error messages(s):
+  E: (Circuit.SetClock) Node n_119_0_l is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_119_0_l is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net UC_18_0_l does not have a driver
+  E: (Circuit.Check) Net UC_18_0_l is of invalid gate type Temp
+  E: (Circuit.Check) Net UC_18_0_l of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G14_3_l does not have a driver
+  E: (Circuit.Check) Net G14_3_l is of invalid gate type Temp
+  E: (Circuit.Check) Net G14_3_l of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G11_3_r does not have a driver
+  E: (Circuit.Check) Net G11_3_r is of invalid gate type Temp
+  E: (Circuit.Check) Net G11_3_r of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_177_3_r of type DFF has 3 fan-in -- [ckt_clk_2_r,n_93_3_r,n_149_3_l] (should be 1).
+  E: (Circuit.Check) Net n_1209_4_r of type DFF has 3 fan-in -- [ckt_clk_2_r,n_2_4_r,n_119_0_l] (should be 1).
+  E: (Circuit.Check) Net n_257_0_l of type DFF has 3 fan-in -- [ckt_clk_2_r,IN_1_0_l,n_256_0_l] (should be 1).
+  E: (Circuit.Check) Net G39_2_r does not have a driver
+  E: (Circuit.Check) Net G39_2_r is of invalid gate type Temp
+  E: (Circuit.Check) Net G39_2_r of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net v7_4_r does not have a driver
+  E: (Circuit.Check) Net v7_4_r is of invalid gate type Temp
+  E: (Circuit.Check) Net v7_4_r of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_405_2_r of type DFF has 3 fan-in -- [ckt_clk_2_r,internal2_2_r,n_200_0_l] (should be 1).
+  E: (Circuit.Check) Net G14_3_r does not have a driver
+  E: (Circuit.Check) Net G14_3_r is of invalid gate type Temp
+  E: (Circuit.Check) Net G14_3_r of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net UC_19_0_l does not have a driver
+  E: (Circuit.Check) Net UC_19_0_l is of invalid gate type Temp
+  E: (Circuit.Check) Net UC_19_0_l of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G11_3_l does not have a driver
+  E: (Circuit.Check) Net G11_3_l is of invalid gate type Temp
+  E: (Circuit.Check) Net G11_3_l of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_177_3_l of type DFF has 3 fan-in -- [ckt_clk_2_r,IN_1_3_l,n_93_3_l] (should be 1).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net n_177_3_r of type DFF has 3 fan-in -- [ckt_clk_2_r,n_93_3_r,n_149_3_l] (should be 1).
+    E: (Circuit.Check) Net n_1209_4_r of type DFF has 3 fan-in -- [ckt_clk_2_r,n_2_4_r,n_119_0_l] (should be 1).
+    E: (Circuit.Check) Net n_257_0_l of type DFF has 3 fan-in -- [n_256_0_l,ckt_clk_2_r,IN_1_0_l] (should be 1).
+    E: (Circuit.Check) Net G39_2_r does not have a driver
+    E: (Circuit.Check) Net G39_2_r is of invalid gate type Temp
+    E: (Circuit.Check) Net G39_2_r of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net v7_4_r does not have a driver
+    E: (Circuit.Check) Net v7_4_r is of invalid gate type Temp
+    E: (Circuit.Check) Net v7_4_r of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_405_2_r of type DFF has 3 fan-in -- [ckt_clk_2_r,internal2_2_r,n_200_0_l] (should be 1).
+    E: (Circuit.Check) Net G14_3_r does not have a driver
+    E: (Circuit.Check) Net G14_3_r is of invalid gate type Temp
+    E: (Circuit.Check) Net G14_3_r of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net UC_19_0_l does not have a driver
+    E: (Circuit.Check) Net UC_19_0_l is of invalid gate type Temp
+    E: (Circuit.Check) Net UC_19_0_l of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G11_3_l does not have a driver
+    E: (Circuit.Check) Net G11_3_l is of invalid gate type Temp
+    E: (Circuit.Check) Net G11_3_l of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_177_3_l of type DFF has 3 fan-in -- [IN_1_3_l,n_93_3_l,ckt_clk_2_r] (should be 1).
+    E: (Circuit.Check) Net UC_18_0_l does not have a driver
+    E: (Circuit.Check) Net UC_18_0_l is of invalid gate type Temp
+    E: (Circuit.Check) Net UC_18_0_l of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G14_3_l does not have a driver
+    E: (Circuit.Check) Net G14_3_l is of invalid gate type Temp
+    E: (Circuit.Check) Net G14_3_l of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G11_3_r does not have a driver
+    E: (Circuit.Check) Net G11_3_r is of invalid gate type Temp
+    E: (Circuit.Check) Net G11_3_r of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net holds does not have a driver
+  E: (Circuit.Check) Net holds is of invalid gate type Temp
+  E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net holds does not have a driver
+    E: (Circuit.Check) Net holds is of invalid gate type Temp
+    E: (Circuit.Check) Net holds of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_74_3_r_0 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_74_3_r_0 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_405_2_r_0 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_177_3_r_0 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetClock encountered the following error messages(s):
+  E: (Circuit.SetClock) Node n_330_3_l_0 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_330_3_l_0 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node v13_D_7_4_r_1 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_177_3_l_1 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_177_3_l_1 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node n_405_2_r_1 is not a DFF node in circuit testing_networkx2verilog
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n_405_2_r_1 of type NOR has 1 fan-in -- internal2_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_811_4_r_1 of type NOR has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net G11_3_r_0 does not have a driver
+  E: (Circuit.Check) Net G11_3_r_0 is of invalid gate type Temp
+  E: (Circuit.Check) Net G11_3_r_0 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G14_3_l_1 does not have a driver
+  E: (Circuit.Check) Net G14_3_l_1 is of invalid gate type Temp
+  E: (Circuit.Check) Net G14_3_l_1 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G11_3_l_0 does not have a driver
+  E: (Circuit.Check) Net G11_3_l_0 is of invalid gate type Temp
+  E: (Circuit.Check) Net G11_3_l_0 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_722_4_r_1 of type NAND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net v7_4_r_1 does not have a driver
+  E: (Circuit.Check) Net v7_4_r_1 is of invalid gate type Temp
+  E: (Circuit.Check) Net v7_4_r_1 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_149_3_l_0 of type AND has 1 fan-in -- IN_6_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_93_3_l_0 of type NAND has 1 fan-in -- IN_2_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net G11_3_l_1 does not have a driver
+  E: (Circuit.Check) Net G11_3_l_1 is of invalid gate type Temp
+  E: (Circuit.Check) Net G11_3_l_1 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_74_3_l_1 of type NAND has 1 fan-in -- n_569_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net v13_D_7_4_r_1 of type NAND has 1 fan-in -- v13_D_7Inter1_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_535_2_r_0 of type NAND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net v13_D_7Inter1_4_r_1 of type NAND has 1 fan-in -- v13_D_7Inv_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_149_3_l_1 of type AND has 1 fan-in -- n_330_3_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net G14_3_r_0 does not have a driver
+  E: (Circuit.Check) Net G14_3_r_0 is of invalid gate type Temp
+  E: (Circuit.Check) Net G14_3_r_0 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G39_2_r_1 does not have a driver
+  E: (Circuit.Check) Net G39_2_r_1 is of invalid gate type Temp
+  E: (Circuit.Check) Net G39_2_r_1 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G14_3_l_0 does not have a driver
+  E: (Circuit.Check) Net G14_3_l_0 is of invalid gate type Temp
+  E: (Circuit.Check) Net G14_3_l_0 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net G39_2_r_0 does not have a driver
+  E: (Circuit.Check) Net G39_2_r_0 is of invalid gate type Temp
+  E: (Circuit.Check) Net G39_2_r_0 of type Temp has 0 fan-in --  (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net n_149_3_l_0 of type AND has 1 fan-in -- IN_6_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_93_3_l_0 of type NAND has 1 fan-in -- IN_2_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net G11_3_l_1 does not have a driver
+    E: (Circuit.Check) Net G11_3_l_1 is of invalid gate type Temp
+    E: (Circuit.Check) Net G11_3_l_1 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_74_3_l_1 of type NAND has 1 fan-in -- n_569_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net v13_D_7_4_r_1 of type NAND has 1 fan-in -- v13_D_7Inter1_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_535_2_r_0 of type NAND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net v13_D_7Inter1_4_r_1 of type NAND has 1 fan-in -- v13_D_7Inv_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_149_3_l_1 of type AND has 1 fan-in -- n_330_3_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net G14_3_r_0 does not have a driver
+    E: (Circuit.Check) Net G14_3_r_0 is of invalid gate type Temp
+    E: (Circuit.Check) Net G14_3_r_0 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G39_2_r_1 does not have a driver
+    E: (Circuit.Check) Net G39_2_r_1 is of invalid gate type Temp
+    E: (Circuit.Check) Net G39_2_r_1 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G14_3_l_0 does not have a driver
+    E: (Circuit.Check) Net G14_3_l_0 is of invalid gate type Temp
+    E: (Circuit.Check) Net G14_3_l_0 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G39_2_r_0 does not have a driver
+    E: (Circuit.Check) Net G39_2_r_0 is of invalid gate type Temp
+    E: (Circuit.Check) Net G39_2_r_0 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_405_2_r_1 of type NOR has 1 fan-in -- internal2_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_811_4_r_1 of type NOR has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net G11_3_r_0 does not have a driver
+    E: (Circuit.Check) Net G11_3_r_0 is of invalid gate type Temp
+    E: (Circuit.Check) Net G11_3_r_0 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G14_3_l_1 does not have a driver
+    E: (Circuit.Check) Net G14_3_l_1 is of invalid gate type Temp
+    E: (Circuit.Check) Net G14_3_l_1 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net G11_3_l_0 does not have a driver
+    E: (Circuit.Check) Net G11_3_l_0 is of invalid gate type Temp
+    E: (Circuit.Check) Net G11_3_l_0 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_722_4_r_1 of type NAND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net v7_4_r_1 does not have a driver
+    E: (Circuit.Check) Net v7_4_r_1 is of invalid gate type Temp
+    E: (Circuit.Check) Net v7_4_r_1 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_149_3_l_0 of type NOT has 4 fan-in -- [and_n_149_3_l_0,IN_6_3_l_0,n_211_3_l_0,and_n_211_3_l_0] (should be 1).
+  E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [n_1184_4_r_1,and_n_1190_4_r_1] (should be 1).
+  E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+  E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+  E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_rst_input_n_2_r_0 of type OR has 1 fan-in -- or_rst_input_n_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_ckt_clk_1 of type AND has 1 fan-in -- ckt_clk_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [n_1184_4_r_1,and_n_1190_4_r_1] (should be 1).
+    E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+    E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+    E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_rst_input_n_2_r_0 of type OR has 1 fan-in -- or_rst_input_n_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_ckt_clk_1 of type AND has 1 fan-in -- ckt_clk_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_149_3_l_0 of type NOT has 4 fan-in -- [and_n_211_3_l_0,and_n_149_3_l_0,IN_6_3_l_0,n_211_3_l_0] (should be 1).
+    E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n_149_3_l_0 of type NOT has 4 fan-in -- [and_n_149_3_l_0,IN_6_3_l_0,n_211_3_l_0,and_n_211_3_l_0] (should be 1).
+  E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_rst_input_n_2_r_0 of type OR has 1 fan-in -- or_rst_input_n_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+  E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [n_1184_4_r_1,and_n_1190_4_r_1] (should be 1).
+  E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+  E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_149_3_l_1 of type NOT has 4 fan-in -- [and_n_149_3_l_1,n_211_3_l_1,internal29_2_r_0,and_n_211_3_l_1] (should be 1).
+  E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_ckt_clk_1 of type AND has 1 fan-in -- ckt_clk_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_149_3_l_0 of type NOT has 4 fan-in -- [n_211_3_l_0,and_n_211_3_l_0,and_n_149_3_l_0,IN_6_3_l_0] (should be 1).
+    E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_rst_input_n_2_r_0 of type OR has 1 fan-in -- or_rst_input_n_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+    E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [n_1184_4_r_1,and_n_1190_4_r_1] (should be 1).
+    E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+    E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_149_3_l_1 of type NOT has 4 fan-in -- [and_n_149_3_l_1,n_211_3_l_1,internal29_2_r_0,and_n_211_3_l_1] (should be 1).
+    E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_ckt_clk_1 of type AND has 1 fan-in -- ckt_clk_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+  E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_74_3_l_1 of type NOT has 4 fan-in -- [and_n_74_3_l_1,n_211_3_l_1,n_330_3_r_0,and_n_211_3_l_1] (should be 1).
+  E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_74_3_l_0 of type NOT has 4 fan-in -- [and_n_211_3_l_0,and_n_74_3_l_0,IN_5_3_l_0,n_211_3_l_0] (should be 1).
+  E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+  E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [and_n_1190_4_r_1,n_1184_4_r_1] (should be 1).
+  E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [and_n_1190_4_r_1,n_1184_4_r_1] (should be 1).
+    E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+    E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_74_3_l_0 of type NOT has 4 fan-in -- [and_n_74_3_l_0,IN_5_3_l_0,n_211_3_l_0,and_n_211_3_l_0] (should be 1).
+    E: (Circuit.Check) Net n_74_3_l_1 of type NOT has 4 fan-in -- [and_n_74_3_l_1,n_211_3_l_1,n_330_3_r_0,and_n_211_3_l_1] (should be 1).
+    E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+    E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [and_n_1190_4_r_1,n_1184_4_r_1] (should be 1).
+  E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+  E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_149_3_l_0 of type NOT has 4 fan-in -- [and_n_211_3_l_0,and_n_149_3_l_0,IN_6_3_l_0,n_211_3_l_0] (should be 1).
+  E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+  E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_74_3_l_0 of type NOT has 4 fan-in -- [and_n_74_3_l_0,IN_5_3_l_0,n_211_3_l_0,and_n_211_3_l_0] (should be 1).
+  E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_rst_input_n_2_r_0 of type OR has 1 fan-in -- or_rst_input_n_2_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+  E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Circuit.Check) Net n_149_3_l_1 of type NOT has 4 fan-in -- [and_n_211_3_l_1,and_n_149_3_l_1,n_211_3_l_1,n_74_3_r_0] (should be 1).
+  E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net n_74_3_l_1 of type NOT has 4 fan-in -- [internal29_2_r_0,and_n_211_3_l_1,and_n_74_3_l_1,n_211_3_l_1] (should be 1).
+  E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+  E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_ckt_clk_1 of type AND has 1 fan-in -- ckt_clk_1 (should be 2 or more).
+  E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+  E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net and_n_471_2_r_0 of type AND has 1 fan-in -- n_471_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_569_2_r_1 of type OR has 1 fan-in -- or_n_569_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_722_4_r_1 of type OR has 1 fan-in -- or_n_722_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_149_3_l_1 of type AND has 1 fan-in -- n_149_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_74_3_l_0 of type NOT has 4 fan-in -- [and_n_74_3_l_0,IN_5_3_l_0,n_211_3_l_0,and_n_211_3_l_0] (should be 1).
+    E: (Circuit.Check) Net and_n_74_3_l_0 of type AND has 1 fan-in -- n_74_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_610_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net or_rst_input_n_2_r_0 of type OR has 1 fan-in -- or_rst_input_n_2_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_74_3_l_1 of type AND has 1 fan-in -- n_74_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_330_3_l_1 of type AND has 1 fan-in -- n_330_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_471_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_471_2_r_0 does not have a driver
+    E: (Circuit.Check) Net n_471_2_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_149_3_l_1 of type NOT has 4 fan-in -- [and_n_149_3_l_1,n_211_3_l_1,n_74_3_r_0,and_n_211_3_l_1] (should be 1).
+    E: (Circuit.Check) Net or_internal29_2_r_1 of type OR has 1 fan-in -- or_internal29_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net or_v13_D_7_4_r_1 of type OR has 1 fan-in -- or_v13_D_7_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_l_0 of type AND has 1 fan-in -- n_211_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_265_2_r_1 of type OR has 1 fan-in -- or_n_265_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_74_3_l_1 of type NOT has 4 fan-in -- [and_n_74_3_l_1,n_211_3_l_1,internal29_2_r_0,and_n_211_3_l_1] (should be 1).
+    E: (Circuit.Check) Net and_n_330_3_l_0 of type AND has 1 fan-in -- n_330_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net or_n_811_4_r_1 of type OR has 1 fan-in -- or_n_811_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_l_1 of type AND has 1 fan-in -- n_211_3_l_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_211_3_r_0 of type AND has 1 fan-in -- n_211_3_r_0 (should be 2 or more).
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 does not have a driver
+    E: (Circuit.Check) Net v13_D_7Inv_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net and_ckt_clk_1 of type AND has 1 fan-in -- ckt_clk_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_rst_connected_not_n_2_rst_r_1 of type AND has 1 fan-in -- rst_connected_not_n_2_rst_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_1190_4_r_1 of type AND has 1 fan-in -- n_1190_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net and_n_471_2_r_1 of type AND has 1 fan-in -- n_471_2_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_1190_4_r_1 of type NOT has 2 fan-in -- [and_n_1190_4_r_1,n_1184_4_r_1] (should be 1).
+    E: (Circuit.Check) Net and_n_2_4_r_1 of type AND has 1 fan-in -- n_2_4_r_1 (should be 2 or more).
+    E: (Circuit.Check) Net n_610_2_r_1 does not have a driver
+    E: (Circuit.Check) Net n_610_2_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_2_4_r_1 does not have a driver
+    E: (Circuit.Check) Net n_2_4_r_1 of type NOT has 0 fan-in -- [] (should be 1).
+    E: (Circuit.Check) Net n_149_3_l_0 of type NOT has 4 fan-in -- [and_n_211_3_l_0,and_n_149_3_l_0,IN_6_3_l_0,n_211_3_l_0] (should be 1).
+    E: (Circuit.Check) Net and_n_149_3_l_0 of type AND has 1 fan-in -- n_149_3_l_0 (should be 2 or more).
+    E: (Circuit.Check) Net n_211_3_r_0 does not have a driver
+    E: (Circuit.Check) Net n_211_3_r_0 of type NOT has 0 fan-in -- [] (should be 1).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+
+Function Circuit.SetClock encountered the following error messages(s):
+  E: (Circuit.SetClock) Node IN_1 is not a DFF node in circuit sub_circuit_10_17
+
+Function Circuit.SetReset encountered the following error messages(s):
+  E: (Circuit.SetReset) Node IN_1 is not a DFF node in circuit sub_circuit_10_17
+
+Function Circuit.Check encountered the following error messages(s):
+  E: (Circuit.Check) Net OLATCH_FEL does not have a driver
+  E: (Circuit.Check) Net OLATCH_FEL is of invalid gate type Temp
+  E: (Circuit.Check) Net OLATCH_FEL of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net C3_Q2 does not have a driver
+  E: (Circuit.Check) Net C3_Q2 is of invalid gate type Temp
+  E: (Circuit.Check) Net C3_Q2 of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Circuit.Check) Net n_156 of type DFF has 3 fan-in -- [n_146,IN_2,clk_input_n] (should be 1).
+
+Function Parsing.WriteBench encountered the following error messages(s):
+  E: (Circuit.Check) Note: Correct circuit inconsistencies before trying to write to bench
+    E: (Circuit.Check) Net C3_Q2 does not have a driver
+    E: (Circuit.Check) Net C3_Q2 is of invalid gate type Temp
+    E: (Circuit.Check) Net C3_Q2 of type Temp has 0 fan-in --  (should be 2 or more).
+    E: (Circuit.Check) Net n_156 of type DFF has 3 fan-in -- [IN_2,clk_input_n,n_146] (should be 1).
+    E: (Circuit.Check) Net OLATCH_FEL does not have a driver
+    E: (Circuit.Check) Net OLATCH_FEL is of invalid gate type Temp
+    E: (Circuit.Check) Net OLATCH_FEL of type Temp has 0 fan-in --  (should be 2 or more).
+  E: (Parsing.WriteBench) Fix circuit inconsistencies before writing to bench
+

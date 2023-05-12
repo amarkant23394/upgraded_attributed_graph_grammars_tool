@@ -68,3 +68,115 @@ Function Parsing.WriteBench encountered the following warning messages(s):
     W: (Circuit.Check) Net _wishbone_bd_ram_q_31_ does not drive any logic
     W: (Circuit.Check) Net _wishbone_bd_ram_q_0_ does not drive any logic
 
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net n65 does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net n65 does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net n65_trj does not drive any logic
+  W: (Circuit.Check) Net N39 does not drive any logic
+  W: (Circuit.Check) Net N41 does not drive any logic
+  W: (Circuit.Check) Net n3 does not drive any logic
+  W: (Circuit.Check) Net N37 does not drive any logic
+  W: (Circuit.Check) Net N36 does not drive any logic
+  W: (Circuit.Check) Net N40 does not drive any logic
+  W: (Circuit.Check) Net N35 does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net N35 does not drive any logic
+    W: (Circuit.Check) Net N40 does not drive any logic
+    W: (Circuit.Check) Net n65_trj does not drive any logic
+    W: (Circuit.Check) Net N39 does not drive any logic
+    W: (Circuit.Check) Net N41 does not drive any logic
+    W: (Circuit.Check) Net n3 does not drive any logic
+    W: (Circuit.Check) Net N37 does not drive any logic
+    W: (Circuit.Check) Net N36 does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net n_177_3_r does not drive any logic
+  W: (Circuit.Check) Net n_1209_4_r does not drive any logic
+  W: (Circuit.Check) Net n_257_0_l does not drive any logic
+  W: (Circuit.Check) Net n_405_2_r does not drive any logic
+  W: (Circuit.Check) Net n_177_3_l does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net n_177_3_r does not drive any logic
+    W: (Circuit.Check) Net n_1209_4_r does not drive any logic
+    W: (Circuit.Check) Net n_257_0_l does not drive any logic
+    W: (Circuit.Check) Net n_405_2_r does not drive any logic
+    W: (Circuit.Check) Net n_177_3_l does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net holds_trj does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net n_405_2_r_1 does not drive any logic
+  W: (Circuit.Check) Net n_405_2_r_0 does not drive any logic
+  W: (Circuit.Check) Net rst_connected_not_n_2_rst_r_1 does not drive any logic
+  W: (Circuit.Check) Net n_177_3_r_0 does not drive any logic
+  W: (Circuit.Check) Net n_74_3_r_0 does not drive any logic
+  W: (Circuit.Check) Net n_177_3_l_1 does not drive any logic
+  W: (Circuit.Check) Net n_177_3_l_0 does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net n_177_3_l_1 does not drive any logic
+    W: (Circuit.Check) Net n_177_3_l_0 does not drive any logic
+    W: (Circuit.Check) Net n_405_2_r_1 does not drive any logic
+    W: (Circuit.Check) Net n_405_2_r_0 does not drive any logic
+    W: (Circuit.Check) Net rst_connected_not_n_2_rst_r_1 does not drive any logic
+    W: (Circuit.Check) Net n_177_3_r_0 does not drive any logic
+    W: (Circuit.Check) Net n_74_3_r_0 does not drive any logic
+
+Function Circuit.Check encountered the following warning messages(s):
+  W: (Circuit.Check) Net n_156 does not drive any logic
+
+Function Parsing.WriteBench encountered the following warning messages(s):
+    W: (Circuit.Check) Net n_156 does not drive any logic
+

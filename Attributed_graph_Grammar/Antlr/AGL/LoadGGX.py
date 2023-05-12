@@ -21,10 +21,11 @@ class LoadGGX:
             raise Exception("{} not found".format(file))
     
     def __call__(self):
-        os.system('java -XX:InitialHeapSize=20g -XX:MaxHeapSize=20g -XX:+UseG1GC -Dfile.encoding=UTF-8 \
-                  -classpath "AGG/bin" \
-                  agg_execution.Importing {}'.format(self.file))
-        # os.system('java -jar AGG.jar {}'.format(self.file))
+#        os.system('java -XX:InitialHeapSize=20g -XX:MaxHeapSize=20g -XX:+UseG1GC -Dfile.encoding=UTF-8 \
+#                  -classpath "AGG/bin" \
+#                  agg_execution.Importing {}'.format(self.file))
+#        os.system('java -jar AGG.jar {}'.format(self.file))
+        os.system('./AGGLCG {}'.format(self.file))
 #-----------------------------------------------------------------------------#
 
 #Testing

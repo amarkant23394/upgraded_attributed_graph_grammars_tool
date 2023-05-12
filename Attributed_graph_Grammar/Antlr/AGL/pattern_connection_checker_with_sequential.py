@@ -34,6 +34,9 @@ from pathlib import Path
 import shutil
 import itertools
 import random
+from verilog_to_networkx import ver_to_nx
+from ver_to_nx import Ver2Nx
+import copy
 
 ###############################################################################
 
@@ -77,7 +80,7 @@ random_combination_cir_dictionaries = []
 random_combo_graphs = []
 no_of_inputs = []
 no_of_outputs = []
-if 0:
+if 1:
     for file_path in pathlib.Path("/home/marupust/Desktop/AGG_ANTLR_AMAR/Attributed_graph_Grammar/Antlr/AGL/dc_compiled_input_select_graphs").iterdir():
         if file_path.is_file():
             input_f_path_str = str(file_path)
@@ -102,6 +105,7 @@ if 0:
             inst_dff_reset = []
             clk_match = False
             rst_match = False
+            print(inst_node_attributes)
             for node_inst_dict in inst_node_attributes:
                 if inst_node_attributes[node_inst_dict] == "INPUT":
                     node_name = str(node_inst_dict)

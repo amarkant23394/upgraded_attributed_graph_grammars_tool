@@ -29,15 +29,15 @@ from AGL import AGL2GGX
 from AGL import GGX2Verilog
 from Networkx2Verilog import Networkx2Verilog
 import json
-from dc_shell_s import dc_shell_input_file_write_up
+from dc_compiler_cmnd_file_generator import DcCommandGen
 from formatting_benchmark_files import formatting_benchmark_circuit_verilog
 
 ###############################################################################
 
 
 list_of_no_inputs = [50]#1000, 1200, 1500, 2000]
-list_of_no_gates = [100]#200000, 400000, 700000, 1000000]
-list_of_no_levels = [5]#200, 290, 300, 400]
+list_of_no_gates = [30000, 50000, 70000, 100000]
+list_of_no_levels = [200, 290, 300, 400]
 clock_input = "BM_CLK"
 reset_input = "BM_RST"
 
@@ -112,7 +112,7 @@ def writing_dff_gates_func(file_stream_fp,dictionary_inst,graph_dict_num_inst,df
             dff_rst_to_be_connected.append(input_connected_node)
             continue
 
-        if dff_graph_instance_node_attribute == "INPUT":
+        if dff_graph_instance_node_attribute == "input":
             dff_inputs_connected_need_2_shifted.append(input_connected_node)
             continue
 
@@ -134,7 +134,7 @@ def writing_dff_gates_func(file_stream_fp,dictionary_inst,graph_dict_num_inst,df
     for clk_connected_node in dff_clk_to_be_connected:
         if dff_input_connected_num > 1:
             file_stream_fp.write(", ")    
-        if dff_graph_node_attribues[clk_connected_node] == "INPUT":    
+        if dff_graph_node_attribues[clk_connected_node].lower() == "input":    
             file_stream_fp.write("BM_CLK.OUT1 -> "+"IN2")
         else:
             file_stream_fp.write(str(clk_connected_node)+".OUT1 -> "+"IN2")
@@ -142,7 +142,7 @@ def writing_dff_gates_func(file_stream_fp,dictionary_inst,graph_dict_num_inst,df
     for rst_connected_node in dff_rst_to_be_connected:
         if dff_input_connected_num > 1:
             file_stream_fp.write(", ")    
-        if dff_graph_node_attribues[rst_connected_node] == "INPUT":    
+        if dff_graph_node_attribues[rst_connected_node].lower() == "input":    
             file_stream_fp.write("BM_RST.OUT1 -> "+"IN3")
         else:
             file_stream_fp.write(str(rst_connected_node)+".OUT1 -> "+"IN3")
@@ -152,8 +152,8 @@ def writing_dff_gates_func(file_stream_fp,dictionary_inst,graph_dict_num_inst,df
 
 for i in range(len(list_of_no_gates)):
 
-    no_of_inputs = list_of_no_inputs[i]
-    no_of_outputs = 0
+#    no_of_inputs = list_of_no_inputs[i]
+#    no_of_outputs = 0
     no_of_gates = list_of_no_gates[i]
     no_of_levels = list_of_no_levels[i]
 
@@ -466,10 +466,14 @@ for i in range(len(list_of_no_gates)):
                                 fp_rule_file.write("GATE_"+input_node+".OUT1 -> IN1")
                             fp_rule_file.write(");") 
 
+                        if graph_num == 0:
+                            print("Amarkant")
                         for node_name in nx.topological_sort(graph_inst):
                             input_degree_inst = graph_inst.in_degree(node_name)
                             if input_degree_inst == 0:
                                 continue
+                            if graph_num == 0:
+                                print("Amarkant node name ="+str(node_name)+" "+str(graph_node_attributes[node_name]))
                             fp_rule_file.write("\n\t\tadd "+str(node_name))
                             if str(graph_node_attributes[node_name]) != "DFF":
                                 fp_rule_file.write(" GATE_NODE_N")
@@ -480,17 +484,22 @@ for i in range(len(list_of_no_gates)):
                                 prev_nodes=graph_inst.predecessors(node_name)
                                 input_connected_num = 1
                                 inputs_connected_need_2_shifted = []
+                                if graph_num == 0:
+                                    print("Prev nodes =",prev_nodes)
                                 for input_connected_node in prev_nodes:
                                     graph_instance_node_attribute = graph_node_attributes[input_connected_node]
-                                    if graph_instance_node_attribute == "INPUT":
+                                    if graph_num == 0:
+                                        print("Amarkant Prev node =",input_connected_node)
+                                        print("Amarkant prev node attribute=",graph_instance_node_attribute)
+                                    if graph_instance_node_attribute == "input":
                                         inputs_connected_need_2_shifted.append(input_connected_node)
                                         continue
                                     if input_connected_num > 1:
                                         fp_rule_file.write(", ")
 
-                                    if input_connected_node in clk_list and graph_node_attributes[input_connected_node] == "INPUT":
+                                    if input_connected_node in clk_list and graph_node_attributes[input_connected_node] == "input":
                                         fp_rule_file.write("BM_CLK.OUT1 -> "+"IN"+str(input_connected_num))
-                                    elif input_connected_node in rst_list and graph_node_attributes[input_connected_node] == "INPUT":
+                                    elif input_connected_node in rst_list and graph_node_attributes[input_connected_node] == "input":
                                         fp_rule_file.write("BM_RST.OUT1 -> "+"IN"+str(input_connected_num))
                                     else:
                                         fp_rule_file.write(str(input_connected_node)+".OUT1 -> "+"IN"+str(input_connected_num))
@@ -501,9 +510,9 @@ for i in range(len(list_of_no_gates)):
                                     if input_connected_num > 1:
                                         fp_rule_file.write(", ")
 
-                                    if input_connected_node in clk_list and graph_node_attributes[input_connected_node] == "INPUT":
+                                    if input_connected_node in clk_list and graph_node_attributes[input_connected_node] == "input":
                                         fp_rule_file.write("BM_CLK.OUT1 -> "+"IN"+str(input_connected_num))
-                                    elif input_connected_node in rst_list and graph_node_attributes[input_connected_node] == "INPUT":
+                                    elif input_connected_node in rst_list and graph_node_attributes[input_connected_node] == "input":
                                         fp_rule_file.write("BM_RST.OUT1 -> "+"IN"+str(input_connected_num))
                                     else:
                                         if primary_input_rule == 0:
@@ -555,7 +564,7 @@ for i in range(len(list_of_no_gates)):
                     fp_rule_file.write(";")
 
                 for input_node in clk_list:
-                    if graph_node_attributes[input_node] == "INPUT":
+                    if graph_node_attributes[input_node] == "input":
                         fp_rule_file.write("\n\t\t\tBM_CLK")
                         fp_rule_file.write(" CLK_G")
                         r_attributes_dictionary["gateType"] = "INPUT"
@@ -563,7 +572,7 @@ for i in range(len(list_of_no_gates)):
                         fp_rule_file.write(";")
 
                 for input_node in rst_list:
-                    if graph_node_attributes[input_node] == "INPUT":
+                    if graph_node_attributes[input_node] == "input":
                         fp_rule_file.write("\n\t\t\tBM_RST")
                         fp_rule_file.write(" RST_G")
                         r_attributes_dictionary["gateType"] = "INPUT"
@@ -702,7 +711,7 @@ for i in range(len(list_of_no_gates)):
                         dict_pat_out[output_node] = output_num
 
                     for rhs_clk_node in rhs_clk_list:
-                        if rhs_graph_node_attribues[rhs_clk_node] == "INPUT":
+                        if rhs_graph_node_attribues[rhs_clk_node].lower() == "input":
                             fp_rule_file.write("\n\t\t\tBM_CLK")
                             fp_rule_file.write(" CLK_G")
                             r_attributes_dictionary["gateType"] = "INPUT"
@@ -710,7 +719,7 @@ for i in range(len(list_of_no_gates)):
                             fp_rule_file.write(";")
 
                     for rhs_rst_node in rhs_rst_list:
-                        if rhs_graph_node_attribues[rhs_rst_node] == "INPUT":
+                        if rhs_graph_node_attribues[rhs_rst_node].lower() == "input":
                             fp_rule_file.write("\n\t\t\tBM_RST")
                             fp_rule_file.write(" RST_G")
                             r_attributes_dictionary["gateType"] = "INPUT"
@@ -740,12 +749,12 @@ for i in range(len(list_of_no_gates)):
                             fp_rule_file.write("OUT_PORT_"+str(output_instance_node_num)+"_"+str(lhs_graph_num)+".OUT1 -> "+input_node)
 
                     for rhs_clk_node in rhs_clk_list:
-                        if rhs_graph_node_attribues[rhs_clk_node] == "INPUT":
+                        if rhs_graph_node_attribues[rhs_clk_node].lower() == "input":
                             fp_rule_file.write(" , BM_CLK.OUT1 -> CLK")
 
 
                     for rhs_rst_node in rhs_rst_list:
-                        if rhs_graph_node_attribues[rhs_rst_node] == "INPUT":
+                        if rhs_graph_node_attribues[rhs_rst_node].lower() == "input":
                             fp_rule_file.write(" , BM_RST.OUT1 -> RST")
 
                     fp_rule_file.write(");")
@@ -998,9 +1007,9 @@ for i in range(len(list_of_no_gates)):
                 
 
     AGLVal = AGL2GGX("./benchmarks_generated/txt_files/"+output_file+".txt")()
-#    LoadGGX("./benchmarks_generated/txt_files/"+output_file+".ggx")()
+    LoadGGX("./benchmarks_generated/txt_files/"+output_file+".txt")()
 #    AGLVal = AGL2GGX("./benchmarks_generated/txt_files/AndTree.txt")()
 #    LoadGGX("./benchmarks_generated/txt_files/AndTree.ggx")()
-#    GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
-#    formatting_benchmark_circuit_verilog(output_file)
-#    dc_shell_input_file_write_up(output_file)
+    GGX2Verilog("./benchmarks_generated/txt_files/"+output_file+"_out.ggx",("./benchmarks_generated/benchmark_generated_files/"+output_file+".v"),AGLVal.getPortOder())
+    formatting_benchmark_circuit_verilog(output_file)
+    DcCommandGen(output_file,"./benchmarks_generated/benchmark_generated_files/"+output_file+".v","./benchmarks_generated/dc_compiled/"+output_file+".v")

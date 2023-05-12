@@ -41,7 +41,12 @@ class FanciTrojanDetection:
                 for file in files:
                     verilog_file_path = os.path.join(subdir, file)
                     file_path = "/".join(verilog_file_path.split("/")[-2:])
-                    file_path = file_path.rstrip(".v")
+                    print("file_path without .v removal =",file_path)
+                    file_path = file_path.rstrip("\n")
+                    print("file_path after .v removal =",file_path)
+                    file_path = file_path.rstrip(" ")
+                    file_path = file_path[:-2]
+                    print("file_path after .v removal =",file_path)
                     tb_input_generation_top_directory = output_t_directory+"/input_for_tb/"
                     tb_random_input_file_path = tb_input_generation_top_directory + file_path + ".txt"
                     tb_file_top_directory = output_t_directory+"/test_bench_files/"
@@ -88,7 +93,9 @@ class FanciTrojanDetection:
 
                         if module_name != "" and input_size != 0:
                             break
-                        
+                    
+                    if input_size <= 0:
+                        continue    
                     if is_sequential == True:
                         Sequential_TestBench_Generator(tb_random_input_file_path,tb_file_path,simulated_output_file_path,input_size,1,module_name)
                     else:
@@ -199,4 +206,4 @@ class FanciTrojanDetection:
                             fp_file.write("\n")
                         
 
-FanciTrojanDetection(5,"./trojan_input_data","./temporary",(1/8),0.5)
+FanciTrojanDetection(5,"./trojan_input_data","./temporary",0.6,0.8)
